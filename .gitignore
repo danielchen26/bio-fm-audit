@@ -1,0 +1,37 @@
+# Data — 185 GB, all public and re-fetchable by the scripts in this repo
+data/
+tiles/
+tiles_s4/
+raw_10x/
+BreaKHis_v1/
+*.tif
+*.tif.gz
+*.tar.gz
+*.svs
+*.h5
+*.h5ad
+
+# Cached arrays and embeddings (regenerable; hundreds of MB to GB)
+*.npz
+!evidence/*.npz
+
+# Model checkpoints (regenerable)
+ckpt/
+*.pt
+*.pth
+
+# Logs and run output
+*.log
+out/
+verify_results.json
+!evidence/verify_results.json
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+
+# macOS
+.DS_Store

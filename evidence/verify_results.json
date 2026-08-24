@@ -1,0 +1,183 @@
+{
+  "snapshot": "9eff6989265d263e",
+  "n_slides": 65,
+  "n_tiles": 52155,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "raw": {
+    "raw_random_seeds": [
+      0.9138737929683528,
+      0.9098563404284156,
+      0.9091149767468258,
+      0.9126280354946982,
+      0.9100050797439668
+    ],
+    "raw_patient_seeds": [
+      0.5989206970702998,
+      0.7939264753831106,
+      0.8696345859241237,
+      0.8563884440292421,
+      0.8472358280254777
+    ],
+    "raw_random": [
+      0.9110956450764517,
+      0.0018283643996891239
+    ],
+    "raw_patient": [
+      0.7932212060864507,
+      0.10049862601993109
+    ],
+    "raw_centre_folds": [
+      0.8488645350908444,
+      0.7575016105941302,
+      0.37499311723919154,
+      0.895728888501877,
+      0.3920483670495457
+    ],
+    "raw_centre_id": [
+      0.9543596506118774,
+      0.29931880108991826
+    ],
+    "phikon_random_seeds": [
+      0.998455894606995,
+      0.9985609571992298,
+      0.9985180449544491,
+      0.9981919252338548,
+      0.9980777858176103
+    ],
+    "phikon_patient_seeds": [
+      0.9576155496151939,
+      0.9802811612091853,
+      0.9826069827430837,
+      0.9815815316517639,
+      0.9901915605095541
+    ],
+    "phikon_random": [
+      0.9983609215624277,
+      0.00019102225240527051
+    ],
+    "phikon_patient": [
+      0.9784553571457562,
+      0.010976142946661493
+    ],
+    "phikon_centre_folds": [
+      0.9892845119344496,
+      0.976676031973276,
+      0.911680469953775,
+      0.9805368338557994,
+      0.9816233606206068
+    ],
+    "phikon_centre_id": [
+      0.9976839423179626,
+      0.29931880108991826
+    ]
+  },
+  "claims": {
+    "leak_raw": {
+      "question": "raw-pixel: random minus patient-disjoint AUC",
+      "null": "zero leak",
+      "value": 0.11787443899000108,
+      "se": 0.050904244055956234,
+      "n": 5,
+      "tier": "RESOLVED",
+      "extra": {
+        "random": 0.9110956450764517,
+        "patient": 0.7932212060864507
+      }
+    },
+    "leak_phikon": {
+      "question": "Phikon: random minus patient-disjoint AUC",
+      "null": "zero leak",
+      "value": 0.019905564416671618,
+      "se": 0.0055325711563928275,
+      "n": 5,
+      "tier": "RESOLVED",
+      "extra": {
+        "random": 0.9983609215624277,
+        "patient": 0.9784553571457562
+      }
+    },
+    "centre_id": {
+      "question": "centre identity decodable from the embedding",
+      "null": "chance = 1/n_centres",
+      "value": 0.6983651412280444,
+      "se": 0.0008776281594636818,
+      "n": 0,
+      "tier": "RESOLVED",
+      "extra": {
+        "acc": 0.9976839423179626,
+        "chance": 0.29931880108991826
+      }
+    },
+    "encoder_gap": {
+      "question": "Phikon minus raw-pixel, patient-disjoint AUC",
+      "null": "no benefit from pathology pretraining",
+      "value": 0.1852341510593054,
+      "se": 0.04511320519524757,
+      "n": 5,
+      "tier": "RESOLVED",
+      "extra": {
+        "phikon": 0.9784553571457562,
+        "raw": 0.7932212060864507
+      }
+    },
+    "delta_site": {
+      "question": "paired seen-site minus unseen-site AUC",
+      "null": "site novelty is free",
+      "value": 0.007681674261271887,
+      "se": 0.006816220389343344,
+      "n": 5,
+      "tier": "NULL",
+      "extra": {
+        "seen": 0.9779963114756566,
+        "unseen": 0.9703146372143845
+      }
+    },
+    "stability": {
+      "question": "across-centre SD of AUC, raw minus phikon",
+      "null": "equally stable",
+      "value": 0.19676683460515024,
+      "se": 0.04784595254696617,
+      "n": 5,
+      "tier": "RESOLVED",
+      "extra": {
+        "sd_raw": 0.22520256458635066,
+        "sd_phikon": 0.028435729981200423,
+        "worst_raw": 0.37499311723919154,
+        "worst_phikon": 0.911680469953775
+      }
+    },
+    "rule_kappa": {
+      "question": "quadratic kappa, AJCC rule on annotated polygons",
+      "null": "chance agreement (kappa=0)",
+      "value": 0.9874927842986339,
+      "se": 0.009480161244504197,
+      "n": 65,
+      "tier": "RESOLVED",
+      "extra": {}
+    },
+    "tile_kappa": {
+      "question": "quadratic kappa, AJCC rule on predicted tiles",
+      "null": "chance agreement (kappa=0)",
+      "value": 0.6741465743614228,
+      "se": 0.06498093504375106,
+      "n": 65,
+      "tier": "RESOLVED",
+      "extra": {}
+    },
+    "seg_value": {
+      "question": "kappa with true geometry minus kappa from tiles",
+      "null": "tile classification suffices",
+      "value": 0.3133462099372111,
+      "se": 0.06566883108737352,
+      "n": 65,
+      "tier": "RESOLVED",
+      "extra": {}
+    }
+  }
+}
