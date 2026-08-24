@@ -9,6 +9,19 @@ Every experiment here is an instance of it, and the answer is consistently that
 the model measures the instrument a great deal — and that **you cannot see this
 from the loss curve**.
 
+### Two halves, two different capabilities
+
+| half | what it does | capability |
+|---|---|---|
+| [`protein-multimodal-fm/`](protein-multimodal-fm/) | **builds** a multimodal FM from scratch — ESM3-style 4-track generative masked model, VQ structure tokenizer, any-to-all conditioning | FM **architecture and pretraining** |
+| [`pathology-fm/`](pathology-fm/) | **audits** existing FMs — frozen-probe evaluation of Phikon/ImageNet, plus a small DINO trained from scratch | FM **evaluation and deployment** |
+
+The protein half is the one that answers "can you train a foundation model"; the
+pathology half answers "can you tell whether one is real". Read
+[`protein-multimodal-fm/README.md`](protein-multimodal-fm/README.md) for the
+former and section 0 of
+[`pathology-fm/README.md`](pathology-fm/README.md) for the latter.
+
 | study | question actually asked | answer |
 |---|---|---|
 | protein multimodal FM | does the structure token encode structure? | **0.55 of 2.39 bits** of SS8 entropy (23%), while the loss looked perfect |
@@ -158,14 +171,16 @@ segmentation" into "**measured that segmentation is worth +0.3133 κ**".
 ## Repository layout
 
 ```
-protein-multimodal-fm/src/     ESM3-style 4-track masked generative model
-  data.py                      RCSB 30%-identity clusters -> DSSP SS8 + Shrake-Rupley SASA
-  struct_tokenizer.py          geometric encoder + EMA VQ + FAPE/distogram decoder
-  multimodal.py                shared trunk, per-track noise schedule, any-to-all eval
-  diag_local.py                parameter-free token information probe (the key tool)
-  decode.py                    SS8 prompt -> co-generate -> decode 3D -> re-run DSSP
+protein-multimodal-fm/         BUILDS a multimodal FM (see its own README)
+  src/                         ESM3-style 4-track masked generative model
+    data.py                    RCSB 30%-identity clusters -> DSSP SS8 + Shrake-Rupley SASA
+    struct_tokenizer.py        geometric encoder + EMA VQ + FAPE/distogram decoder
+    multimodal.py              shared trunk, per-track noise schedule, any-to-all eval
+    diag_local.py              parameter-free token information probe (the key tool)
+    decode.py                  SS8 prompt -> co-generate -> decode 3D -> re-run DSSP
 
-pathology-fm/src/
+pathology-fm/                  AUDITS existing FMs (see its own README)
+  src/
   verify.py                    SINGLE SOURCE OF TRUTH: frozen snapshot, pre-registered
                                claims, paired SEs, RESOLVED/NULL/UNDERPOWERED tiers
   pathdata.py                  3 split regimes, Macenko normalisation
@@ -219,6 +234,10 @@ mismatches correct, 50/50 when deliberately swapped.
   The official rule is implemented and runs, reported as a pipeline demonstration.
 - **Segmentation is not implemented.** Its value is measured (+0.3133 κ), not delivered.
 - **No IHC.** H&E only.
+- **The protein trunk was implemented but never evaluated.** Its structure
+  tokenizer is fully trained and measured, but the 4-track any-to-all results
+  table and the closed-loop generation were cancelled mid-flight when the project
+  pivoted to pathology. No claim is made about the trunk's performance.
 - The DINO encoder saw 5,354 patches from 55 patients for 2,500 steps. It is not
   comparable in scale to Phikon and is not presented as such.
 - Flow model `cov90 = 0.817` against a 0.90 target — mildly overconfident, wants
