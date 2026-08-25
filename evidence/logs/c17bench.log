@@ -1,0 +1,79 @@
+[filter] grades micro,macro -> 11883 tiles (54.0% tumour)
+
+tiles 11883  tumour 6412 (54.0%)  slides 41  patients 35
+  centre 0:   3509 tiles   2702 tumour (77.0%)   6 slides   5 patients
+  centre 1:   3007 tiles   1835 tumour (61.0%)   6 slides   5 patients
+  centre 2:   2452 tiles   1004 tumour (40.9%)   6 slides   5 patients
+  centre 3:   1600 tiles    297 tumour (18.6%)   4 slides   4 patients
+  centre 4:   1315 tiles    574 tumour (43.7%)   3 slides   3 patients
+  grade micro    :   5600 tiles,   850 tumour
+  grade macro    :   6283 tiles,  5562 tumour 
+
+[random  ] (8912, 2971)  shared slides 25 patients 22 centres 5
+[slide   ] (8588, 3295)  shared slides 0 patients 1 centres 4
+[patient ] (8750, 3133)  shared slides 0 patients 0 centres 4
+[centre  ] leave-one-out over [0, 1, 2, 3, 4]
+
+[enc] raw-pixel colour statistics
+
+=== raw-pixel (dim 54) ===
+  tumour AUC [random  ] 0.9117 +-0.0032 (5 seeds)
+  tumour AUC [slide   ] 0.5993 +-0.1405 (5 seeds)
+  tumour AUC [patient ] 0.6487 +-0.0985 (5 seeds)
+  tumour AUC [centre 0] 0.7484  (test n=3509, pos 0.77)
+  tumour AUC [centre 1] 0.7583  (test n=3007, pos 0.61)
+  tumour AUC [centre 2] 0.5673  (test n=2452, pos 0.41)
+  tumour AUC [centre 3] 0.7924  (test n=1600, pos 0.19)
+  tumour AUC [centre 4] 0.6702  (test n=1315, pos 0.44)
+  confound: centre-ID 0.9615 (chance 0.333, lift 2.89x) | slide-ID 0.8728 (chance 0.0983, lift 8.9x)
+[enc] ImageNet ViT-S/16
+    embed 0/11883
+    embed 3840/11883
+    embed 7680/11883
+    embed 11520/11883
+
+=== imagenet-vit-s (dim 384) ===
+  tumour AUC [random  ] 0.9732 +-0.0018 (5 seeds)
+  tumour AUC [slide   ] 0.8066 +-0.0681 (5 seeds)
+  tumour AUC [patient ] 0.8457 +-0.0393 (5 seeds)
+  tumour AUC [centre 0] 0.9304  (test n=3509, pos 0.77)
+  tumour AUC [centre 1] 0.8839  (test n=3007, pos 0.61)
+  tumour AUC [centre 2] 0.6882  (test n=2452, pos 0.41)
+  tumour AUC [centre 3] 0.8457  (test n=1600, pos 0.19)
+  tumour AUC [centre 4] 0.9020  (test n=1315, pos 0.44)
+  confound: centre-ID 0.9661 (chance 0.333, lift 2.90x) | slide-ID 0.8964 (chance 0.0983, lift 9.1x)
+[enc] Phikon ViT-B (iBOT on TCGA)
+Loading weights:   0%|          | 0/198 [00:00<?, ?it/s]Loading weights: 100%|██████████| 198/198 [00:00<00:00, 12412.15it/s]
+[transformers] [1mViTModel LOAD REPORT[0m from: owkin/phikon
+Key                 | Status     |  | 
+--------------------+------------+--+-
+pooler.dense.bias   | UNEXPECTED |  | 
+pooler.dense.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+    embed 0/11883
+    embed 3840/11883
+    embed 7680/11883
+    embed 11520/11883
+
+=== phikon-vit-b (dim 768) ===
+  tumour AUC [random  ] 0.9973 +-0.0003 (5 seeds)
+  tumour AUC [slide   ] 0.8827 +-0.0607 (5 seeds)
+  tumour AUC [patient ] 0.9250 +-0.0310 (5 seeds)
+  tumour AUC [centre 0] 0.9874  (test n=3509, pos 0.77)
+  tumour AUC [centre 1] 0.9617  (test n=3007, pos 0.61)
+  tumour AUC [centre 2] 0.9390  (test n=2452, pos 0.41)
+  tumour AUC [centre 3] 0.9530  (test n=1600, pos 0.19)
+  tumour AUC [centre 4] 0.9563  (test n=1315, pos 0.44)
+  confound: centre-ID 0.9958 (chance 0.333, lift 2.99x) | slide-ID 0.9832 (chance 0.0983, lift 10.0x)
+
+========================================================================================================
+CAMELYON17 tumour-tile AUC by split regime.  delta_site = patient - centre
+========================================================================================================
+encoder            random    slide  patient      centre (LOCO)  delta_site   centreID   slideID
+raw-pixel          0.9117   0.5993   0.6487     0.7073+-0.0806     -0.0587     0.9615      8.9x
+imagenet-vit-s     0.9732   0.8066   0.8457     0.8500+-0.0855     -0.0044     0.9661      9.1x
+phikon-vit-b       0.9973   0.8827   0.9250     0.9595+-0.0158     -0.0345     0.9958     10.0x
+
+[bench] wrote /Volumes/Lexar/camelyon17/c17_bench.npz

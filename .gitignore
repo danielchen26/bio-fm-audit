@@ -20,8 +20,10 @@ ckpt/
 *.pt
 *.pth
 
-# Logs and run output
+# Logs and run output -- but evidence/logs holds the raw output backing the
+# numbers in the READMEs, so those are whitelisted
 *.log
+!evidence/logs/*.log
 out/
 verify_results.json
 !evidence/verify_results.json

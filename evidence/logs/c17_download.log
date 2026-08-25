@@ -1,0 +1,17 @@
+[c17] listing bucket ...
+[c17] 50 annotated slides; per-centre {0: 10, 1: 10, 2: 10, 3: 10, 4: 10}
+[c17] 100 files, 152.5 GB total, 3.3 GB already present, 146 min remaining at 17 MB/s
+[  3/100] patient_009_node_1.tif              3.35 GB   16.3 MB/s  ~149.5 min left
+[  4/100] patient_009_node_1_mask.tif         0.02 GB   16.2 MB/s  ~149.9 min left
+[  5/100] patient_010_node_4.tif              2.29 GB   15.9 MB/s  ~150.7 min left
+[  6/100] patient_010_node_4_mask.tif         0.01 GB   15.9 MB/s  ~150.9 min left
+[  7/100] patient_012_node_0.tif              1.97 GB   15.7 MB/s  ~150.4 min left
+[  8/100] patient_012_node_0_mask.tif         0.01 GB   15.7 MB/s  ~150.6 min left
+[  9/100] patient_015_node_1.tif              2.17 GB   15.5 MB/s  ~150.1 min left
+[ 10/100] patient_015_node_1_mask.tif         0.01 GB   15.5 MB/s  ~150.3 min left
+[ 11/100] patient_015_node_2.tif              2.36 GB   15.4 MB/s  ~148.4 min left
+[ 12/100] patient_015_node_2_mask.tif         0.01 GB   15.4 MB/s  ~148.6 min left
+[ 13/100] patient_016_node_1.tif              2.81 GB   13.7 MB/s  ~163.8 min left
+[ 14/100] patient_016_node_1_mask.tif         0.02 GB   13.6 MB/s  ~163.9 min left
+[ 15/100] patient_017_node_1.tif              2.40 GB   13.8 MB/s  ~158.9 min left
+[ 16/100] patient_017_node_1_mask.tif         0.02 GB   13.7 MB/s  ~160.5 min left
