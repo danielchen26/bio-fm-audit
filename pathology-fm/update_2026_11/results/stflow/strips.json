@@ -1,0 +1,230 @@
+{
+ "LUNG/TENX118/rep0": {
+  "n": 1944,
+  "n_val": 397
+ },
+ "LUNG/TENX118/rep1": {
+  "n": 1944,
+  "n_val": 384
+ },
+ "LUNG/TENX118/rep2": {
+  "n": 1944,
+  "n_val": 388
+ },
+ "LUNG/TENX141/rep0": {
+  "n": 3262,
+  "n_val": 679
+ },
+ "LUNG/TENX141/rep1": {
+  "n": 3262,
+  "n_val": 648
+ },
+ "LUNG/TENX141/rep2": {
+  "n": 3262,
+  "n_val": 618
+ },
+ "PAAD/TENX116/rep0": {
+  "n": 2010,
+  "n_val": 410
+ },
+ "PAAD/TENX116/rep1": {
+  "n": 2010,
+  "n_val": 387
+ },
+ "PAAD/TENX116/rep2": {
+  "n": 2010,
+  "n_val": 400
+ },
+ "PAAD/TENX126/rep0": {
+  "n": 1951,
+  "n_val": 411
+ },
+ "PAAD/TENX126/rep1": {
+  "n": 1951,
+  "n_val": 390
+ },
+ "PAAD/TENX126/rep2": {
+  "n": 1951,
+  "n_val": 385
+ },
+ "PAAD/TENX140/rep0": {
+  "n": 3610,
+  "n_val": 749
+ },
+ "PAAD/TENX140/rep1": {
+  "n": 3610,
+  "n_val": 722
+ },
+ "PAAD/TENX140/rep2": {
+  "n": 3610,
+  "n_val": 707
+ },
+ "SKCM/TENX115/rep0": {
+  "n": 1741,
+  "n_val": 369
+ },
+ "SKCM/TENX115/rep1": {
+  "n": 1741,
+  "n_val": 345
+ },
+ "SKCM/TENX115/rep2": {
+  "n": 1741,
+  "n_val": 325
+ },
+ "SKCM/TENX117/rep0": {
+  "n": 1293,
+  "n_val": 284
+ },
+ "SKCM/TENX117/rep1": {
+  "n": 1293,
+  "n_val": 252
+ },
+ "SKCM/TENX117/rep2": {
+  "n": 1293,
+  "n_val": 246
+ },
+ "COAD/TENX111/rep0": {
+  "n": 5079,
+  "n_val": 1034
+ },
+ "COAD/TENX111/rep1": {
+  "n": 5079,
+  "n_val": 976
+ },
+ "COAD/TENX111/rep2": {
+  "n": 5079,
+  "n_val": 993
+ },
+ "COAD/TENX147/rep0": {
+  "n": 3417,
+  "n_val": 714
+ },
+ "COAD/TENX147/rep1": {
+  "n": 3417,
+  "n_val": 657
+ },
+ "COAD/TENX147/rep2": {
+  "n": 3417,
+  "n_val": 676
+ },
+ "COAD/TENX148/rep0": {
+  "n": 3535,
+  "n_val": 711
+ },
+ "COAD/TENX148/rep1": {
+  "n": 3535,
+  "n_val": 696
+ },
+ "COAD/TENX148/rep2": {
+  "n": 3535,
+  "n_val": 694
+ },
+ "COAD/TENX149/rep0": {
+  "n": 3620,
+  "n_val": 737
+ },
+ "COAD/TENX149/rep1": {
+  "n": 3620,
+  "n_val": 775
+ },
+ "COAD/TENX149/rep2": {
+  "n": 3620,
+  "n_val": 714
+ },
+ "READ/ZEN36/rep0": {
+  "n": 1691,
+  "n_val": 354
+ },
+ "READ/ZEN36/rep1": {
+  "n": 1691,
+  "n_val": 341
+ },
+ "READ/ZEN36/rep2": {
+  "n": 1691,
+  "n_val": 320
+ },
+ "READ/ZEN40/rep0": {
+  "n": 2128,
+  "n_val": 428
+ },
+ "READ/ZEN40/rep1": {
+  "n": 2128,
+  "n_val": 429
+ },
+ "READ/ZEN40/rep2": {
+  "n": 2128,
+  "n_val": 424
+ },
+ "READ/ZEN48/rep0": {
+  "n": 2385,
+  "n_val": 479
+ },
+ "READ/ZEN48/rep1": {
+  "n": 2385,
+  "n_val": 487
+ },
+ "READ/ZEN48/rep2": {
+  "n": 2385,
+  "n_val": 466
+ },
+ "READ/ZEN49/rep0": {
+  "n": 2203,
+  "n_val": 445
+ },
+ "READ/ZEN49/rep1": {
+  "n": 2203,
+  "n_val": 443
+ },
+ "READ/ZEN49/rep2": {
+  "n": 2203,
+  "n_val": 439
+ },
+ "LYMPH_IDC/NCBI681/rep0": {
+  "n": 4992,
+  "n_val": 999
+ },
+ "LYMPH_IDC/NCBI681/rep1": {
+  "n": 4992,
+  "n_val": 998
+ },
+ "LYMPH_IDC/NCBI681/rep2": {
+  "n": 4992,
+  "n_val": 998
+ },
+ "LYMPH_IDC/NCBI682/rep0": {
+  "n": 4988,
+  "n_val": 998
+ },
+ "LYMPH_IDC/NCBI682/rep1": {
+  "n": 4988,
+  "n_val": 999
+ },
+ "LYMPH_IDC/NCBI682/rep2": {
+  "n": 4988,
+  "n_val": 998
+ },
+ "LYMPH_IDC/NCBI683/rep0": {
+  "n": 4992,
+  "n_val": 999
+ },
+ "LYMPH_IDC/NCBI683/rep1": {
+  "n": 4992,
+  "n_val": 998
+ },
+ "LYMPH_IDC/NCBI683/rep2": {
+  "n": 4992,
+  "n_val": 998
+ },
+ "LYMPH_IDC/NCBI684/rep0": {
+  "n": 4992,
+  "n_val": 999
+ },
+ "LYMPH_IDC/NCBI684/rep1": {
+  "n": 4992,
+  "n_val": 998
+ },
+ "LYMPH_IDC/NCBI684/rep2": {
+  "n": 4992,
+  "n_val": 999
+ }
+}

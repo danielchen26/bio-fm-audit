@@ -1,0 +1,356 @@
+{
+ "COAD": {
+  "phikon": {
+   "mean": 0.2619,
+   "per_split": [
+    0.2597,
+    0.2642
+   ],
+   "published": 0.2623,
+   "diff": -0.0004
+  },
+  "path_dino_vitb_kaiko": {
+   "mean": 0.2806,
+   "per_split": [
+    0.3169,
+    0.2444
+   ],
+   "published": 0.2812,
+   "diff": -0.0006
+  },
+  "path_dinov2_vitl_phikon2": {
+   "mean": 0.25,
+   "per_split": [
+    0.2307,
+    0.2694
+   ],
+   "published": 0.25,
+   "diff": 0.0
+  },
+  "in_dino_vitb": {
+   "mean": 0.2456,
+   "per_split": [
+    0.1999,
+    0.2913
+   ],
+   "published": null,
+   "diff": null
+  },
+  "path_dino_vits_lunit": {
+   "mean": 0.2551,
+   "per_split": [
+    0.2357,
+    0.2745
+   ],
+   "published": null,
+   "diff": null
+  },
+  "in_dino_vits": {
+   "mean": 0.2146,
+   "per_split": [
+    0.1778,
+    0.2514
+   ],
+   "published": null,
+   "diff": null
+  }
+ },
+ "LUNG": {
+  "phikon": {
+   "mean": 0.5528,
+   "per_split": [
+    0.5541,
+    0.5514
+   ],
+   "published": 0.5466,
+   "diff": 0.0062
+  },
+  "path_dino_vitb_kaiko": {
+   "mean": 0.5167,
+   "per_split": [
+    0.4876,
+    0.5459
+   ],
+   "published": 0.5156,
+   "diff": 0.0011
+  },
+  "path_dinov2_vitl_phikon2": {
+   "mean": 0.5415,
+   "per_split": [
+    0.5318,
+    0.5512
+   ],
+   "published": 0.5419,
+   "diff": -0.0004
+  },
+  "in_dino_vitb": {
+   "mean": 0.5062,
+   "per_split": [
+    0.4871,
+    0.5253
+   ],
+   "published": null,
+   "diff": null
+  },
+  "path_dino_vits_lunit": {
+   "mean": 0.5299,
+   "per_split": [
+    0.512,
+    0.5478
+   ],
+   "published": null,
+   "diff": null
+  },
+  "in_dino_vits": {
+   "mean": 0.4892,
+   "per_split": [
+    0.4683,
+    0.5102
+   ],
+   "published": null,
+   "diff": null
+  }
+ },
+ "LYMPH_IDC": {
+  "phikon": {
+   "mean": 0.2372,
+   "per_split": [
+    0.3143,
+    0.1953,
+    0.2251,
+    0.2142
+   ],
+   "published": 0.2373,
+   "diff": -0.0001
+  },
+  "path_dino_vitb_kaiko": {
+   "mean": 0.2366,
+   "per_split": [
+    0.314,
+    0.1845,
+    0.2311,
+    0.2168
+   ],
+   "published": 0.2365,
+   "diff": 0.0001
+  },
+  "path_dinov2_vitl_phikon2": {
+   "mean": 0.244,
+   "per_split": [
+    0.3154,
+    0.1843,
+    0.2541,
+    0.2221
+   ],
+   "published": 0.2437,
+   "diff": 0.0003
+  },
+  "in_dino_vitb": {
+   "mean": 0.2515,
+   "per_split": [
+    0.3327,
+    0.2051,
+    0.28,
+    0.1881
+   ],
+   "published": null,
+   "diff": null
+  },
+  "path_dino_vits_lunit": {
+   "mean": 0.2525,
+   "per_split": [
+    0.3237,
+    0.2006,
+    0.2627,
+    0.2232
+   ],
+   "published": null,
+   "diff": null
+  },
+  "in_dino_vits": {
+   "mean": 0.2521,
+   "per_split": [
+    0.326,
+    0.2046,
+    0.2786,
+    0.1993
+   ],
+   "published": null,
+   "diff": null
+  }
+ },
+ "PAAD": {
+  "phikon": {
+   "mean": 0.4426,
+   "per_split": [
+    0.3711,
+    0.5366,
+    0.42
+   ],
+   "published": 0.4425,
+   "diff": 0.0001
+  },
+  "path_dino_vitb_kaiko": {
+   "mean": 0.4546,
+   "per_split": [
+    0.4038,
+    0.5387,
+    0.4212
+   ],
+   "published": 0.4524,
+   "diff": 0.0022
+  },
+  "path_dinov2_vitl_phikon2": {
+   "mean": 0.4451,
+   "per_split": [
+    0.3937,
+    0.542,
+    0.3998
+   ],
+   "published": 0.4455,
+   "diff": -0.0004
+  },
+  "in_dino_vitb": {
+   "mean": 0.4101,
+   "per_split": [
+    0.3734,
+    0.4959,
+    0.3611
+   ],
+   "published": null,
+   "diff": null
+  },
+  "path_dino_vits_lunit": {
+   "mean": 0.438,
+   "per_split": [
+    0.3709,
+    0.5479,
+    0.3951
+   ],
+   "published": null,
+   "diff": null
+  },
+  "in_dino_vits": {
+   "mean": 0.4088,
+   "per_split": [
+    0.3756,
+    0.4911,
+    0.3597
+   ],
+   "published": null,
+   "diff": null
+  }
+ },
+ "READ": {
+  "phikon": {
+   "mean": 0.1543,
+   "per_split": [
+    0.2339,
+    0.0747
+   ],
+   "published": 0.1532,
+   "diff": 0.0011
+  },
+  "path_dino_vitb_kaiko": {
+   "mean": 0.1559,
+   "per_split": [
+    0.2333,
+    0.0786
+   ],
+   "published": 0.1525,
+   "diff": 0.0034
+  },
+  "path_dinov2_vitl_phikon2": {
+   "mean": 0.1781,
+   "per_split": [
+    0.2386,
+    0.1175
+   ],
+   "published": 0.1749,
+   "diff": 0.0032
+  },
+  "in_dino_vitb": {
+   "mean": 0.1078,
+   "per_split": [
+    0.1584,
+    0.0573
+   ],
+   "published": null,
+   "diff": null
+  },
+  "path_dino_vits_lunit": {
+   "mean": 0.1451,
+   "per_split": [
+    0.209,
+    0.0812
+   ],
+   "published": null,
+   "diff": null
+  },
+  "in_dino_vits": {
+   "mean": 0.1075,
+   "per_split": [
+    0.1633,
+    0.0516
+   ],
+   "published": null,
+   "diff": null
+  }
+ },
+ "SKCM": {
+  "phikon": {
+   "mean": 0.5396,
+   "per_split": [
+    0.5981,
+    0.4811
+   ],
+   "published": 0.5355,
+   "diff": 0.0041
+  },
+  "path_dino_vitb_kaiko": {
+   "mean": 0.5468,
+   "per_split": [
+    0.6404,
+    0.4532
+   ],
+   "published": 0.5502,
+   "diff": -0.0034
+  },
+  "path_dinov2_vitl_phikon2": {
+   "mean": 0.5565,
+   "per_split": [
+    0.5969,
+    0.5161
+   ],
+   "published": 0.5554,
+   "diff": 0.0011
+  },
+  "in_dino_vitb": {
+   "mean": 0.5014,
+   "per_split": [
+    0.5542,
+    0.4487
+   ],
+   "published": null,
+   "diff": null
+  },
+  "path_dino_vits_lunit": {
+   "mean": 0.5074,
+   "per_split": [
+    0.5991,
+    0.4158
+   ],
+   "published": null,
+   "diff": null
+  },
+  "in_dino_vits": {
+   "mean": 0.4761,
+   "per_split": [
+    0.5501,
+    0.4022
+   ],
+   "published": null,
+   "diff": null
+  }
+ }
+}

@@ -1,4 +1,4 @@
-# Data — 185 GB, all public and re-fetchable by the scripts in this repo
+# Data — 205 GB, all public and re-fetchable by the scripts in this repo
 data/
 tiles/
 tiles_s4/
@@ -37,3 +37,17 @@ __pycache__/
 
 # macOS
 .DS_Store
+
+# November 2026 update: what its scripts download or write next to themselves.
+# The result files that back its README are versioned under update_2026_11/results/.
+pathology-fm/update_2026_11/**/*.npy
+pathology-fm/update_2026_11/*.json
+pathology-fm/update_2026_11/hest/*.json
+pathology-fm/update_2026_11/hest/bench_data/
+pathology-fm/update_2026_11/hest/emb/
+pathology-fm/update_2026_11/stflow_cmp/*.json
+pathology-fm/update_2026_11/stflow_cmp/STFlow/
+pathology-fm/update_2026_11/stflow_cmp/env/
+pathology-fm/update_2026_11/stflow_cmp/embed/
+pathology-fm/update_2026_11/stflow_cmp/embed_val/
+pathology-fm/update_2026_11/stflow_cmp/results*/

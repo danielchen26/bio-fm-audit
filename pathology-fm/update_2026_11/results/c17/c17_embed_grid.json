@@ -1,0 +1,156 @@
+{
+ "sanity": {
+  "phikon_min_cosine_vs_stored": 0.9999998807907104,
+  "imagenet_legacy_norm_min_cosine_vs_stored": 0.9999998807907104,
+  "imagenet_vits_model_config_mean_std": [
+   [
+    0.5,
+    0.5,
+    0.5
+   ],
+   [
+    0.5,
+    0.5,
+    0.5
+   ]
+  ],
+  "legacy_run_used_mean_std": [
+   [
+    0.485,
+    0.456,
+    0.406
+   ],
+   [
+    0.229,
+    0.224,
+    0.225
+   ]
+  ]
+ },
+ "in_sup_vits": {
+  "id": "vit_small_patch16_224.augreg_in21k_ft_in1k",
+  "mean": [
+   0.5,
+   0.5,
+   0.5
+  ],
+  "std": [
+   0.5,
+   0.5,
+   0.5
+  ],
+  "input": 224,
+  "dim": 384,
+  "n": 59255,
+  "params_M": 21.7,
+  "seconds": 161
+ },
+ "in_dino_vits": {
+  "id": "vit_small_patch16_224.dino",
+  "mean": [
+   0.485,
+   0.456,
+   0.406
+  ],
+  "std": [
+   0.229,
+   0.224,
+   0.225
+  ],
+  "input": 224,
+  "dim": 384,
+  "n": 59255,
+  "params_M": 21.7,
+  "seconds": 251
+ },
+ "path_dino_vits_lunit": {
+  "id": "hf-hub:1aurent/vit_small_patch16_224.lunit_dino",
+  "mean": [
+   0.5,
+   0.5,
+   0.5
+  ],
+  "std": [
+   0.5,
+   0.5,
+   0.5
+  ],
+  "input": 224,
+  "dim": 384,
+  "n": 59255,
+  "params_M": 21.7,
+  "seconds": 268
+ },
+ "in_dino_vitb": {
+  "id": "vit_base_patch16_224.dino",
+  "mean": [
+   0.485,
+   0.456,
+   0.406
+  ],
+  "std": [
+   0.229,
+   0.224,
+   0.225
+  ],
+  "input": 224,
+  "dim": 768,
+  "n": 59255,
+  "params_M": 85.8,
+  "seconds": 1072
+ },
+ "in_sup_vitb": {
+  "id": "vit_base_patch16_224.augreg_in21k_ft_in1k",
+  "mean": [
+   0.5,
+   0.5,
+   0.5
+  ],
+  "std": [
+   0.5,
+   0.5,
+   0.5
+  ],
+  "input": 224,
+  "dim": 768,
+  "n": 59255,
+  "params_M": 85.8,
+  "seconds": 1190
+ },
+ "path_dino_vitb_kaiko": {
+  "id": "hf-hub:1aurent/vit_base_patch16_224.kaiko_ai_towards_large_pathology_fms",
+  "mean": [
+   0.5,
+   0.5,
+   0.5
+  ],
+  "std": [
+   0.5,
+   0.5,
+   0.5
+  ],
+  "input": 224,
+  "dim": 768,
+  "n": 59255,
+  "params_M": 85.8,
+  "seconds": 709
+ },
+ "path_dinov2_vitl_phikon2": {
+  "id": "owkin/phikon-v2",
+  "mean": [
+   0.485,
+   0.456,
+   0.406
+  ],
+  "std": [
+   0.229,
+   0.224,
+   0.225
+  ],
+  "input": 224,
+  "dim": 1024,
+  "n": 59255,
+  "params_M": 303.4,
+  "seconds": 2053
+ }
+}

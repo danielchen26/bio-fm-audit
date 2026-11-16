@@ -1,0 +1,28 @@
+{
+ "gauss_uncal": {
+  "mean": 0.8867,
+  "min": 0.835,
+  "max": 0.9206
+ },
+ "conformal_per_gene": {
+  "mean": 0.9007,
+  "min": 0.8547,
+  "max": 0.9425
+ },
+ "conformal_global": {
+  "mean": 0.8979,
+  "min": 0.8474,
+  "max": 0.9426
+ },
+ "width_ratio_per_gene": {
+  "mean": 1.0523,
+  "min": 0.9383,
+  "max": 1.2485
+ },
+ "q_median": {
+  "mean": 1.731,
+  "min": 1.5435,
+  "max": 2.0537
+ },
+ "note": "nominal 0.90; 10 evaluations = 5 folds x 2 halves of held-out blocks"
+}

@@ -1,0 +1,523 @@
+{
+ "slide": "BRCA",
+ "spots": 3798,
+ "genes": 256,
+ "encoders": [
+  "in_sup_vits",
+  "in_dino_vits",
+  "path_dino_vits_lunit",
+  "in_sup_vitb",
+  "in_dino_vitb",
+  "path_dino_vitb_kaiko",
+  "phikon",
+  "path_dinov2_vitl_phikon2"
+ ],
+ "blocks_6x6": {
+  "coords_only_knn": {
+   "gene_r_mean": 0.4135,
+   "gene_r_median": 0.3942,
+   "n_gt_0.5": 45,
+   "n_gt_0.3": 227,
+   "per_fold_median_r": [
+    0.3849,
+    0.4342,
+    0.4065,
+    0.3575,
+    0.3532
+   ],
+   "per_fold_mean_r": [
+    0.3947,
+    0.4457,
+    0.4247,
+    0.3625,
+    0.3473
+   ],
+   "top50_hvg_r_per_fold": [
+    0.4974,
+    0.5651,
+    0.4961,
+    0.3932,
+    0.4014
+   ],
+   "top50_hvg_r": 0.4706,
+   "mae_log": 0.4185
+  },
+  "phikon_feature_knn": {
+   "gene_r_mean": 0.4248,
+   "gene_r_median": 0.4148,
+   "n_gt_0.5": 49,
+   "n_gt_0.3": 235,
+   "per_fold_median_r": [
+    0.4145,
+    0.42,
+    0.4377,
+    0.4025,
+    0.362
+   ],
+   "per_fold_mean_r": [
+    0.415,
+    0.4306,
+    0.4507,
+    0.4013,
+    0.3634
+   ],
+   "top50_hvg_r_per_fold": [
+    0.5312,
+    0.5494,
+    0.5569,
+    0.4649,
+    0.4514
+   ],
+   "top50_hvg_r": 0.5107,
+   "mae_log": 0.4093
+  },
+  "ridge:in_sup_vits": {
+   "gene_r_mean": 0.406,
+   "gene_r_median": 0.4112,
+   "n_gt_0.5": 42,
+   "n_gt_0.3": 219,
+   "per_fold_median_r": [
+    0.404,
+    0.3954,
+    0.4279,
+    0.3832,
+    0.3717
+   ],
+   "per_fold_mean_r": [
+    0.4019,
+    0.4106,
+    0.4354,
+    0.3762,
+    0.3618
+   ],
+   "top50_hvg_r_per_fold": [
+    0.4975,
+    0.5047,
+    0.5341,
+    0.4471,
+    0.4151
+   ],
+   "top50_hvg_r": 0.4797,
+   "mae_log": 0.4166,
+   "alpha_over_n": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  "ridge:in_dino_vits": {
+   "gene_r_mean": 0.4152,
+   "gene_r_median": 0.4156,
+   "n_gt_0.5": 40,
+   "n_gt_0.3": 227,
+   "per_fold_median_r": [
+    0.4233,
+    0.416,
+    0.4311,
+    0.3885,
+    0.3873
+   ],
+   "per_fold_mean_r": [
+    0.4202,
+    0.4243,
+    0.43,
+    0.3862,
+    0.3731
+   ],
+   "top50_hvg_r_per_fold": [
+    0.5204,
+    0.527,
+    0.5355,
+    0.4662,
+    0.43
+   ],
+   "top50_hvg_r": 0.4958,
+   "mae_log": 0.414,
+   "alpha_over_n": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  "ridge:path_dino_vits_lunit": {
+   "gene_r_mean": 0.4215,
+   "gene_r_median": 0.4227,
+   "n_gt_0.5": 45,
+   "n_gt_0.3": 231,
+   "per_fold_median_r": [
+    0.444,
+    0.4093,
+    0.4434,
+    0.415,
+    0.3752
+   ],
+   "per_fold_mean_r": [
+    0.4385,
+    0.4162,
+    0.4418,
+    0.4035,
+    0.3671
+   ],
+   "top50_hvg_r_per_fold": [
+    0.543,
+    0.515,
+    0.5418,
+    0.476,
+    0.4269
+   ],
+   "top50_hvg_r": 0.5005,
+   "mae_log": 0.4114,
+   "alpha_over_n": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  "ridge:in_sup_vitb": {
+   "gene_r_mean": 0.4182,
+   "gene_r_median": 0.4181,
+   "n_gt_0.5": 45,
+   "n_gt_0.3": 227,
+   "per_fold_median_r": [
+    0.4269,
+    0.4128,
+    0.4257,
+    0.3906,
+    0.3754
+   ],
+   "per_fold_mean_r": [
+    0.4215,
+    0.4256,
+    0.4324,
+    0.3864,
+    0.3673
+   ],
+   "top50_hvg_r_per_fold": [
+    0.5285,
+    0.5242,
+    0.5376,
+    0.4597,
+    0.438
+   ],
+   "top50_hvg_r": 0.4976,
+   "mae_log": 0.4124,
+   "alpha_over_n": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  "ridge:in_dino_vitb": {
+   "gene_r_mean": 0.4172,
+   "gene_r_median": 0.4175,
+   "n_gt_0.5": 43,
+   "n_gt_0.3": 226,
+   "per_fold_median_r": [
+    0.4244,
+    0.4072,
+    0.4329,
+    0.3914,
+    0.3808
+   ],
+   "per_fold_mean_r": [
+    0.4227,
+    0.4165,
+    0.4356,
+    0.3902,
+    0.3705
+   ],
+   "top50_hvg_r_per_fold": [
+    0.5261,
+    0.5237,
+    0.5439,
+    0.4758,
+    0.4361
+   ],
+   "top50_hvg_r": 0.5011,
+   "mae_log": 0.4132,
+   "alpha_over_n": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  "ridge:path_dino_vitb_kaiko": {
+   "gene_r_mean": 0.4488,
+   "gene_r_median": 0.4459,
+   "n_gt_0.5": 61,
+   "n_gt_0.3": 238,
+   "per_fold_median_r": [
+    0.4563,
+    0.4253,
+    0.4742,
+    0.4383,
+    0.3997
+   ],
+   "per_fold_mean_r": [
+    0.4535,
+    0.4374,
+    0.4765,
+    0.4331,
+    0.3973
+   ],
+   "top50_hvg_r_per_fold": [
+    0.5626,
+    0.5494,
+    0.5752,
+    0.5014,
+    0.4704
+   ],
+   "top50_hvg_r": 0.5318,
+   "mae_log": 0.4032,
+   "alpha_over_n": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  "ridge:phikon": {
+   "gene_r_mean": 0.4367,
+   "gene_r_median": 0.4319,
+   "n_gt_0.5": 55,
+   "n_gt_0.3": 240,
+   "per_fold_median_r": [
+    0.4527,
+    0.42,
+    0.4449,
+    0.4313,
+    0.3929
+   ],
+   "per_fold_mean_r": [
+    0.4477,
+    0.4311,
+    0.4468,
+    0.4224,
+    0.3895
+   ],
+   "top50_hvg_r_per_fold": [
+    0.5534,
+    0.5397,
+    0.5487,
+    0.4919,
+    0.4593
+   ],
+   "top50_hvg_r": 0.5186,
+   "mae_log": 0.407,
+   "alpha_over_n": [
+    1.0,
+    1.0,
+    10.0,
+    1.0,
+    1.0
+   ]
+  },
+  "ridge:path_dinov2_vitl_phikon2": {
+   "gene_r_mean": 0.4397,
+   "gene_r_median": 0.4368,
+   "n_gt_0.5": 56,
+   "n_gt_0.3": 238,
+   "per_fold_median_r": [
+    0.4378,
+    0.4231,
+    0.468,
+    0.4353,
+    0.3928
+   ],
+   "per_fold_mean_r": [
+    0.438,
+    0.4401,
+    0.4712,
+    0.4356,
+    0.3871
+   ],
+   "top50_hvg_r_per_fold": [
+    0.5382,
+    0.5531,
+    0.5811,
+    0.5102,
+    0.4584
+   ],
+   "top50_hvg_r": 0.5282,
+   "mae_log": 0.405,
+   "alpha_over_n": [
+    10.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  }
+ },
+ "noise_ceiling": {
+  "median_ceiling_r": 0.6998,
+  "mean_ceiling_r": 0.7172,
+  "genes_with_ceiling_gt_0.5": 256,
+  "genes_with_ceiling_gt_0.8": 42,
+  "median_fraction_of_ceiling": {
+   "coords_only_knn": 0.5723,
+   "phikon_feature_knn": 0.6019,
+   "ridge:in_sup_vits": 0.5841,
+   "ridge:in_dino_vits": 0.5968,
+   "ridge:path_dino_vits_lunit": 0.6045,
+   "ridge:in_sup_vitb": 0.5973,
+   "ridge:in_dino_vitb": 0.5986,
+   "ridge:path_dino_vitb_kaiko": 0.6411,
+   "ridge:phikon": 0.6253,
+   "ridge:path_dinov2_vitl_phikon2": 0.6366
+  },
+  "corr_gene_r_vs_ceiling": {
+   "coords_only_knn": 0.676,
+   "phikon_feature_knn": 0.701,
+   "ridge:in_sup_vits": 0.533,
+   "ridge:in_dino_vits": 0.576,
+   "ridge:path_dino_vits_lunit": 0.577,
+   "ridge:in_sup_vitb": 0.598,
+   "ridge:in_dino_vitb": 0.608,
+   "ridge:path_dino_vitb_kaiko": 0.645,
+   "ridge:phikon": 0.619,
+   "ridge:path_dinov2_vitl_phikon2": 0.642
+  },
+  "median_r_among_genes_with_ceiling_gt_0.8": {
+   "coords_only_knn": 0.5303,
+   "phikon_feature_knn": 0.5653,
+   "ridge:in_sup_vits": 0.5123,
+   "ridge:in_dino_vits": 0.5211,
+   "ridge:path_dino_vits_lunit": 0.5232,
+   "ridge:in_sup_vitb": 0.5395,
+   "ridge:in_dino_vitb": 0.526,
+   "ridge:path_dino_vitb_kaiko": 0.5767,
+   "ridge:phikon": 0.5551,
+   "ridge:path_dinov2_vitl_phikon2": 0.5679
+  }
+ },
+ "blocks_3x3": {
+  "coords_only_knn": {
+   "gene_r_mean": 0.2837,
+   "gene_r_median": 0.2687,
+   "n_gt_0.5": 7,
+   "n_gt_0.3": 95,
+   "per_fold_median_r": [
+    0.2389,
+    0.2079,
+    0.3445,
+    0.154,
+    0.1834
+   ],
+   "per_fold_mean_r": [
+    0.2472,
+    0.2168,
+    0.352,
+    0.1728,
+    0.1995
+   ],
+   "top50_hvg_r_per_fold": [
+    0.3079,
+    0.2409,
+    0.435,
+    0.1774,
+    0.2484
+   ],
+   "top50_hvg_r": 0.2819,
+   "mae_log": 0.469
+  },
+  "ridge:in_dino_vitb": {
+   "gene_r_mean": 0.3241,
+   "gene_r_median": 0.3454,
+   "n_gt_0.5": 16,
+   "n_gt_0.3": 164,
+   "per_fold_median_r": [
+    0.3413,
+    0.328,
+    0.3842,
+    0.4099,
+    0.2883
+   ],
+   "per_fold_mean_r": [
+    0.314,
+    0.3158,
+    0.386,
+    0.404,
+    0.295
+   ],
+   "top50_hvg_r_per_fold": [
+    0.3615,
+    0.3447,
+    0.5,
+    0.4856,
+    0.3648
+   ],
+   "top50_hvg_r": 0.4113,
+   "mae_log": 0.4348
+  },
+  "ridge:phikon": {
+   "gene_r_mean": 0.3438,
+   "gene_r_median": 0.3632,
+   "n_gt_0.5": 23,
+   "n_gt_0.3": 179,
+   "per_fold_median_r": [
+    0.3779,
+    0.348,
+    0.3937,
+    0.4339,
+    0.3349
+   ],
+   "per_fold_mean_r": [
+    0.3454,
+    0.3327,
+    0.3956,
+    0.4183,
+    0.3277
+   ],
+   "top50_hvg_r_per_fold": [
+    0.3953,
+    0.354,
+    0.5102,
+    0.5178,
+    0.4175
+   ],
+   "top50_hvg_r": 0.4389,
+   "mae_log": 0.4316
+  },
+  "ridge:path_dino_vitb_kaiko": {
+   "gene_r_mean": 0.3628,
+   "gene_r_median": 0.3847,
+   "n_gt_0.5": 31,
+   "n_gt_0.3": 191,
+   "per_fold_median_r": [
+    0.3719,
+    0.3492,
+    0.3943,
+    0.4403,
+    0.327
+   ],
+   "per_fold_mean_r": [
+    0.3516,
+    0.3301,
+    0.3941,
+    0.4295,
+    0.3297
+   ],
+   "top50_hvg_r_per_fold": [
+    0.4063,
+    0.3645,
+    0.4987,
+    0.5462,
+    0.4133
+   ],
+   "top50_hvg_r": 0.4458,
+   "mae_log": 0.4271
+  }
+ }
+}

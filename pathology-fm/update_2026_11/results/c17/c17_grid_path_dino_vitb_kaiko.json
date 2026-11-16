@@ -1,0 +1,611 @@
+{
+ "encoder": "path_dino_vitb_kaiko",
+ "dim": 768,
+ "tiles": 49532,
+ "E1_label_eff": {
+  "1": [
+   0.8747528207163067,
+   0.8577162358642973,
+   0.9355359519675925,
+   0.9357602843251979,
+   0.8064892350053079
+  ],
+  "2": [
+   0.8455514581847736,
+   0.9631970786214324,
+   0.8820085194391836,
+   0.9668378921486681,
+   0.929732003052017
+  ],
+  "4": [
+   0.8960356220463788,
+   0.9153758817985999,
+   0.9210145793876262,
+   0.9329882355399532,
+   0.958143295514862
+  ],
+  "8": [
+   0.8853054162609231,
+   0.93535309639203,
+   0.9568837726220538,
+   0.9833653826061518,
+   0.9503225517515923
+  ],
+  "16": [
+   0.9754305322332891,
+   0.9470833064081852,
+   0.9667461792403199,
+   0.9823002514487909,
+   0.9661711451698514
+  ],
+  "all": [
+   0.981168950331879,
+   0.9816421917070544,
+   0.9754684869528619,
+   0.9916438900033434,
+   0.9699839437367304
+  ]
+ },
+ "E2_pooled_oof_auc_per_repeat": [
+  0.9654308926017942,
+  0.9691458273642951,
+  0.9694961600277879,
+  0.9769183515707892,
+  0.9799760935932106
+ ],
+ "E2_fold_mean_auc_per_repeat": [
+  0.9724211959495073,
+  0.9746937089156361,
+  0.9755890113466812,
+  0.9779881702006683,
+  0.9840151585692263
+ ],
+ "E3_E4_loco": {
+  "M0": {
+   "per_hospital_auc": [
+    0.9873,
+    0.9601,
+    0.9508,
+    0.9703,
+    0.9915
+   ],
+   "mean_auc": 0.972,
+   "worst_auc": 0.9508,
+   "pooled_auc": 0.9666,
+   "sens_at_0.5": 0.8968,
+   "spec_at_0.5": 0.9265,
+   "per_hospital_sens": [
+    0.925,
+    0.908,
+    0.929,
+    0.895,
+    0.878
+   ],
+   "per_hospital_spec": [
+    0.984,
+    0.938,
+    0.771,
+    0.987,
+    0.994
+   ]
+  },
+  "M1": {
+   "per_hospital_auc": [
+    0.9828,
+    0.9609,
+    0.8949,
+    0.9768,
+    0.9873
+   ],
+   "mean_auc": 0.9606,
+   "worst_auc": 0.8949,
+   "pooled_auc": 0.9133,
+   "sens_at_0.5": 0.8789,
+   "spec_at_0.5": 0.7526,
+   "per_hospital_sens": [
+    0.963,
+    0.97,
+    0.957,
+    0.855,
+    0.828
+   ],
+   "per_hospital_spec": [
+    0.867,
+    0.543,
+    0.508,
+    1.0,
+    0.993
+   ]
+  },
+  "M2": {
+   "per_hospital_auc": [
+    0.9859,
+    0.9589,
+    0.922,
+    0.9674,
+    0.9916
+   ],
+   "mean_auc": 0.9652,
+   "worst_auc": 0.922,
+   "pooled_auc": 0.9654,
+   "sens_at_0.5": 0.9082,
+   "spec_at_0.5": 0.8994,
+   "per_hospital_sens": [
+    0.923,
+    0.904,
+    0.925,
+    0.891,
+    0.908
+   ],
+   "per_hospital_spec": [
+    0.982,
+    0.928,
+    0.67,
+    0.987,
+    0.989
+   ]
+  },
+  "M3": {
+   "per_hospital_auc": [
+    0.9866,
+    0.9637,
+    0.9589,
+    0.9702,
+    0.9921
+   ],
+   "mean_auc": 0.9743,
+   "worst_auc": 0.9589,
+   "pooled_auc": 0.9689,
+   "sens_at_0.5": 0.9134,
+   "spec_at_0.5": 0.9212,
+   "per_hospital_sens": [
+    0.918,
+    0.917,
+    0.96,
+    0.897,
+    0.904
+   ],
+   "per_hospital_spec": [
+    0.985,
+    0.937,
+    0.747,
+    0.99,
+    0.994
+   ]
+  },
+  "selected": {
+   "per_hospital_auc": [
+    0.9859,
+    0.9637,
+    0.9589,
+    0.9702,
+    0.9915
+   ],
+   "mean_auc": 0.9741,
+   "worst_auc": 0.9589,
+   "pooled_auc": 0.9659,
+   "sens_at_0.5": 0.9024,
+   "spec_at_0.5": 0.9207,
+   "per_hospital_sens": [
+    0.923,
+    0.917,
+    0.96,
+    0.897,
+    0.878
+   ],
+   "per_hospital_spec": [
+    0.982,
+    0.937,
+    0.747,
+    0.99,
+    0.994
+   ]
+  }
+ },
+ "E4_selection": [
+  {
+   "held_out": 0,
+   "inner_pooled_auc": {
+    "M0": 0.9349,
+    "M1": 0.8759,
+    "M2": 0.9361,
+    "M3": 0.9349
+   },
+   "selected": "M2"
+  },
+  {
+   "held_out": 1,
+   "inner_pooled_auc": {
+    "M0": 0.9711,
+    "M1": 0.9252,
+    "M2": 0.9681,
+    "M3": 0.9733
+   },
+   "selected": "M3"
+  },
+  {
+   "held_out": 2,
+   "inner_pooled_auc": {
+    "M0": 0.9229,
+    "M1": 0.9012,
+    "M2": 0.9128,
+    "M3": 0.9252
+   },
+   "selected": "M3"
+  },
+  {
+   "held_out": 3,
+   "inner_pooled_auc": {
+    "M0": 0.9683,
+    "M1": 0.8961,
+    "M2": 0.9698,
+    "M3": 0.9731
+   },
+   "selected": "M3"
+  },
+  {
+   "held_out": 4,
+   "inner_pooled_auc": {
+    "M0": 0.962,
+    "M1": 0.9218,
+    "M2": 0.9547,
+    "M3": 0.959
+   },
+   "selected": "M0"
+  }
+ ],
+ "E5_per_slide": {
+  "patient_000_node_0": {
+   "hospital": 0,
+   "grade": "negative",
+   "tiles": 600,
+   "tumour": 0,
+   "auc": null,
+   "mean_p_normal": 0.0126,
+   "mean_p_tumour": null
+  },
+  "patient_009_node_1": {
+   "hospital": 0,
+   "grade": "micro",
+   "tiles": 660,
+   "tumour": 60,
+   "auc": 0.9264,
+   "mean_p_normal": 0.0478,
+   "mean_p_tumour": 0.7142
+  },
+  "patient_010_node_4": {
+   "hospital": 0,
+   "grade": "micro",
+   "tiles": 816,
+   "tumour": 216,
+   "auc": 0.9555,
+   "mean_p_normal": 0.0227,
+   "mean_p_tumour": 0.6782
+  },
+  "patient_012_node_0": {
+   "hospital": 0,
+   "grade": "macro",
+   "tiles": 1678,
+   "tumour": 1078,
+   "auc": 0.9979,
+   "mean_p_normal": 0.013,
+   "mean_p_tumour": 0.9874
+  },
+  "patient_015_node_1": {
+   "hospital": 0,
+   "grade": "macro",
+   "tiles": 1028,
+   "tumour": 428,
+   "auc": 0.9941,
+   "mean_p_normal": 0.0086,
+   "mean_p_tumour": 0.9491
+  },
+  "patient_015_node_2": {
+   "hospital": 0,
+   "grade": "macro",
+   "tiles": 717,
+   "tumour": 117,
+   "auc": 0.984,
+   "mean_p_normal": 0.024,
+   "mean_p_tumour": 0.9246
+  },
+  "patient_017_node_2": {
+   "hospital": 0,
+   "grade": "macro",
+   "tiles": 1403,
+   "tumour": 803,
+   "auc": 0.9935,
+   "mean_p_normal": 0.001,
+   "mean_p_tumour": 0.9156
+  },
+  "patient_017_node_4": {
+   "hospital": 0,
+   "grade": "micro",
+   "tiles": 705,
+   "tumour": 105,
+   "auc": 0.9443,
+   "mean_p_normal": 0.0343,
+   "mean_p_tumour": 0.7883
+  },
+  "patient_020_node_0": {
+   "hospital": 1,
+   "grade": "negative",
+   "tiles": 600,
+   "tumour": 0,
+   "auc": null,
+   "mean_p_normal": 0.0766,
+   "mean_p_tumour": null
+  },
+  "patient_020_node_2": {
+   "hospital": 1,
+   "grade": "micro",
+   "tiles": 624,
+   "tumour": 24,
+   "auc": 0.8437,
+   "mean_p_normal": 0.0767,
+   "mean_p_tumour": 0.6558
+  },
+  "patient_020_node_4": {
+   "hospital": 1,
+   "grade": "macro",
+   "tiles": 902,
+   "tumour": 302,
+   "auc": 0.9949,
+   "mean_p_normal": 0.0728,
+   "mean_p_tumour": 0.9692
+  },
+  "patient_021_node_3": {
+   "hospital": 1,
+   "grade": "micro",
+   "tiles": 627,
+   "tumour": 27,
+   "auc": 0.9819,
+   "mean_p_normal": 0.0741,
+   "mean_p_tumour": 0.8984
+  },
+  "patient_022_node_4": {
+   "hospital": 1,
+   "grade": "macro",
+   "tiles": 1505,
+   "tumour": 905,
+   "auc": 0.9565,
+   "mean_p_normal": 0.11,
+   "mean_p_tumour": 0.9263
+  },
+  "patient_034_node_3": {
+   "hospital": 1,
+   "grade": "macro",
+   "tiles": 1102,
+   "tumour": 502,
+   "auc": 0.9577,
+   "mean_p_normal": 0.0804,
+   "mean_p_tumour": 0.8723
+  },
+  "patient_036_node_3": {
+   "hospital": 1,
+   "grade": "micro",
+   "tiles": 675,
+   "tumour": 75,
+   "auc": 0.9602,
+   "mean_p_normal": 0.0594,
+   "mean_p_tumour": 0.8768
+  },
+  "patient_038_node_2": {
+   "hospital": 1,
+   "grade": "micro",
+   "tiles": 628,
+   "tumour": 28,
+   "auc": 0.8495,
+   "mean_p_normal": 0.09,
+   "mean_p_tumour": 0.6878
+  },
+  "patient_039_node_1": {
+   "hospital": 1,
+   "grade": "micro",
+   "tiles": 642,
+   "tumour": 42,
+   "auc": 0.909,
+   "mean_p_normal": 0.0625,
+   "mean_p_tumour": 0.6856
+  },
+  "patient_040_node_0": {
+   "hospital": 2,
+   "grade": "negative",
+   "tiles": 600,
+   "tumour": 0,
+   "auc": null,
+   "mean_p_normal": 0.0813,
+   "mean_p_tumour": null
+  },
+  "patient_042_node_3": {
+   "hospital": 2,
+   "grade": "macro",
+   "tiles": 1052,
+   "tumour": 452,
+   "auc": 0.9709,
+   "mean_p_normal": 0.0575,
+   "mean_p_tumour": 0.8261
+  },
+  "patient_044_node_4": {
+   "hospital": 2,
+   "grade": "macro",
+   "tiles": 853,
+   "tumour": 253,
+   "auc": 0.9912,
+   "mean_p_normal": 0.2116,
+   "mean_p_tumour": 0.9871
+  },
+  "patient_045_node_1": {
+   "hospital": 2,
+   "grade": "micro",
+   "tiles": 629,
+   "tumour": 29,
+   "auc": 0.932,
+   "mean_p_normal": 0.3146,
+   "mean_p_tumour": 0.9076
+  },
+  "patient_046_node_3": {
+   "hospital": 2,
+   "grade": "micro",
+   "tiles": 698,
+   "tumour": 98,
+   "auc": 0.9985,
+   "mean_p_normal": 0.419,
+   "mean_p_tumour": 0.9999
+  },
+  "patient_046_node_4": {
+   "hospital": 2,
+   "grade": "micro",
+   "tiles": 755,
+   "tumour": 155,
+   "auc": 0.951,
+   "mean_p_normal": 0.3087,
+   "mean_p_tumour": 0.9414
+  },
+  "patient_048_node_1": {
+   "hospital": 2,
+   "grade": "micro",
+   "tiles": 617,
+   "tumour": 17,
+   "auc": 0.9998,
+   "mean_p_normal": 0.1604,
+   "mean_p_tumour": 0.9999
+  },
+  "patient_051_node_2": {
+   "hospital": 2,
+   "grade": "macro",
+   "tiles": 2958,
+   "tumour": 2358,
+   "auc": 0.9678,
+   "mean_p_normal": 0.3223,
+   "mean_p_tumour": 0.964
+  },
+  "patient_052_node_1": {
+   "hospital": 2,
+   "grade": "macro",
+   "tiles": 1250,
+   "tumour": 650,
+   "auc": 0.8395,
+   "mean_p_normal": 0.3005,
+   "mean_p_tumour": 0.7808
+  },
+  "patient_060_node_1": {
+   "hospital": 3,
+   "grade": "negative",
+   "tiles": 600,
+   "tumour": 0,
+   "auc": null,
+   "mean_p_normal": 0.0102,
+   "mean_p_tumour": null
+  },
+  "patient_061_node_4": {
+   "hospital": 3,
+   "grade": "micro",
+   "tiles": 620,
+   "tumour": 20,
+   "auc": 0.9559,
+   "mean_p_normal": 0.0165,
+   "mean_p_tumour": 0.7546
+  },
+  "patient_062_node_2": {
+   "hospital": 3,
+   "grade": "macro",
+   "tiles": 807,
+   "tumour": 207,
+   "auc": 0.9704,
+   "mean_p_normal": 0.0477,
+   "mean_p_tumour": 0.9121
+  },
+  "patient_066_node_2": {
+   "hospital": 3,
+   "grade": "micro",
+   "tiles": 625,
+   "tumour": 25,
+   "auc": 0.9776,
+   "mean_p_normal": 0.0187,
+   "mean_p_tumour": 0.8529
+  },
+  "patient_067_node_4": {
+   "hospital": 3,
+   "grade": "micro",
+   "tiles": 645,
+   "tumour": 45,
+   "auc": 0.8667,
+   "mean_p_normal": 0.0148,
+   "mean_p_tumour": 0.6228
+  },
+  "patient_073_node_1": {
+   "hospital": 3,
+   "grade": "macro",
+   "tiles": 4742,
+   "tumour": 4142,
+   "auc": 0.9698,
+   "mean_p_normal": 0.0152,
+   "mean_p_tumour": 0.8803
+  },
+  "patient_075_node_4": {
+   "hospital": 3,
+   "grade": "macro",
+   "tiles": 1903,
+   "tumour": 1303,
+   "auc": 0.9891,
+   "mean_p_normal": 0.0381,
+   "mean_p_tumour": 0.9503
+  },
+  "patient_081_node_0": {
+   "hospital": 4,
+   "grade": "negative",
+   "tiles": 600,
+   "tumour": 0,
+   "auc": null,
+   "mean_p_normal": 0.0005,
+   "mean_p_tumour": null
+  },
+  "patient_088_node_1": {
+   "hospital": 4,
+   "grade": "micro",
+   "tiles": 643,
+   "tumour": 43,
+   "auc": 0.9495,
+   "mean_p_normal": 0.0099,
+   "mean_p_tumour": 0.8377
+  },
+  "patient_089_node_3": {
+   "hospital": 4,
+   "grade": "micro",
+   "tiles": 616,
+   "tumour": 16,
+   "auc": 0.9603,
+   "mean_p_normal": 0.0002,
+   "mean_p_tumour": 0.6201
+  },
+  "patient_092_node_1": {
+   "hospital": 4,
+   "grade": "macro",
+   "tiles": 1115,
+   "tumour": 515,
+   "auc": 0.9757,
+   "mean_p_normal": 0.0012,
+   "mean_p_tumour": 0.6805
+  },
+  "patient_096_node_0": {
+   "hospital": 4,
+   "grade": "macro",
+   "tiles": 10794,
+   "tumour": 10194,
+   "auc": 0.9801,
+   "mean_p_normal": 0.0356,
+   "mean_p_tumour": 0.875
+  },
+  "patient_099_node_4": {
+   "hospital": 4,
+   "grade": "macro",
+   "tiles": 1498,
+   "tumour": 898,
+   "auc": 0.9898,
+   "mean_p_normal": 0.006,
+   "mean_p_tumour": 0.8993
+  }
+ },
+ "seconds": 335
+}

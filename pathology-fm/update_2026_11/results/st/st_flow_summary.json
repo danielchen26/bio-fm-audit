@@ -1,0 +1,128 @@
+{
+ "V1LN": {
+  "gene_r_median": 0.339,
+  "gene_r_mean": 0.3663,
+  "n_gt_0.5": 34,
+  "n_gt_0.3": 169,
+  "per_fold_median_r": [
+   0.3607,
+   0.42,
+   0.3767,
+   0.2962,
+   0.2872
+  ],
+  "top50_hvg_r": 0.4893,
+  "median_fraction_of_ceiling": 0.6227,
+  "crps_rel_vs_climatology": -0.0811,
+  "crps_rel_per_fold": [
+   -0.0778,
+   -0.1118,
+   -0.0976,
+   -0.0725,
+   -0.0535
+  ],
+  "ridge_same_features": {
+   "gene_r_median": 0.2563,
+   "per_fold_median_r": [
+    0.2795,
+    0.3092,
+    0.2947,
+    0.2245,
+    0.2071
+   ],
+   "n_gt_0.5": 8
+  },
+  "folds_flow_above_ridge": 5,
+  "folds_flow_above_coords_only": 5,
+  "coverage90_uncalibrated": 0.8867,
+  "coverage90_conformal": 0.9007,
+  "coverage90_conformal_range": [
+   0.8547,
+   0.9425
+  ]
+ },
+ "BRCA": {
+  "gene_r_median": 0.4802,
+  "gene_r_mean": 0.4913,
+  "n_gt_0.5": 103,
+  "n_gt_0.3": 248,
+  "per_fold_median_r": [
+   0.4751,
+   0.4752,
+   0.5281,
+   0.4883,
+   0.4149
+  ],
+  "top50_hvg_r": 0.584,
+  "median_fraction_of_ceiling": 0.6983,
+  "crps_rel_vs_climatology": -0.1557,
+  "crps_rel_per_fold": [
+   -0.15,
+   -0.1747,
+   -0.1902,
+   -0.1597,
+   -0.1283
+  ],
+  "ridge_same_features": {
+   "gene_r_median": 0.4319,
+   "per_fold_median_r": [
+    0.4527,
+    0.42,
+    0.4449,
+    0.4313,
+    0.3929
+   ],
+   "n_gt_0.5": 55
+  },
+  "folds_flow_above_ridge": 5,
+  "folds_flow_above_coords_only": 5,
+  "coverage90_uncalibrated": 0.9105,
+  "coverage90_conformal": 0.8935,
+  "coverage90_conformal_range": [
+   0.807,
+   0.952
+  ]
+ },
+ "V2LN": {
+  "gene_r_median": 0.7038,
+  "gene_r_mean": 0.7059,
+  "n_gt_0.5": 250,
+  "n_gt_0.3": 256,
+  "per_fold_median_r": [
+   0.6998,
+   0.7445,
+   0.6886,
+   0.7174,
+   0.7006
+  ],
+  "top50_hvg_r": 0.775,
+  "median_fraction_of_ceiling": 0.8578,
+  "crps_rel_vs_climatology": -0.3294,
+  "crps_rel_per_fold": [
+   -0.3102,
+   -0.3428,
+   -0.2937,
+   -0.3411,
+   -0.3504
+  ],
+  "ridge_same_features": {
+   "gene_r_median": 0.6626,
+   "per_fold_median_r": [
+    0.6481,
+    0.6803,
+    0.6388,
+    0.6633,
+    0.6628
+   ],
+   "n_gt_0.5": 243
+  },
+  "folds_flow_above_ridge": 5,
+  "folds_flow_above_coords_only": 5,
+  "coverage90_uncalibrated": 0.932,
+  "coverage90_conformal": 0.8988,
+  "coverage90_conformal_range": [
+   0.8633,
+   0.9331
+  ]
+ }
+}

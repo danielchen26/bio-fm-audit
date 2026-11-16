@@ -1,0 +1,107 @@
+{
+ "tasks": [
+  "LUNG",
+  "PAAD",
+  "SKCM",
+  "COAD",
+  "READ",
+  "LYMPH_IDC"
+ ],
+ "gate": {
+  "n": 18,
+  "max_abs_diff": 0.0062
+ },
+ "matched_pairs": {
+  "wins": 22,
+  "total": 30,
+  "per_task": {
+   "LUNG": "4/4",
+   "PAAD": "5/6",
+   "SKCM": "4/4",
+   "COAD": "3/4",
+   "READ": "4/4",
+   "LYMPH_IDC": "2/8"
+  }
+ },
+ "flow_vs_ridge": {
+  "splits_flow_higher": 11,
+  "splits": 15,
+  "per_task": {
+   "LUNG": "1/2",
+   "PAAD": "3/3",
+   "SKCM": "2/2",
+   "COAD": "2/2",
+   "READ": "2/2",
+   "LYMPH_IDC": "1/4"
+  },
+  "mean_gain_over_splits": 0.0182,
+  "tasks_flow_better": 5,
+  "mean_gain_over_tasks": 0.0241,
+  "task_means": {
+   "LUNG": {
+    "flow": 0.5572,
+    "ridge": 0.5528,
+    "ridge_context": 0.5447
+   },
+   "PAAD": {
+    "flow": 0.4723,
+    "ridge": 0.4426,
+    "ridge_context": 0.4401
+   },
+   "SKCM": {
+    "flow": 0.6058,
+    "ridge": 0.5396,
+    "ridge_context": 0.5675
+   },
+   "COAD": {
+    "flow": 0.3126,
+    "ridge": 0.262,
+    "ridge_context": 0.2506
+   },
+   "READ": {
+    "flow": 0.1702,
+    "ridge": 0.1543,
+    "ridge_context": 0.1417
+   },
+   "LYMPH_IDC": {
+    "flow": 0.2147,
+    "ridge": 0.2372,
+    "ridge_context": 0.234
+   }
+  },
+  "crps_rel_vs_climatology_per_split": {
+   "LUNG": [
+    0.0402,
+    -0.0224
+   ],
+   "PAAD": [
+    0.0678,
+    -0.0786,
+    0.1738
+   ],
+   "SKCM": [
+    -0.171,
+    -0.0547
+   ],
+   "COAD": [
+    0.0078,
+    0.4705
+   ],
+   "READ": [
+    0.0589,
+    0.1334
+   ],
+   "LYMPH_IDC": [
+    0.013,
+    0.3734,
+    0.0947,
+    0.2853
+   ]
+  },
+  "splits_crps_better_than_climatology": 4
+ },
+ "preregistered_rule": {
+  "first_three_tasks": "passed (6 of 7 splits, mean gain above 0.01)",
+  "all_six_tasks_same_rule": "split criterion not met"
+ }
+}

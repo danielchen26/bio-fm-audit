@@ -1,0 +1,2438 @@
+{
+ "encoders": [
+  "raw",
+  "in_sup_vits",
+  "in_dino_vits",
+  "path_dino_vits_lunit",
+  "in_sup_vitb",
+  "in_dino_vitb",
+  "path_dino_vitb_kaiko",
+  "phikon",
+  "path_dinov2_vitl_phikon2"
+ ],
+ "table": {
+  "raw": {
+   "dim": 54,
+   "E1_mean_by_budget": {
+    "1": 0.5654,
+    "2": 0.6435,
+    "4": 0.6362,
+    "8": 0.6939,
+    "16": 0.7246,
+    "all": 0.7283
+   },
+   "E1_min_split_by_budget": {
+    "1": 0.5006,
+    "2": 0.6135,
+    "4": 0.4971,
+    "8": 0.6434,
+    "16": 0.4395,
+    "all": 0.4145
+   },
+   "E2_pooled_oof_auc": 0.589,
+   "E2_ci95": [
+    0.4084,
+    0.8389
+   ],
+   "E2_pooled_mean_over_repeats": 0.5718,
+   "E2_fold_mean_over_repeats": 0.7066,
+   "E3_per_hospital": [
+    0.8497,
+    0.7429,
+    0.4704,
+    0.879,
+    0.3989
+   ],
+   "E3_mean": 0.6682,
+   "E3_worst": 0.3989,
+   "E3_pooled": 0.7045,
+   "E3_pooled_ci95": [
+    0.6225,
+    0.7769
+   ],
+   "E3_sens_spec_at_0.5": [
+    0.6665,
+    0.6772
+   ],
+   "E3_per_hospital_spec": [
+    0.914,
+    0.749,
+    0.458,
+    0.865,
+    0.364
+   ],
+   "E3_per_hospital_sens": [
+    0.62,
+    0.679,
+    0.497,
+    0.79,
+    0.673
+   ]
+  },
+  "in_sup_vits": {
+   "dim": 384,
+   "E1_mean_by_budget": {
+    "1": 0.7963,
+    "2": 0.8399,
+    "4": 0.8617,
+    "8": 0.9088,
+    "16": 0.938,
+    "all": 0.952
+   },
+   "E1_min_split_by_budget": {
+    "1": 0.6919,
+    "2": 0.7859,
+    "4": 0.7621,
+    "8": 0.8319,
+    "16": 0.8769,
+    "all": 0.8984
+   },
+   "E2_pooled_oof_auc": 0.9379,
+   "E2_ci95": [
+    0.9202,
+    0.9615
+   ],
+   "E2_pooled_mean_over_repeats": 0.9347,
+   "E2_fold_mean_over_repeats": 0.9477,
+   "E3_per_hospital": [
+    0.9492,
+    0.9453,
+    0.9505,
+    0.9645,
+    0.9048
+   ],
+   "E3_mean": 0.9429,
+   "E3_worst": 0.9048,
+   "E3_pooled": 0.926,
+   "E3_pooled_ci95": [
+    0.9009,
+    0.9592
+   ],
+   "E3_sens_spec_at_0.5": [
+    0.8007,
+    0.8964
+   ],
+   "E3_per_hospital_spec": [
+    0.939,
+    0.852,
+    0.833,
+    0.965,
+    0.922
+   ],
+   "E3_per_hospital_sens": [
+    0.838,
+    0.892,
+    0.9,
+    0.876,
+    0.706
+   ]
+  },
+  "in_dino_vits": {
+   "dim": 384,
+   "E1_mean_by_budget": {
+    "1": 0.7812,
+    "2": 0.7854,
+    "4": 0.8583,
+    "8": 0.8973,
+    "16": 0.9315,
+    "all": 0.9507
+   },
+   "E1_min_split_by_budget": {
+    "1": 0.6628,
+    "2": 0.567,
+    "4": 0.7439,
+    "8": 0.7947,
+    "16": 0.8853,
+    "all": 0.9309
+   },
+   "E2_pooled_oof_auc": 0.9318,
+   "E2_ci95": [
+    0.9175,
+    0.9573
+   ],
+   "E2_pooled_mean_over_repeats": 0.9213,
+   "E2_fold_mean_over_repeats": 0.9427,
+   "E3_per_hospital": [
+    0.9631,
+    0.9372,
+    0.918,
+    0.9287,
+    0.9528
+   ],
+   "E3_mean": 0.94,
+   "E3_worst": 0.918,
+   "E3_pooled": 0.8561,
+   "E3_pooled_ci95": [
+    0.7896,
+    0.9476
+   ],
+   "E3_sens_spec_at_0.5": [
+    0.6814,
+    0.8725
+   ],
+   "E3_per_hospital_spec": [
+    0.906,
+    0.948,
+    0.603,
+    0.979,
+    0.994
+   ],
+   "E3_per_hospital_sens": [
+    0.898,
+    0.784,
+    0.926,
+    0.767,
+    0.486
+   ]
+  },
+  "path_dino_vits_lunit": {
+   "dim": 384,
+   "E1_mean_by_budget": {
+    "1": 0.8697,
+    "2": 0.8803,
+    "4": 0.9336,
+    "8": 0.9621,
+    "16": 0.9751,
+    "all": 0.9822
+   },
+   "E1_min_split_by_budget": {
+    "1": 0.7899,
+    "2": 0.7205,
+    "4": 0.9066,
+    "8": 0.9509,
+    "16": 0.9652,
+    "all": 0.9731
+   },
+   "E2_pooled_oof_auc": 0.9803,
+   "E2_ci95": [
+    0.9716,
+    0.9852
+   ],
+   "E2_pooled_mean_over_repeats": 0.9818,
+   "E2_fold_mean_over_repeats": 0.9822,
+   "E3_per_hospital": [
+    0.9817,
+    0.9675,
+    0.9579,
+    0.9804,
+    0.9874
+   ],
+   "E3_mean": 0.975,
+   "E3_worst": 0.9579,
+   "E3_pooled": 0.9716,
+   "E3_pooled_ci95": [
+    0.9535,
+    0.9794
+   ],
+   "E3_sens_spec_at_0.5": [
+    0.8638,
+    0.9839
+   ],
+   "E3_per_hospital_spec": [
+    0.96,
+    0.985,
+    0.994,
+    0.987,
+    0.995
+   ],
+   "E3_per_hospital_sens": [
+    0.933,
+    0.876,
+    0.652,
+    0.906,
+    0.897
+   ]
+  },
+  "in_sup_vitb": {
+   "dim": 768,
+   "E1_mean_by_budget": {
+    "1": 0.7821,
+    "2": 0.8307,
+    "4": 0.8751,
+    "8": 0.8769,
+    "16": 0.9333,
+    "all": 0.9205
+   },
+   "E1_min_split_by_budget": {
+    "1": 0.6957,
+    "2": 0.714,
+    "4": 0.8385,
+    "8": 0.7185,
+    "16": 0.8316,
+    "all": 0.7549
+   },
+   "E2_pooled_oof_auc": 0.8995,
+   "E2_ci95": [
+    0.8479,
+    0.96
+   ],
+   "E2_pooled_mean_over_repeats": 0.8836,
+   "E2_fold_mean_over_repeats": 0.9291,
+   "E3_per_hospital": [
+    0.9365,
+    0.9443,
+    0.9355,
+    0.9693,
+    0.8286
+   ],
+   "E3_mean": 0.9228,
+   "E3_worst": 0.8286,
+   "E3_pooled": 0.8861,
+   "E3_pooled_ci95": [
+    0.8362,
+    0.9467
+   ],
+   "E3_sens_spec_at_0.5": [
+    0.5196,
+    0.9461
+   ],
+   "E3_per_hospital_spec": [
+    0.951,
+    0.846,
+    0.997,
+    0.992,
+    0.96
+   ],
+   "E3_per_hospital_sens": [
+    0.787,
+    0.896,
+    0.434,
+    0.819,
+    0.276
+   ]
+  },
+  "in_dino_vitb": {
+   "dim": 768,
+   "E1_mean_by_budget": {
+    "1": 0.7817,
+    "2": 0.8158,
+    "4": 0.8863,
+    "8": 0.9245,
+    "16": 0.9493,
+    "all": 0.9673
+   },
+   "E1_min_split_by_budget": {
+    "1": 0.6434,
+    "2": 0.7093,
+    "4": 0.8609,
+    "8": 0.8952,
+    "16": 0.9326,
+    "all": 0.952
+   },
+   "E2_pooled_oof_auc": 0.9279,
+   "E2_ci95": [
+    0.9071,
+    0.9592
+   ],
+   "E2_pooled_mean_over_repeats": 0.9421,
+   "E2_fold_mean_over_repeats": 0.9533,
+   "E3_per_hospital": [
+    0.9696,
+    0.9282,
+    0.9539,
+    0.9597,
+    0.9727
+   ],
+   "E3_mean": 0.9568,
+   "E3_worst": 0.9282,
+   "E3_pooled": 0.9565,
+   "E3_pooled_ci95": [
+    0.9392,
+    0.9653
+   ],
+   "E3_sens_spec_at_0.5": [
+    0.8596,
+    0.9424
+   ],
+   "E3_per_hospital_spec": [
+    0.946,
+    0.903,
+    0.938,
+    0.982,
+    0.957
+   ],
+   "E3_per_hospital_sens": [
+    0.882,
+    0.825,
+    0.848,
+    0.838,
+    0.875
+   ]
+  },
+  "path_dino_vitb_kaiko": {
+   "dim": 768,
+   "E1_mean_by_budget": {
+    "1": 0.8821,
+    "2": 0.9175,
+    "4": 0.9247,
+    "8": 0.9422,
+    "16": 0.9675,
+    "all": 0.98
+   },
+   "E1_min_split_by_budget": {
+    "1": 0.8065,
+    "2": 0.8456,
+    "4": 0.896,
+    "8": 0.8853,
+    "16": 0.9471,
+    "all": 0.97
+   },
+   "E2_pooled_oof_auc": 0.9654,
+   "E2_ci95": [
+    0.9426,
+    0.9794
+   ],
+   "E2_pooled_mean_over_repeats": 0.9722,
+   "E2_fold_mean_over_repeats": 0.9769,
+   "E3_per_hospital": [
+    0.9873,
+    0.9601,
+    0.9508,
+    0.9703,
+    0.9915
+   ],
+   "E3_mean": 0.972,
+   "E3_worst": 0.9508,
+   "E3_pooled": 0.9666,
+   "E3_pooled_ci95": [
+    0.955,
+    0.9782
+   ],
+   "E3_sens_spec_at_0.5": [
+    0.8968,
+    0.9265
+   ],
+   "E3_per_hospital_spec": [
+    0.984,
+    0.938,
+    0.771,
+    0.987,
+    0.994
+   ],
+   "E3_per_hospital_sens": [
+    0.925,
+    0.908,
+    0.929,
+    0.895,
+    0.878
+   ]
+  },
+  "phikon": {
+   "dim": 768,
+   "E1_mean_by_budget": {
+    "1": 0.8588,
+    "2": 0.897,
+    "4": 0.897,
+    "8": 0.9195,
+    "16": 0.9583,
+    "all": 0.9812
+   },
+   "E1_min_split_by_budget": {
+    "1": 0.7621,
+    "2": 0.8072,
+    "4": 0.7763,
+    "8": 0.7934,
+    "16": 0.9099,
+    "all": 0.9676
+   },
+   "E2_pooled_oof_auc": 0.9536,
+   "E2_ci95": [
+    0.9123,
+    0.9797
+   ],
+   "E2_pooled_mean_over_repeats": 0.9584,
+   "E2_fold_mean_over_repeats": 0.9719,
+   "E3_per_hospital": [
+    0.9854,
+    0.9767,
+    0.8941,
+    0.9787,
+    0.9755
+   ],
+   "E3_mean": 0.9621,
+   "E3_worst": 0.8941,
+   "E3_pooled": 0.9368,
+   "E3_pooled_ci95": [
+    0.9038,
+    0.9756
+   ],
+   "E3_sens_spec_at_0.5": [
+    0.8286,
+    0.9436
+   ],
+   "E3_per_hospital_spec": [
+    0.958,
+    0.855,
+    0.964,
+    0.991,
+    0.973
+   ],
+   "E3_per_hospital_sens": [
+    0.942,
+    0.956,
+    0.719,
+    0.904,
+    0.781
+   ]
+  },
+  "path_dinov2_vitl_phikon2": {
+   "dim": 1024,
+   "E1_mean_by_budget": {
+    "1": 0.8128,
+    "2": 0.8896,
+    "4": 0.9193,
+    "8": 0.9359,
+    "16": 0.9737,
+    "all": 0.9798
+   },
+   "E1_min_split_by_budget": {
+    "1": 0.7543,
+    "2": 0.7958,
+    "4": 0.8583,
+    "8": 0.8522,
+    "16": 0.9652,
+    "all": 0.9693
+   },
+   "E2_pooled_oof_auc": 0.9821,
+   "E2_ci95": [
+    0.9727,
+    0.9872
+   ],
+   "E2_pooled_mean_over_repeats": 0.979,
+   "E2_fold_mean_over_repeats": 0.9818,
+   "E3_per_hospital": [
+    0.9795,
+    0.9664,
+    0.9783,
+    0.9744,
+    0.9757
+   ],
+   "E3_mean": 0.9749,
+   "E3_worst": 0.9664,
+   "E3_pooled": 0.9349,
+   "E3_pooled_ci95": [
+    0.8983,
+    0.9739
+   ],
+   "E3_sens_spec_at_0.5": [
+    0.7436,
+    0.9358
+   ],
+   "E3_per_hospital_spec": [
+    0.983,
+    0.785,
+    0.992,
+    0.957,
+    0.989
+   ],
+   "E3_per_hospital_sens": [
+    0.878,
+    0.959,
+    0.746,
+    0.913,
+    0.592
+   ]
+  }
+ },
+ "contrasts": {
+  "C1 lunit - in_dino_vits": {
+   "E2_diff": 0.0485,
+   "E2_ci95": [
+    0.0234,
+    0.061
+   ],
+   "E2_diff_per_repeat": [
+    0.0484,
+    0.0513,
+    0.0657,
+    0.0747,
+    0.0625
+   ],
+   "E2_fold_mean_diff_per_repeat": [
+    0.0347,
+    0.0374,
+    0.0444,
+    0.0412,
+    0.0398
+   ],
+   "E1_diff_mean_by_budget": {
+    "1": 0.0885,
+    "2": 0.0949,
+    "4": 0.0752,
+    "8": 0.0649,
+    "16": 0.0436,
+    "all": 0.0316
+   },
+   "E1_splits_positive_by_budget": {
+    "1": 4,
+    "2": 5,
+    "4": 5,
+    "8": 5,
+    "16": 5,
+    "all": 5
+   },
+   "E3_per_hospital_diff": [
+    0.0186,
+    0.0303,
+    0.0399,
+    0.0517,
+    0.0346
+   ],
+   "E3_pooled_diff": 0.1155,
+   "E3_pooled_ci95": [
+    0.0103,
+    0.1849
+   ],
+   "rule_E2_ci_excludes_0_positive": true,
+   "rule_E1_budgets_2_and_16_at_least_4_of_5": true
+  },
+  "C2 kaiko - in_dino_vitb": {
+   "E2_diff": 0.0375,
+   "E2_ci95": [
+    -0.0016,
+    0.0576
+   ],
+   "E2_diff_per_repeat": [
+    0.0375,
+    0.0241,
+    0.0052,
+    0.0304,
+    0.0533
+   ],
+   "E2_fold_mean_diff_per_repeat": [
+    0.0217,
+    0.0195,
+    0.0125,
+    0.0286,
+    0.0359
+   ],
+   "E1_diff_mean_by_budget": {
+    "1": 0.1004,
+    "2": 0.1016,
+    "4": 0.0384,
+    "8": 0.0178,
+    "16": 0.0182,
+    "all": 0.0127
+   },
+   "E1_splits_positive_by_budget": {
+    "1": 5,
+    "2": 5,
+    "4": 5,
+    "8": 3,
+    "16": 5,
+    "all": 5
+   },
+   "E3_per_hospital_diff": [
+    0.0177,
+    0.0319,
+    -0.0031,
+    0.0106,
+    0.0188
+   ],
+   "E3_pooled_diff": 0.0101,
+   "E3_pooled_ci95": [
+    -0.0004,
+    0.026
+   ],
+   "rule_E2_ci_excludes_0_positive": false,
+   "rule_E1_budgets_2_and_16_at_least_4_of_5": true
+  },
+  "C3 phikon - in_dino_vitb": {
+   "E2_diff": 0.0257,
+   "E2_ci95": [
+    -0.03,
+    0.0491
+   ],
+   "E2_diff_per_repeat": [
+    0.0257,
+    0.027,
+    -0.0167,
+    0.0258,
+    0.0198
+   ],
+   "E2_fold_mean_diff_per_repeat": [
+    0.015,
+    0.0203,
+    0.0059,
+    0.0268,
+    0.025
+   ],
+   "E1_diff_mean_by_budget": {
+    "1": 0.0771,
+    "2": 0.0812,
+    "4": 0.0107,
+    "8": -0.005,
+    "16": 0.009,
+    "all": 0.0139
+   },
+   "E1_splits_positive_by_budget": {
+    "1": 4,
+    "2": 5,
+    "4": 4,
+    "8": 3,
+    "16": 3,
+    "all": 5
+   },
+   "E3_per_hospital_diff": [
+    0.0158,
+    0.0485,
+    -0.0598,
+    0.019,
+    0.0028
+   ],
+   "E3_pooled_diff": -0.0197,
+   "E3_pooled_ci95": [
+    -0.0483,
+    0.0248
+   ],
+   "rule_E2_ci_excludes_0_positive": false,
+   "rule_E1_budgets_2_and_16_at_least_4_of_5": false
+  },
+  "C4 phikon - in_sup_vitb": {
+   "E2_diff": 0.0541,
+   "E2_ci95": [
+    -0.0326,
+    0.1051
+   ],
+   "E2_diff_per_repeat": [
+    0.0541,
+    0.0796,
+    0.0677,
+    0.1323,
+    0.0405
+   ],
+   "E2_fold_mean_diff_per_repeat": [
+    0.0366,
+    0.0332,
+    0.0622,
+    0.0497,
+    0.0322
+   ],
+   "E1_diff_mean_by_budget": {
+    "1": 0.0767,
+    "2": 0.0663,
+    "4": 0.022,
+    "8": 0.0425,
+    "16": 0.0251,
+    "all": 0.0608
+   },
+   "E1_splits_positive_by_budget": {
+    "1": 5,
+    "2": 4,
+    "4": 3,
+    "8": 4,
+    "16": 4,
+    "all": 5
+   },
+   "E3_per_hospital_diff": [
+    0.0489,
+    0.0324,
+    -0.0414,
+    0.0094,
+    0.1469
+   ],
+   "E3_pooled_diff": 0.0507,
+   "E3_pooled_ci95": [
+    -0.0156,
+    0.0895
+   ],
+   "rule_E2_ci_excludes_0_positive": false,
+   "rule_E1_budgets_2_and_16_at_least_4_of_5": true
+  },
+  "S1 in_dino_vitb - in_dino_vits": {
+   "E2_diff": -0.0039,
+   "E2_ci95": [
+    -0.0185,
+    0.0188
+   ],
+   "E2_diff_per_repeat": [
+    -0.0039,
+    0.0118,
+    0.0474,
+    0.0408,
+    0.0081
+   ],
+   "E2_fold_mean_diff_per_repeat": [
+    0.0032,
+    0.0126,
+    0.0243,
+    0.0087,
+    0.0045
+   ],
+   "E1_diff_mean_by_budget": {
+    "1": 0.0005,
+    "2": 0.0304,
+    "4": 0.028,
+    "8": 0.0272,
+    "16": 0.0178,
+    "all": 0.0167
+   },
+   "E1_splits_positive_by_budget": {
+    "1": 4,
+    "2": 4,
+    "4": 3,
+    "8": 4,
+    "16": 4,
+    "all": 5
+   },
+   "E3_per_hospital_diff": [
+    0.0065,
+    -0.009,
+    0.0359,
+    0.031,
+    0.0199
+   ],
+   "E3_pooled_diff": 0.1004,
+   "E3_pooled_ci95": [
+    0.0085,
+    0.1691
+   ],
+   "rule_E2_ci_excludes_0_positive": false,
+   "rule_E1_budgets_2_and_16_at_least_4_of_5": true
+  },
+  "S2 phikon2 - phikon": {
+   "E2_diff": 0.0285,
+   "E2_ci95": [
+    0.0006,
+    0.0649
+   ],
+   "E2_diff_per_repeat": [
+    0.0285,
+    0.0092,
+    0.0295,
+    0.0054,
+    0.0303
+   ],
+   "E2_fold_mean_diff_per_repeat": [
+    0.018,
+    0.0042,
+    0.0133,
+    0.0029,
+    0.0113
+   ],
+   "E1_diff_mean_by_budget": {
+    "1": -0.046,
+    "2": -0.0074,
+    "4": 0.0223,
+    "8": 0.0164,
+    "16": 0.0153,
+    "all": -0.0015
+   },
+   "E1_splits_positive_by_budget": {
+    "1": 2,
+    "2": 1,
+    "4": 3,
+    "8": 4,
+    "16": 3,
+    "all": 3
+   },
+   "E3_per_hospital_diff": [
+    -0.0059,
+    -0.0103,
+    0.0842,
+    -0.0043,
+    0.0002
+   ],
+   "E3_pooled_diff": -0.0019,
+   "E3_pooled_ci95": [
+    -0.0284,
+    0.0412
+   ],
+   "rule_E2_ci_excludes_0_positive": true,
+   "rule_E1_budgets_2_and_16_at_least_4_of_5": false
+  },
+  "X1 phikon - in_sup_vits": {
+   "E2_diff": 0.0157,
+   "E2_ci95": [
+    -0.0338,
+    0.0387
+   ],
+   "E2_diff_per_repeat": [
+    0.0157,
+    0.0267,
+    0.015,
+    0.0471,
+    0.0141
+   ],
+   "E2_fold_mean_diff_per_repeat": [
+    0.0155,
+    0.0316,
+    0.0205,
+    0.0313,
+    0.0218
+   ],
+   "E1_diff_mean_by_budget": {
+    "1": 0.0625,
+    "2": 0.0571,
+    "4": 0.0353,
+    "8": 0.0107,
+    "16": 0.0204,
+    "all": 0.0292
+   },
+   "E1_splits_positive_by_budget": {
+    "1": 4,
+    "2": 4,
+    "4": 4,
+    "8": 3,
+    "16": 4,
+    "all": 5
+   },
+   "E3_per_hospital_diff": [
+    0.0362,
+    0.0314,
+    -0.0564,
+    0.0142,
+    0.0707
+   ],
+   "E3_pooled_diff": 0.0108,
+   "E3_pooled_ci95": [
+    -0.0345,
+    0.0356
+   ],
+   "rule_E2_ci_excludes_0_positive": false,
+   "rule_E1_budgets_2_and_16_at_least_4_of_5": true
+  },
+  "X2 kaiko - lunit": {
+   "E2_diff": -0.0149,
+   "E2_ci95": [
+    -0.0348,
+    0.0005
+   ],
+   "E2_diff_per_repeat": [
+    -0.0148,
+    -0.0154,
+    -0.0132,
+    -0.0035,
+    -0.0011
+   ],
+   "E2_fold_mean_diff_per_repeat": [
+    -0.0099,
+    -0.0052,
+    -0.0076,
+    -0.004,
+    0.0005
+   ],
+   "E1_diff_mean_by_budget": {
+    "1": 0.0123,
+    "2": 0.0371,
+    "4": -0.0089,
+    "8": -0.0199,
+    "16": -0.0076,
+    "all": -0.0022
+   },
+   "E1_splits_positive_by_budget": {
+    "1": 4,
+    "2": 4,
+    "4": 1,
+    "8": 1,
+    "16": 1,
+    "all": 1
+   },
+   "E3_per_hospital_diff": [
+    0.0056,
+    -0.0074,
+    -0.0071,
+    -0.0101,
+    0.0041
+   ],
+   "E3_pooled_diff": -0.005,
+   "E3_pooled_ci95": [
+    -0.0187,
+    0.0204
+   ],
+   "rule_E2_ci_excludes_0_positive": false,
+   "rule_E1_budgets_2_and_16_at_least_4_of_5": false
+  },
+  "X3 lunit - in_sup_vits": {
+   "E2_diff": 0.0424,
+   "E2_ci95": [
+    0.0189,
+    0.0608
+   ],
+   "E2_diff_per_repeat": [
+    0.0424,
+    0.0391,
+    0.05,
+    0.0552,
+    0.0487
+   ],
+   "E2_fold_mean_diff_per_repeat": [
+    0.032,
+    0.036,
+    0.0348,
+    0.0371,
+    0.0322
+   ],
+   "E1_diff_mean_by_budget": {
+    "1": 0.0735,
+    "2": 0.0404,
+    "4": 0.0719,
+    "8": 0.0534,
+    "16": 0.0372,
+    "all": 0.0302
+   },
+   "E1_splits_positive_by_budget": {
+    "1": 4,
+    "2": 4,
+    "4": 5,
+    "8": 5,
+    "16": 5,
+    "all": 5
+   },
+   "E3_per_hospital_diff": [
+    0.0325,
+    0.0222,
+    0.0074,
+    0.0159,
+    0.0826
+   ],
+   "E3_pooled_diff": 0.0456,
+   "E3_pooled_ci95": [
+    0.0007,
+    0.0749
+   ],
+   "rule_E2_ci_excludes_0_positive": true,
+   "rule_E1_budgets_2_and_16_at_least_4_of_5": true
+  },
+  "X4 phikon - kaiko": {
+   "E2_diff": -0.0118,
+   "E2_ci95": [
+    -0.0323,
+    0.0043
+   ],
+   "E2_diff_per_repeat": [
+    -0.0119,
+    0.003,
+    -0.0219,
+    -0.0046,
+    -0.0334
+   ],
+   "E2_fold_mean_diff_per_repeat": [
+    -0.0067,
+    0.0008,
+    -0.0067,
+    -0.0018,
+    -0.0109
+   ],
+   "E1_diff_mean_by_budget": {
+    "1": -0.0232,
+    "2": -0.0205,
+    "4": -0.0277,
+    "8": -0.0228,
+    "16": -0.0092,
+    "all": 0.0012
+   },
+   "E1_splits_positive_by_budget": {
+    "1": 1,
+    "2": 1,
+    "4": 2,
+    "8": 1,
+    "16": 3,
+    "all": 3
+   },
+   "E3_per_hospital_diff": [
+    -0.0019,
+    0.0166,
+    -0.0567,
+    0.0084,
+    -0.016
+   ],
+   "E3_pooled_diff": -0.0298,
+   "E3_pooled_ci95": [
+    -0.0606,
+    0.0098
+   ],
+   "rule_E2_ci_excludes_0_positive": false,
+   "rule_E1_budgets_2_and_16_at_least_4_of_5": false
+  }
+ },
+ "E4": {
+  "raw": {
+   "M0": {
+    "per_hospital_auc": [
+     0.8497,
+     0.7429,
+     0.4704,
+     0.879,
+     0.3989
+    ],
+    "mean_auc": 0.6682,
+    "worst_auc": 0.3989,
+    "pooled_auc": 0.7045,
+    "sens_at_0.5": 0.6665,
+    "spec_at_0.5": 0.6772
+   },
+   "M1": {
+    "per_hospital_auc": [
+     0.9011,
+     0.7815,
+     0.8684,
+     0.9339,
+     0.6537
+    ],
+    "mean_auc": 0.8277,
+    "worst_auc": 0.6537,
+    "pooled_auc": 0.7983,
+    "sens_at_0.5": 0.7967,
+    "spec_at_0.5": 0.7221
+   },
+   "M2": {
+    "per_hospital_auc": [
+     0.8396,
+     0.6981,
+     0.535,
+     0.8819,
+     0.4018
+    ],
+    "mean_auc": 0.6713,
+    "worst_auc": 0.4018,
+    "pooled_auc": 0.7056,
+    "sens_at_0.5": 0.6696,
+    "spec_at_0.5": 0.6932
+   },
+   "M3": {
+    "per_hospital_auc": [
+     0.8425,
+     0.7292,
+     0.4631,
+     0.8735,
+     0.3985
+    ],
+    "mean_auc": 0.6613,
+    "worst_auc": 0.3985,
+    "pooled_auc": 0.7112,
+    "sens_at_0.5": 0.7269,
+    "spec_at_0.5": 0.6982
+   },
+   "selected": {
+    "per_hospital_auc": [
+     0.9011,
+     0.7815,
+     0.4631,
+     0.9339,
+     0.6537
+    ],
+    "mean_auc": 0.7467,
+    "worst_auc": 0.4631,
+    "pooled_auc": 0.7249,
+    "sens_at_0.5": 0.6893,
+    "spec_at_0.5": 0.7168
+   },
+   "selected_per_hospital": [
+    "M1",
+    "M1",
+    "M3",
+    "M1",
+    "M1"
+   ],
+   "success": true
+  },
+  "in_sup_vits": {
+   "M0": {
+    "per_hospital_auc": [
+     0.9492,
+     0.9453,
+     0.9505,
+     0.9645,
+     0.9048
+    ],
+    "mean_auc": 0.9429,
+    "worst_auc": 0.9048,
+    "pooled_auc": 0.926,
+    "sens_at_0.5": 0.8007,
+    "spec_at_0.5": 0.8964
+   },
+   "M1": {
+    "per_hospital_auc": [
+     0.9349,
+     0.9176,
+     0.9429,
+     0.9654,
+     0.8812
+    ],
+    "mean_auc": 0.9284,
+    "worst_auc": 0.8812,
+    "pooled_auc": 0.8464,
+    "sens_at_0.5": 0.7289,
+    "spec_at_0.5": 0.7938
+   },
+   "M2": {
+    "per_hospital_auc": [
+     0.9442,
+     0.9382,
+     0.9422,
+     0.9617,
+     0.9095
+    ],
+    "mean_auc": 0.9392,
+    "worst_auc": 0.9095,
+    "pooled_auc": 0.9289,
+    "sens_at_0.5": 0.809,
+    "spec_at_0.5": 0.8972
+   },
+   "M3": {
+    "per_hospital_auc": [
+     0.9589,
+     0.9418,
+     0.9478,
+     0.962,
+     0.9345
+    ],
+    "mean_auc": 0.949,
+    "worst_auc": 0.9345,
+    "pooled_auc": 0.9401,
+    "sens_at_0.5": 0.8455,
+    "spec_at_0.5": 0.894
+   },
+   "selected": {
+    "per_hospital_auc": [
+     0.9492,
+     0.9418,
+     0.9478,
+     0.962,
+     0.9048
+    ],
+    "mean_auc": 0.9411,
+    "worst_auc": 0.9048,
+    "pooled_auc": 0.9235,
+    "sens_at_0.5": 0.8019,
+    "spec_at_0.5": 0.8921
+   },
+   "selected_per_hospital": [
+    "M0",
+    "M3",
+    "M3",
+    "M3",
+    "M0"
+   ],
+   "success": false
+  },
+  "in_dino_vits": {
+   "M0": {
+    "per_hospital_auc": [
+     0.9631,
+     0.9372,
+     0.918,
+     0.9287,
+     0.9528
+    ],
+    "mean_auc": 0.94,
+    "worst_auc": 0.918,
+    "pooled_auc": 0.8561,
+    "sens_at_0.5": 0.6814,
+    "spec_at_0.5": 0.8725
+   },
+   "M1": {
+    "per_hospital_auc": [
+     0.9548,
+     0.9064,
+     0.9095,
+     0.9385,
+     0.9525
+    ],
+    "mean_auc": 0.9323,
+    "worst_auc": 0.9064,
+    "pooled_auc": 0.864,
+    "sens_at_0.5": 0.7689,
+    "spec_at_0.5": 0.7926
+   },
+   "M2": {
+    "per_hospital_auc": [
+     0.9679,
+     0.9396,
+     0.9344,
+     0.9139,
+     0.932
+    ],
+    "mean_auc": 0.9375,
+    "worst_auc": 0.9139,
+    "pooled_auc": 0.887,
+    "sens_at_0.5": 0.6494,
+    "spec_at_0.5": 0.9242
+   },
+   "M3": {
+    "per_hospital_auc": [
+     0.9665,
+     0.9306,
+     0.9359,
+     0.9346,
+     0.9619
+    ],
+    "mean_auc": 0.9459,
+    "worst_auc": 0.9306,
+    "pooled_auc": 0.8964,
+    "sens_at_0.5": 0.7253,
+    "spec_at_0.5": 0.9205
+   },
+   "selected": {
+    "per_hospital_auc": [
+     0.9665,
+     0.9064,
+     0.918,
+     0.9287,
+     0.9619
+    ],
+    "mean_auc": 0.9363,
+    "worst_auc": 0.9064,
+    "pooled_auc": 0.844,
+    "sens_at_0.5": 0.7388,
+    "spec_at_0.5": 0.768
+   },
+   "selected_per_hospital": [
+    "M3",
+    "M1",
+    "M0",
+    "M0",
+    "M3"
+   ],
+   "success": false
+  },
+  "path_dino_vits_lunit": {
+   "M0": {
+    "per_hospital_auc": [
+     0.9817,
+     0.9675,
+     0.9579,
+     0.9804,
+     0.9874
+    ],
+    "mean_auc": 0.975,
+    "worst_auc": 0.9579,
+    "pooled_auc": 0.9716,
+    "sens_at_0.5": 0.8638,
+    "spec_at_0.5": 0.9839
+   },
+   "M1": {
+    "per_hospital_auc": [
+     0.9766,
+     0.9649,
+     0.9462,
+     0.9722,
+     0.9721
+    ],
+    "mean_auc": 0.9664,
+    "worst_auc": 0.9462,
+    "pooled_auc": 0.9158,
+    "sens_at_0.5": 0.8596,
+    "spec_at_0.5": 0.8141
+   },
+   "M2": {
+    "per_hospital_auc": [
+     0.9818,
+     0.9674,
+     0.948,
+     0.9792,
+     0.9837
+    ],
+    "mean_auc": 0.972,
+    "worst_auc": 0.948,
+    "pooled_auc": 0.968,
+    "sens_at_0.5": 0.8494,
+    "spec_at_0.5": 0.9867
+   },
+   "M3": {
+    "per_hospital_auc": [
+     0.9831,
+     0.9669,
+     0.9668,
+     0.9792,
+     0.9875
+    ],
+    "mean_auc": 0.9767,
+    "worst_auc": 0.9668,
+    "pooled_auc": 0.9651,
+    "sens_at_0.5": 0.8635,
+    "spec_at_0.5": 0.9775
+   },
+   "selected": {
+    "per_hospital_auc": [
+     0.9817,
+     0.9674,
+     0.9579,
+     0.9804,
+     0.9721
+    ],
+    "mean_auc": 0.9719,
+    "worst_auc": 0.9579,
+    "pooled_auc": 0.9605,
+    "sens_at_0.5": 0.8104,
+    "spec_at_0.5": 0.983
+   },
+   "selected_per_hospital": [
+    "M0",
+    "M2",
+    "M0",
+    "M0",
+    "M1"
+   ],
+   "success": false
+  },
+  "in_sup_vitb": {
+   "M0": {
+    "per_hospital_auc": [
+     0.9365,
+     0.9443,
+     0.9355,
+     0.9693,
+     0.8286
+    ],
+    "mean_auc": 0.9228,
+    "worst_auc": 0.8286,
+    "pooled_auc": 0.8861,
+    "sens_at_0.5": 0.5196,
+    "spec_at_0.5": 0.9461
+   },
+   "M1": {
+    "per_hospital_auc": [
+     0.9309,
+     0.9491,
+     0.939,
+     0.9689,
+     0.8114
+    ],
+    "mean_auc": 0.9199,
+    "worst_auc": 0.8114,
+    "pooled_auc": 0.8423,
+    "sens_at_0.5": 0.7148,
+    "spec_at_0.5": 0.8162
+   },
+   "M2": {
+    "per_hospital_auc": [
+     0.9492,
+     0.9299,
+     0.9201,
+     0.9627,
+     0.8484
+    ],
+    "mean_auc": 0.922,
+    "worst_auc": 0.8484,
+    "pooled_auc": 0.8126,
+    "sens_at_0.5": 0.501,
+    "spec_at_0.5": 0.9079
+   },
+   "M3": {
+    "per_hospital_auc": [
+     0.9567,
+     0.9506,
+     0.9223,
+     0.9659,
+     0.7679
+    ],
+    "mean_auc": 0.9127,
+    "worst_auc": 0.7679,
+    "pooled_auc": 0.806,
+    "sens_at_0.5": 0.4889,
+    "spec_at_0.5": 0.9124
+   },
+   "selected": {
+    "per_hospital_auc": [
+     0.9567,
+     0.9506,
+     0.939,
+     0.9627,
+     0.7679
+    ],
+    "mean_auc": 0.9154,
+    "worst_auc": 0.7679,
+    "pooled_auc": 0.7939,
+    "sens_at_0.5": 0.5634,
+    "spec_at_0.5": 0.8737
+   },
+   "selected_per_hospital": [
+    "M3",
+    "M3",
+    "M1",
+    "M2",
+    "M3"
+   ],
+   "success": false
+  },
+  "in_dino_vitb": {
+   "M0": {
+    "per_hospital_auc": [
+     0.9696,
+     0.9282,
+     0.9539,
+     0.9597,
+     0.9727
+    ],
+    "mean_auc": 0.9568,
+    "worst_auc": 0.9282,
+    "pooled_auc": 0.9565,
+    "sens_at_0.5": 0.8596,
+    "spec_at_0.5": 0.9424
+   },
+   "M1": {
+    "per_hospital_auc": [
+     0.9569,
+     0.9323,
+     0.8961,
+     0.9589,
+     0.9738
+    ],
+    "mean_auc": 0.9436,
+    "worst_auc": 0.8961,
+    "pooled_auc": 0.8898,
+    "sens_at_0.5": 0.8216,
+    "spec_at_0.5": 0.7937
+   },
+   "M2": {
+    "per_hospital_auc": [
+     0.9694,
+     0.9445,
+     0.9534,
+     0.9537,
+     0.9719
+    ],
+    "mean_auc": 0.9586,
+    "worst_auc": 0.9445,
+    "pooled_auc": 0.9593,
+    "sens_at_0.5": 0.8517,
+    "spec_at_0.5": 0.9468
+   },
+   "M3": {
+    "per_hospital_auc": [
+     0.9647,
+     0.938,
+     0.9529,
+     0.9464,
+     0.9723
+    ],
+    "mean_auc": 0.9548,
+    "worst_auc": 0.938,
+    "pooled_auc": 0.952,
+    "sens_at_0.5": 0.8469,
+    "spec_at_0.5": 0.9345
+   },
+   "selected": {
+    "per_hospital_auc": [
+     0.9647,
+     0.938,
+     0.9534,
+     0.9537,
+     0.9727
+    ],
+    "mean_auc": 0.9565,
+    "worst_auc": 0.938,
+    "pooled_auc": 0.9566,
+    "sens_at_0.5": 0.8619,
+    "spec_at_0.5": 0.9351
+   },
+   "selected_per_hospital": [
+    "M3",
+    "M3",
+    "M2",
+    "M2",
+    "M0"
+   ],
+   "success": true
+  },
+  "path_dino_vitb_kaiko": {
+   "M0": {
+    "per_hospital_auc": [
+     0.9873,
+     0.9601,
+     0.9508,
+     0.9703,
+     0.9915
+    ],
+    "mean_auc": 0.972,
+    "worst_auc": 0.9508,
+    "pooled_auc": 0.9666,
+    "sens_at_0.5": 0.8968,
+    "spec_at_0.5": 0.9265
+   },
+   "M1": {
+    "per_hospital_auc": [
+     0.9828,
+     0.9609,
+     0.8949,
+     0.9768,
+     0.9873
+    ],
+    "mean_auc": 0.9606,
+    "worst_auc": 0.8949,
+    "pooled_auc": 0.9133,
+    "sens_at_0.5": 0.8789,
+    "spec_at_0.5": 0.7526
+   },
+   "M2": {
+    "per_hospital_auc": [
+     0.9859,
+     0.9589,
+     0.922,
+     0.9674,
+     0.9916
+    ],
+    "mean_auc": 0.9652,
+    "worst_auc": 0.922,
+    "pooled_auc": 0.9654,
+    "sens_at_0.5": 0.9082,
+    "spec_at_0.5": 0.8994
+   },
+   "M3": {
+    "per_hospital_auc": [
+     0.9866,
+     0.9637,
+     0.9589,
+     0.9702,
+     0.9921
+    ],
+    "mean_auc": 0.9743,
+    "worst_auc": 0.9589,
+    "pooled_auc": 0.9689,
+    "sens_at_0.5": 0.9134,
+    "spec_at_0.5": 0.9212
+   },
+   "selected": {
+    "per_hospital_auc": [
+     0.9859,
+     0.9637,
+     0.9589,
+     0.9702,
+     0.9915
+    ],
+    "mean_auc": 0.9741,
+    "worst_auc": 0.9589,
+    "pooled_auc": 0.9659,
+    "sens_at_0.5": 0.9024,
+    "spec_at_0.5": 0.9207
+   },
+   "selected_per_hospital": [
+    "M2",
+    "M3",
+    "M3",
+    "M3",
+    "M0"
+   ],
+   "success": true
+  },
+  "phikon": {
+   "M0": {
+    "per_hospital_auc": [
+     0.9854,
+     0.9767,
+     0.8941,
+     0.9787,
+     0.9755
+    ],
+    "mean_auc": 0.9621,
+    "worst_auc": 0.8941,
+    "pooled_auc": 0.9368,
+    "sens_at_0.5": 0.8286,
+    "spec_at_0.5": 0.9436
+   },
+   "M1": {
+    "per_hospital_auc": [
+     0.9787,
+     0.9732,
+     0.8127,
+     0.9827,
+     0.9577
+    ],
+    "mean_auc": 0.941,
+    "worst_auc": 0.8127,
+    "pooled_auc": 0.8908,
+    "sens_at_0.5": 0.8537,
+    "spec_at_0.5": 0.7509
+   },
+   "M2": {
+    "per_hospital_auc": [
+     0.9848,
+     0.9722,
+     0.8827,
+     0.9729,
+     0.9765
+    ],
+    "mean_auc": 0.9578,
+    "worst_auc": 0.8827,
+    "pooled_auc": 0.9495,
+    "sens_at_0.5": 0.855,
+    "spec_at_0.5": 0.9387
+   },
+   "M3": {
+    "per_hospital_auc": [
+     0.9852,
+     0.9758,
+     0.8493,
+     0.9734,
+     0.9764
+    ],
+    "mean_auc": 0.952,
+    "worst_auc": 0.8493,
+    "pooled_auc": 0.944,
+    "sens_at_0.5": 0.861,
+    "spec_at_0.5": 0.931
+   },
+   "selected": {
+    "per_hospital_auc": [
+     0.9848,
+     0.9758,
+     0.8127,
+     0.9787,
+     0.9577
+    ],
+    "mean_auc": 0.942,
+    "worst_auc": 0.8127,
+    "pooled_auc": 0.9191,
+    "sens_at_0.5": 0.8468,
+    "spec_at_0.5": 0.8385
+   },
+   "selected_per_hospital": [
+    "M2",
+    "M3",
+    "M1",
+    "M0",
+    "M1"
+   ],
+   "success": false
+  },
+  "path_dinov2_vitl_phikon2": {
+   "M0": {
+    "per_hospital_auc": [
+     0.9795,
+     0.9664,
+     0.9783,
+     0.9744,
+     0.9757
+    ],
+    "mean_auc": 0.9749,
+    "worst_auc": 0.9664,
+    "pooled_auc": 0.9349,
+    "sens_at_0.5": 0.7436,
+    "spec_at_0.5": 0.9358
+   },
+   "M1": {
+    "per_hospital_auc": [
+     0.9734,
+     0.9611,
+     0.9678,
+     0.978,
+     0.9797
+    ],
+    "mean_auc": 0.972,
+    "worst_auc": 0.9611,
+    "pooled_auc": 0.9181,
+    "sens_at_0.5": 0.8642,
+    "spec_at_0.5": 0.7993
+   },
+   "M2": {
+    "per_hospital_auc": [
+     0.9728,
+     0.9564,
+     0.972,
+     0.9678,
+     0.9745
+    ],
+    "mean_auc": 0.9687,
+    "worst_auc": 0.9564,
+    "pooled_auc": 0.9306,
+    "sens_at_0.5": 0.7119,
+    "spec_at_0.5": 0.9382
+   },
+   "M3": {
+    "per_hospital_auc": [
+     0.9783,
+     0.9682,
+     0.971,
+     0.9814,
+     0.9772
+    ],
+    "mean_auc": 0.9752,
+    "worst_auc": 0.9682,
+    "pooled_auc": 0.9528,
+    "sens_at_0.5": 0.7782,
+    "spec_at_0.5": 0.9489
+   },
+   "selected": {
+    "per_hospital_auc": [
+     0.9783,
+     0.9664,
+     0.971,
+     0.9814,
+     0.9757
+    ],
+    "mean_auc": 0.9746,
+    "worst_auc": 0.9664,
+    "pooled_auc": 0.9362,
+    "sens_at_0.5": 0.7252,
+    "spec_at_0.5": 0.9418
+   },
+   "selected_per_hospital": [
+    "M3",
+    "M0",
+    "M3",
+    "M3",
+    "M0"
+   ],
+   "success": false
+  }
+ },
+ "bootstrap": "patient-cluster, B=2000, 34 patients",
+ "claim_pathology_pretraining_helps_at_matched_size": false,
+ "E5_per_slide": {
+  "patient_000_node_0": {
+   "hospital": 0,
+   "grade": "negative",
+   "tumour": 0,
+   "tiles": 600,
+   "auc": {
+    "raw": null,
+    "in_sup_vits": null,
+    "in_dino_vits": null,
+    "path_dino_vits_lunit": null,
+    "in_sup_vitb": null,
+    "in_dino_vitb": null,
+    "path_dino_vitb_kaiko": null,
+    "phikon": null,
+    "path_dinov2_vitl_phikon2": null
+   }
+  },
+  "patient_009_node_1": {
+   "hospital": 0,
+   "grade": "micro",
+   "tumour": 60,
+   "tiles": 660,
+   "auc": {
+    "raw": 0.5909,
+    "in_sup_vits": 0.9126,
+    "in_dino_vits": 0.9151,
+    "path_dino_vits_lunit": 0.9709,
+    "in_sup_vitb": 0.8713,
+    "in_dino_vitb": 0.9331,
+    "path_dino_vitb_kaiko": 0.9264,
+    "phikon": 0.9356,
+    "path_dinov2_vitl_phikon2": 0.9855
+   }
+  },
+  "patient_010_node_4": {
+   "hospital": 0,
+   "grade": "micro",
+   "tumour": 216,
+   "tiles": 816,
+   "auc": {
+    "raw": 0.4385,
+    "in_sup_vits": 0.864,
+    "in_dino_vits": 0.9059,
+    "path_dino_vits_lunit": 0.8812,
+    "in_sup_vitb": 0.7547,
+    "in_dino_vitb": 0.9214,
+    "path_dino_vitb_kaiko": 0.9555,
+    "phikon": 0.9352,
+    "path_dinov2_vitl_phikon2": 0.9114
+   }
+  },
+  "patient_012_node_0": {
+   "hospital": 0,
+   "grade": "macro",
+   "tumour": 1078,
+   "tiles": 1678,
+   "auc": {
+    "raw": 0.9689,
+    "in_sup_vits": 0.9894,
+    "in_dino_vits": 0.9921,
+    "path_dino_vits_lunit": 0.9952,
+    "in_sup_vitb": 0.9896,
+    "in_dino_vitb": 0.9915,
+    "path_dino_vitb_kaiko": 0.9979,
+    "phikon": 0.9955,
+    "path_dinov2_vitl_phikon2": 0.9938
+   }
+  },
+  "patient_015_node_1": {
+   "hospital": 0,
+   "grade": "macro",
+   "tumour": 428,
+   "tiles": 1028,
+   "auc": {
+    "raw": 0.9009,
+    "in_sup_vits": 0.9664,
+    "in_dino_vits": 0.9741,
+    "path_dino_vits_lunit": 0.9911,
+    "in_sup_vitb": 0.9716,
+    "in_dino_vitb": 0.9818,
+    "path_dino_vitb_kaiko": 0.9941,
+    "phikon": 0.9897,
+    "path_dinov2_vitl_phikon2": 0.9929
+   }
+  },
+  "patient_015_node_2": {
+   "hospital": 0,
+   "grade": "macro",
+   "tumour": 117,
+   "tiles": 717,
+   "auc": {
+    "raw": 0.8677,
+    "in_sup_vits": 0.9693,
+    "in_dino_vits": 0.9787,
+    "path_dino_vits_lunit": 0.963,
+    "in_sup_vitb": 0.9717,
+    "in_dino_vitb": 0.9731,
+    "path_dino_vitb_kaiko": 0.984,
+    "phikon": 0.9918,
+    "path_dinov2_vitl_phikon2": 0.9838
+   }
+  },
+  "patient_017_node_2": {
+   "hospital": 0,
+   "grade": "macro",
+   "tumour": 803,
+   "tiles": 1403,
+   "auc": {
+    "raw": 0.9514,
+    "in_sup_vits": 0.9725,
+    "in_dino_vits": 0.9729,
+    "path_dino_vits_lunit": 0.9952,
+    "in_sup_vitb": 0.9762,
+    "in_dino_vitb": 0.9842,
+    "path_dino_vitb_kaiko": 0.9935,
+    "phikon": 0.9935,
+    "path_dinov2_vitl_phikon2": 0.9913
+   }
+  },
+  "patient_017_node_4": {
+   "hospital": 0,
+   "grade": "micro",
+   "tumour": 105,
+   "tiles": 705,
+   "auc": {
+    "raw": 0.576,
+    "in_sup_vits": 0.887,
+    "in_dino_vits": 0.9059,
+    "path_dino_vits_lunit": 0.9531,
+    "in_sup_vitb": 0.8674,
+    "in_dino_vitb": 0.8849,
+    "path_dino_vitb_kaiko": 0.9443,
+    "phikon": 0.9586,
+    "path_dinov2_vitl_phikon2": 0.9506
+   }
+  },
+  "patient_020_node_0": {
+   "hospital": 1,
+   "grade": "negative",
+   "tumour": 0,
+   "tiles": 600,
+   "auc": {
+    "raw": null,
+    "in_sup_vits": null,
+    "in_dino_vits": null,
+    "path_dino_vits_lunit": null,
+    "in_sup_vitb": null,
+    "in_dino_vitb": null,
+    "path_dino_vitb_kaiko": null,
+    "phikon": null,
+    "path_dinov2_vitl_phikon2": null
+   }
+  },
+  "patient_020_node_2": {
+   "hospital": 1,
+   "grade": "micro",
+   "tumour": 24,
+   "tiles": 624,
+   "auc": {
+    "raw": 0.1592,
+    "in_sup_vits": 0.7806,
+    "in_dino_vits": 0.7098,
+    "path_dino_vits_lunit": 0.7752,
+    "in_sup_vitb": 0.8924,
+    "in_dino_vitb": 0.7851,
+    "path_dino_vitb_kaiko": 0.8437,
+    "phikon": 0.6324,
+    "path_dinov2_vitl_phikon2": 0.6456
+   }
+  },
+  "patient_020_node_4": {
+   "hospital": 1,
+   "grade": "macro",
+   "tumour": 302,
+   "tiles": 902,
+   "auc": {
+    "raw": 0.4445,
+    "in_sup_vits": 0.9851,
+    "in_dino_vits": 0.9849,
+    "path_dino_vits_lunit": 0.9973,
+    "in_sup_vitb": 0.9666,
+    "in_dino_vitb": 0.9867,
+    "path_dino_vitb_kaiko": 0.9949,
+    "phikon": 0.9886,
+    "path_dinov2_vitl_phikon2": 0.9938
+   }
+  },
+  "patient_021_node_3": {
+   "hospital": 1,
+   "grade": "micro",
+   "tumour": 27,
+   "tiles": 627,
+   "auc": {
+    "raw": 0.6614,
+    "in_sup_vits": 0.9771,
+    "in_dino_vits": 0.9623,
+    "path_dino_vits_lunit": 0.9922,
+    "in_sup_vitb": 0.9493,
+    "in_dino_vitb": 0.9264,
+    "path_dino_vitb_kaiko": 0.9819,
+    "phikon": 0.9004,
+    "path_dinov2_vitl_phikon2": 0.9838
+   }
+  },
+  "patient_022_node_4": {
+   "hospital": 1,
+   "grade": "macro",
+   "tumour": 905,
+   "tiles": 1505,
+   "auc": {
+    "raw": 0.859,
+    "in_sup_vits": 0.9352,
+    "in_dino_vits": 0.9438,
+    "path_dino_vits_lunit": 0.9616,
+    "in_sup_vitb": 0.9417,
+    "in_dino_vitb": 0.9379,
+    "path_dino_vitb_kaiko": 0.9565,
+    "phikon": 0.9832,
+    "path_dinov2_vitl_phikon2": 0.9479
+   }
+  },
+  "patient_034_node_3": {
+   "hospital": 1,
+   "grade": "macro",
+   "tumour": 502,
+   "tiles": 1102,
+   "auc": {
+    "raw": 0.752,
+    "in_sup_vits": 0.9356,
+    "in_dino_vits": 0.9129,
+    "path_dino_vits_lunit": 0.9849,
+    "in_sup_vitb": 0.949,
+    "in_dino_vitb": 0.9249,
+    "path_dino_vitb_kaiko": 0.9577,
+    "phikon": 0.9837,
+    "path_dinov2_vitl_phikon2": 0.9827
+   }
+  },
+  "patient_036_node_3": {
+   "hospital": 1,
+   "grade": "micro",
+   "tumour": 75,
+   "tiles": 675,
+   "auc": {
+    "raw": 0.5058,
+    "in_sup_vits": 0.8724,
+    "in_dino_vits": 0.9048,
+    "path_dino_vits_lunit": 0.9776,
+    "in_sup_vitb": 0.8798,
+    "in_dino_vitb": 0.9312,
+    "path_dino_vitb_kaiko": 0.9602,
+    "phikon": 0.9647,
+    "path_dinov2_vitl_phikon2": 0.9812
+   }
+  },
+  "patient_038_node_2": {
+   "hospital": 1,
+   "grade": "micro",
+   "tumour": 28,
+   "tiles": 628,
+   "auc": {
+    "raw": 0.6567,
+    "in_sup_vits": 0.8345,
+    "in_dino_vits": 0.867,
+    "path_dino_vits_lunit": 0.9396,
+    "in_sup_vitb": 0.9557,
+    "in_dino_vitb": 0.8698,
+    "path_dino_vitb_kaiko": 0.8495,
+    "phikon": 0.9775,
+    "path_dinov2_vitl_phikon2": 0.9632
+   }
+  },
+  "patient_039_node_1": {
+   "hospital": 1,
+   "grade": "micro",
+   "tumour": 42,
+   "tiles": 642,
+   "auc": {
+    "raw": 0.502,
+    "in_sup_vits": 0.8245,
+    "in_dino_vits": 0.7991,
+    "path_dino_vits_lunit": 0.8511,
+    "in_sup_vitb": 0.8667,
+    "in_dino_vitb": 0.8234,
+    "path_dino_vitb_kaiko": 0.909,
+    "phikon": 0.9179,
+    "path_dinov2_vitl_phikon2": 0.8981
+   }
+  },
+  "patient_040_node_0": {
+   "hospital": 2,
+   "grade": "negative",
+   "tumour": 0,
+   "tiles": 600,
+   "auc": {
+    "raw": null,
+    "in_sup_vits": null,
+    "in_dino_vits": null,
+    "path_dino_vits_lunit": null,
+    "in_sup_vitb": null,
+    "in_dino_vitb": null,
+    "path_dino_vitb_kaiko": null,
+    "phikon": null,
+    "path_dinov2_vitl_phikon2": null
+   }
+  },
+  "patient_042_node_3": {
+   "hospital": 2,
+   "grade": "macro",
+   "tumour": 452,
+   "tiles": 1052,
+   "auc": {
+    "raw": 0.6208,
+    "in_sup_vits": 0.9309,
+    "in_dino_vits": 0.8562,
+    "path_dino_vits_lunit": 0.9297,
+    "in_sup_vitb": 0.8776,
+    "in_dino_vitb": 0.95,
+    "path_dino_vitb_kaiko": 0.9709,
+    "phikon": 0.9903,
+    "path_dinov2_vitl_phikon2": 0.9574
+   }
+  },
+  "patient_044_node_4": {
+   "hospital": 2,
+   "grade": "macro",
+   "tumour": 253,
+   "tiles": 853,
+   "auc": {
+    "raw": 0.4908,
+    "in_sup_vits": 0.9754,
+    "in_dino_vits": 0.9501,
+    "path_dino_vits_lunit": 0.9789,
+    "in_sup_vitb": 0.951,
+    "in_dino_vitb": 0.9761,
+    "path_dino_vitb_kaiko": 0.9912,
+    "phikon": 0.9897,
+    "path_dinov2_vitl_phikon2": 0.9924
+   }
+  },
+  "patient_045_node_1": {
+   "hospital": 2,
+   "grade": "micro",
+   "tumour": 29,
+   "tiles": 629,
+   "auc": {
+    "raw": 0.6192,
+    "in_sup_vits": 0.8041,
+    "in_dino_vits": 0.7301,
+    "path_dino_vits_lunit": 0.9376,
+    "in_sup_vitb": 0.7978,
+    "in_dino_vitb": 0.8861,
+    "path_dino_vitb_kaiko": 0.932,
+    "phikon": 0.7079,
+    "path_dinov2_vitl_phikon2": 0.9344
+   }
+  },
+  "patient_046_node_3": {
+   "hospital": 2,
+   "grade": "micro",
+   "tumour": 98,
+   "tiles": 698,
+   "auc": {
+    "raw": 0.2073,
+    "in_sup_vits": 0.9847,
+    "in_dino_vits": 0.963,
+    "path_dino_vits_lunit": 0.9984,
+    "in_sup_vitb": 0.9796,
+    "in_dino_vitb": 0.9897,
+    "path_dino_vitb_kaiko": 0.9985,
+    "phikon": 0.9991,
+    "path_dinov2_vitl_phikon2": 0.9976
+   }
+  },
+  "patient_046_node_4": {
+   "hospital": 2,
+   "grade": "micro",
+   "tumour": 155,
+   "tiles": 755,
+   "auc": {
+    "raw": 0.7348,
+    "in_sup_vits": 0.8891,
+    "in_dino_vits": 0.847,
+    "path_dino_vits_lunit": 0.9626,
+    "in_sup_vitb": 0.8777,
+    "in_dino_vitb": 0.7979,
+    "path_dino_vitb_kaiko": 0.951,
+    "phikon": 0.9908,
+    "path_dinov2_vitl_phikon2": 0.9386
+   }
+  },
+  "patient_048_node_1": {
+   "hospital": 2,
+   "grade": "micro",
+   "tumour": 17,
+   "tiles": 617,
+   "auc": {
+    "raw": 0.7907,
+    "in_sup_vits": 0.9902,
+    "in_dino_vits": 0.9042,
+    "path_dino_vits_lunit": 0.9995,
+    "in_sup_vitb": 0.9634,
+    "in_dino_vitb": 0.995,
+    "path_dino_vitb_kaiko": 0.9998,
+    "phikon": 0.9999,
+    "path_dinov2_vitl_phikon2": 0.9974
+   }
+  },
+  "patient_051_node_2": {
+   "hospital": 2,
+   "grade": "macro",
+   "tumour": 2358,
+   "tiles": 2958,
+   "auc": {
+    "raw": 0.5741,
+    "in_sup_vits": 0.9779,
+    "in_dino_vits": 0.972,
+    "path_dino_vits_lunit": 0.9896,
+    "in_sup_vitb": 0.98,
+    "in_dino_vitb": 0.9879,
+    "path_dino_vitb_kaiko": 0.9678,
+    "phikon": 0.9696,
+    "path_dinov2_vitl_phikon2": 0.9953
+   }
+  },
+  "patient_052_node_1": {
+   "hospital": 2,
+   "grade": "macro",
+   "tumour": 650,
+   "tiles": 1250,
+   "auc": {
+    "raw": 0.2912,
+    "in_sup_vits": 0.9474,
+    "in_dino_vits": 0.8339,
+    "path_dino_vits_lunit": 0.9808,
+    "in_sup_vitb": 0.9426,
+    "in_dino_vitb": 0.8979,
+    "path_dino_vitb_kaiko": 0.8395,
+    "phikon": 0.6605,
+    "path_dinov2_vitl_phikon2": 0.9426
+   }
+  },
+  "patient_060_node_1": {
+   "hospital": 3,
+   "grade": "negative",
+   "tumour": 0,
+   "tiles": 600,
+   "auc": {
+    "raw": null,
+    "in_sup_vits": null,
+    "in_dino_vits": null,
+    "path_dino_vits_lunit": null,
+    "in_sup_vitb": null,
+    "in_dino_vitb": null,
+    "path_dino_vitb_kaiko": null,
+    "phikon": null,
+    "path_dinov2_vitl_phikon2": null
+   }
+  },
+  "patient_061_node_4": {
+   "hospital": 3,
+   "grade": "micro",
+   "tumour": 20,
+   "tiles": 620,
+   "auc": {
+    "raw": 0.7408,
+    "in_sup_vits": 0.9568,
+    "in_dino_vits": 0.9521,
+    "path_dino_vits_lunit": 0.9996,
+    "in_sup_vitb": 0.9752,
+    "in_dino_vitb": 0.974,
+    "path_dino_vitb_kaiko": 0.9559,
+    "phikon": 0.9873,
+    "path_dinov2_vitl_phikon2": 0.9536
+   }
+  },
+  "patient_062_node_2": {
+   "hospital": 3,
+   "grade": "macro",
+   "tumour": 207,
+   "tiles": 807,
+   "auc": {
+    "raw": 0.686,
+    "in_sup_vits": 0.942,
+    "in_dino_vits": 0.9146,
+    "path_dino_vits_lunit": 0.9788,
+    "in_sup_vitb": 0.9703,
+    "in_dino_vitb": 0.9716,
+    "path_dino_vitb_kaiko": 0.9704,
+    "phikon": 0.9711,
+    "path_dinov2_vitl_phikon2": 0.9644
+   }
+  },
+  "patient_066_node_2": {
+   "hospital": 3,
+   "grade": "micro",
+   "tumour": 25,
+   "tiles": 625,
+   "auc": {
+    "raw": 0.7116,
+    "in_sup_vits": 0.8807,
+    "in_dino_vits": 0.9329,
+    "path_dino_vits_lunit": 0.9883,
+    "in_sup_vitb": 0.9059,
+    "in_dino_vitb": 0.9299,
+    "path_dino_vitb_kaiko": 0.9776,
+    "phikon": 0.9978,
+    "path_dinov2_vitl_phikon2": 0.9534
+   }
+  },
+  "patient_067_node_4": {
+   "hospital": 3,
+   "grade": "micro",
+   "tumour": 45,
+   "tiles": 645,
+   "auc": {
+    "raw": 0.6324,
+    "in_sup_vits": 0.7054,
+    "in_dino_vits": 0.5741,
+    "path_dino_vits_lunit": 0.8549,
+    "in_sup_vitb": 0.8061,
+    "in_dino_vitb": 0.799,
+    "path_dino_vitb_kaiko": 0.8667,
+    "phikon": 0.9429,
+    "path_dinov2_vitl_phikon2": 0.8644
+   }
+  },
+  "patient_073_node_1": {
+   "hospital": 3,
+   "grade": "macro",
+   "tumour": 4142,
+   "tiles": 4742,
+   "auc": {
+    "raw": 0.8513,
+    "in_sup_vits": 0.9697,
+    "in_dino_vits": 0.9469,
+    "path_dino_vits_lunit": 0.9777,
+    "in_sup_vitb": 0.9746,
+    "in_dino_vitb": 0.9743,
+    "path_dino_vitb_kaiko": 0.9698,
+    "phikon": 0.9782,
+    "path_dinov2_vitl_phikon2": 0.9797
+   }
+  },
+  "patient_075_node_4": {
+   "hospital": 3,
+   "grade": "macro",
+   "tumour": 1303,
+   "tiles": 1903,
+   "auc": {
+    "raw": 0.8122,
+    "in_sup_vits": 0.9589,
+    "in_dino_vits": 0.9398,
+    "path_dino_vits_lunit": 0.9922,
+    "in_sup_vitb": 0.9798,
+    "in_dino_vitb": 0.9721,
+    "path_dino_vitb_kaiko": 0.9891,
+    "phikon": 0.9893,
+    "path_dinov2_vitl_phikon2": 0.9903
+   }
+  },
+  "patient_081_node_0": {
+   "hospital": 4,
+   "grade": "negative",
+   "tumour": 0,
+   "tiles": 600,
+   "auc": {
+    "raw": null,
+    "in_sup_vits": null,
+    "in_dino_vits": null,
+    "path_dino_vits_lunit": null,
+    "in_sup_vitb": null,
+    "in_dino_vitb": null,
+    "path_dino_vitb_kaiko": null,
+    "phikon": null,
+    "path_dinov2_vitl_phikon2": null
+   }
+  },
+  "patient_088_node_1": {
+   "hospital": 4,
+   "grade": "micro",
+   "tumour": 43,
+   "tiles": 643,
+   "auc": {
+    "raw": 0.5171,
+    "in_sup_vits": 0.9455,
+    "in_dino_vits": 0.9396,
+    "path_dino_vits_lunit": 0.9657,
+    "in_sup_vitb": 0.9416,
+    "in_dino_vitb": 0.9307,
+    "path_dino_vitb_kaiko": 0.9495,
+    "phikon": 0.9483,
+    "path_dinov2_vitl_phikon2": 0.959
+   }
+  },
+  "patient_089_node_3": {
+   "hospital": 4,
+   "grade": "micro",
+   "tumour": 16,
+   "tiles": 616,
+   "auc": {
+    "raw": 0.1857,
+    "in_sup_vits": 0.8978,
+    "in_dino_vits": 0.9716,
+    "path_dino_vits_lunit": 0.9427,
+    "in_sup_vitb": 0.9347,
+    "in_dino_vitb": 0.8365,
+    "path_dino_vitb_kaiko": 0.9603,
+    "phikon": 0.986,
+    "path_dinov2_vitl_phikon2": 0.9792
+   }
+  },
+  "patient_092_node_1": {
+   "hospital": 4,
+   "grade": "macro",
+   "tumour": 515,
+   "tiles": 1115,
+   "auc": {
+    "raw": 0.4961,
+    "in_sup_vits": 0.9603,
+    "in_dino_vits": 0.9757,
+    "path_dino_vits_lunit": 0.9873,
+    "in_sup_vitb": 0.9735,
+    "in_dino_vitb": 0.9869,
+    "path_dino_vitb_kaiko": 0.9757,
+    "phikon": 0.993,
+    "path_dinov2_vitl_phikon2": 0.9978
+   }
+  },
+  "patient_096_node_0": {
+   "hospital": 4,
+   "grade": "macro",
+   "tumour": 10194,
+   "tiles": 10794,
+   "auc": {
+    "raw": 0.59,
+    "in_sup_vits": 0.9004,
+    "in_dino_vits": 0.9112,
+    "path_dino_vits_lunit": 0.9826,
+    "in_sup_vitb": 0.7362,
+    "in_dino_vitb": 0.9446,
+    "path_dino_vitb_kaiko": 0.9801,
+    "phikon": 0.9147,
+    "path_dinov2_vitl_phikon2": 0.9749
+   }
+  },
+  "patient_099_node_4": {
+   "hospital": 4,
+   "grade": "macro",
+   "tumour": 898,
+   "tiles": 1498,
+   "auc": {
+    "raw": 0.946,
+    "in_sup_vits": 0.9714,
+    "in_dino_vits": 0.9757,
+    "path_dino_vits_lunit": 0.986,
+    "in_sup_vitb": 0.9767,
+    "in_dino_vitb": 0.9703,
+    "path_dino_vitb_kaiko": 0.9898,
+    "phikon": 0.9867,
+    "path_dinov2_vitl_phikon2": 0.9782
+   }
+  }
+ }
+}
