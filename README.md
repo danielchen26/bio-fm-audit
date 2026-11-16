@@ -30,6 +30,18 @@ former and section 0 of
 | morphology ↔ transcriptome | does morphology inform, or is spatial smoothing enough? | morphology **0.005** CRPS vs spatial **0.05** |
 | clinical grading | lesion size, or the classifier's own threshold? | fitted cut points span **0.213–0.453 mm** across hospitals |
 
+**November 2026 update** ([`pathology-fm/update_2026_11/`](pathology-fm/update_2026_11/README.md)) — the same
+question asked of pretraining data, of expression predicted from H&E, and of a
+published method's evaluation script:
+
+| study | question actually asked | answer |
+|---|---|---|
+| CAMELYON17, matched encoders | pathology pretraining, or just a bigger/different model? | **+0.049 AUC** over the ImageNet twin at fixed architecture and method, all 5 held-out hospitals |
+| expression from H&E, three slides | prediction, or spatial interpolation? | image beats a coordinates-only baseline in **15 of 15** folds; median gene at 62–86% of its noise ceiling |
+| HEST-Benchmark, six organs | does it survive a new patient? | **+0.040** mean Pearson over the benchmark's ridge probe, 13 of 15 splits; lymph node is the exception |
+| head-to-head with STFlow (ICML 2025) | a better score, or a budget picked on the test patients? | **parity** (0.397 vs 0.393) once neither side sees the test patients; picking on them adds 0.02–0.04 |
+| the ImageNet baseline | a finding, or my preprocessing? | **my preprocessing**: wrong input statistics, 0.801 → 0.891 once fixed |
+
 Everything was measured on one laptop (Apple M4 Max, MPS) from public data.
 No number is estimated.
 
@@ -120,7 +132,7 @@ quality **never**. Only parameter-free probes on frozen features did.
 
 ---
 
-## Twelve defects caught, and what each would have produced
+## Thirteen defects caught, and what each would have produced
 
 None of these raise an error. Every loss curve stayed normal. Each one produces a
 publishable-looking number.
@@ -137,12 +149,13 @@ publishable-looking number.
 | `delta_site` v1/v2/v3 | three clean-looking numbers, each confounded by a different nuisance (grade, test size, train size) |
 | no mid-run checkpointing | 5,750 of 6,000 steps discarded on a wall-clock kill |
 | extrapolating rate from a differently-configured smoke test | 25-minute estimate for a 37-minute run |
+| every encoder normalised with the ImageNet statistics | an ImageNet baseline **0.09 AUC too low** and the conclusion "ImageNet pretraining contributes nothing" — found eleven weeks after publishing it |
 | **SD used where SE belonged** | a real +0.185 effect reported as underpowered |
 | **unpaired comparison of paired measurements** | 2·SE inflated 0.090 → 0.317, burying that effect |
 
 The last two were caught by the harness **on its author**.
 
-### Four numbers I published and then had to correct
+### Five numbers I published and then had to correct
 
 | quantity | I claimed | verified | cause |
 |---|---|---|---|
@@ -150,6 +163,7 @@ The last two were caught by the harness **on its author**.
 | `delta_site` | −0.028, underpowered | **+0.0077, NULL** | matched test sets, equalised training, all 65 slides |
 | Phikon leak | +0.072 | **+0.0199** | negative slides not yet downloaded |
 | raw-pixel leak | +0.263 | **+0.1179** | different slide set |
+| BreaKHis ImageNet ViT-S, honest split | 0.801, "a colour histogram matches ImageNet" | **0.891** | the checkpoint expects 0.5 / 0.5 inputs and was given the ImageNet statistics |
 
 The 0.64 was the worst: two kappas over different populations, differenced and
 presented as an effect size. Precisely what the harness exists to prevent.
@@ -194,6 +208,9 @@ pathology-fm/                  AUDITS existing FMs (see its own README)
   c17stage.py                  AJCC size rule -> slide grade -> pN, two-stage validation
   xmodal.py                    morphology <-> transcriptome, MSE vs rectified flow, CRPS
   frontier.py                  stain-jitter sweep with across-seed error bars
+  update_2026_11/              matched pretraining, expression from H&E on three slides and on
+                               held-out patients of six organs, head-to-head with STFlow,
+                               pre-registration, result files, figures (see its own README)
 
 evidence/                      machine-readable results and data provenance
 ```
@@ -203,7 +220,7 @@ Full methodology, every table, and the limitations are in
 
 ---
 
-## Data (not included — 185 GB)
+## Data (not included — 205 GB)
 
 All public, all fetched by scripts in the repo:
 
@@ -212,6 +229,8 @@ All public, all fetched by scripts in the repo:
 | BreaKHis v1 — 7,909 images, 81 patients | 4 GB | `get_breakhis.py` |
 | CAMELYON17 — 65 whole slides, 5 hospitals | 180 GB | `get_camelyon17.py` |
 | 10x Visium Human Lymph Node — 4,035 spots | 425 MB | `get_hest.py` |
+| 10x Visium Breast Cancer Block A Section 1, Visium V2 Lymph Node FFPE | 9.7 GB | 10x Genomics datasets page (update, section 2) |
+| HEST-Benchmark — six tasks, 19 slides, official splits | 9.9 GB | `update_2026_11/hest/hest_download.py` (gated; accept the terms first) |
 | RCSB PDB — 5,770 proteins, 857k residues | ~1 GB | `protein-multimodal-fm/src/data.py` |
 
 `get_camelyon17.py` is resumable and size-verifying, and downloads
@@ -219,8 +238,10 @@ centre-interleaved so leave-one-hospital-out becomes runnable at ~40% of the
 transfer rather than 100%. Measured throughput was link-saturated at 17 MB/s —
 eight concurrent streams gave the same aggregate as one.
 
-HEST-1k was the intended spatial-transcriptomics source but is gated (HTTP 403
-even authenticated), so an open 10x Visium sample was substituted. The
+HEST-1k was the intended spatial-transcriptomics source but returned HTTP 403
+even authenticated, so an open 10x Visium sample was substituted for the first
+cross-modal study. Its benchmark subset was accessible in November 2026 and is
+what the update uses. The
 coordinate-to-pixel mapping was verified with an axis-swap control: 0/200
 mismatches correct, 50/50 when deliberately swapped.
 
@@ -228,7 +249,11 @@ mismatches correct, 50/50 when deliberately swapped.
 
 ## Limitations, stated plainly
 
-- **Cross-modal results are n=1 slide, one tissue** (lymph node). Not generalisable.
+- **The cross-modal decomposition is n=1 slide, one tissue** (lymph node). The
+  update repeats image-only prediction on three slides and on held-out patients of
+  six organs; the decomposition itself has not been repeated.
+- **Parity with STFlow is parity with its public code on Phikon features.** Its
+  published numbers use UNI features and have not been compared.
 - **pN staging is not scoreable here.** It needs all five nodes per patient; only
   the lesion-annotated subset was downloaded (nodes-per-patient `{1: 37, 2: 5, 3: 1}`).
   The official rule is implemented and runs, reported as a pipeline demonstration.
@@ -241,7 +266,9 @@ mismatches correct, 50/50 when deliberately swapped.
 - The DINO encoder saw 5,354 patches from 55 patients for 2,500 steps. It is not
   comparable in scale to Phikon and is not presented as such.
 - Flow model `cov90 = 0.817` against a 0.90 target — mildly overconfident, wants
-  post-hoc calibration.
+  post-hoc calibration. The update adds it within a slide (89–90% after
+  split-conformal calibration); across patients the predictive distributions beat
+  a no-skill reference in only 4 of 15 splits.
 
 ## Reproducing
 
@@ -254,5 +281,9 @@ python pathology-fm/src/get_camelyon17.py      # 152 GB, ~3 h, resumable
 python pathology-fm/src/wsi.py
 python pathology-fm/src/verify.py              # the quotable numbers
 ```
+
+The November 2026 update has its own instructions in
+[`pathology-fm/update_2026_11/README.md`](pathology-fm/update_2026_11/README.md).
+Set `C17_ROOT` to keep the CAMELYON17 files on another disk.
 
 Quote a number only together with its snapshot id.

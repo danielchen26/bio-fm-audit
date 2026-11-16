@@ -1,0 +1,184 @@
+{
+ "protocol": "Phase 4: validation strip (one fifth of every training slide) chooses the training budget of both models; same Phikon embeddings, official HEST-Benchmark splits, 50 genes; three replicates",
+ "per_organ": {
+  "LUNG": {
+   "ridge": 0.5528,
+   "ours_default": 0.5555,
+   "stflow_default": 0.5908,
+   "ours_A": 0.5812,
+   "stflow_A": 0.5959,
+   "ours_B": 0.5993,
+   "stflow_B": 0.607,
+   "ours_hindsight": 0.5919,
+   "stflow_hindsight": 0.6061
+  },
+  "PAAD": {
+   "ridge": 0.4426,
+   "ours_default": 0.4715,
+   "stflow_default": 0.4602,
+   "ours_A": 0.4645,
+   "stflow_A": 0.4448,
+   "ours_B": 0.4801,
+   "stflow_B": 0.4439,
+   "ours_hindsight": 0.4714,
+   "stflow_hindsight": 0.487
+  },
+  "SKCM": {
+   "ridge": 0.5396,
+   "ours_default": 0.6098,
+   "stflow_default": 0.6109,
+   "ours_A": 0.6198,
+   "stflow_A": 0.6181,
+   "ours_B": 0.6496,
+   "stflow_B": 0.6139,
+   "ours_hindsight": 0.6645,
+   "stflow_hindsight": 0.6606
+  },
+  "COAD": {
+   "ridge": 0.262,
+   "ours_default": 0.3047,
+   "stflow_default": 0.2869,
+   "ours_A": 0.3071,
+   "stflow_A": 0.2949,
+   "ours_B": 0.3105,
+   "stflow_B": 0.3014,
+   "ours_hindsight": 0.3349,
+   "stflow_hindsight": 0.3397
+  },
+  "READ": {
+   "ridge": 0.1543,
+   "ours_default": 0.159,
+   "stflow_default": 0.153,
+   "ours_A": 0.1815,
+   "stflow_A": 0.1717,
+   "ours_B": 0.1791,
+   "stflow_B": 0.1538,
+   "ours_hindsight": 0.189,
+   "stflow_hindsight": 0.2021
+  },
+  "LYMPH_IDC": {
+   "ridge": 0.2372,
+   "ours_default": 0.2135,
+   "stflow_default": 0.2146,
+   "ours_A": 0.2258,
+   "stflow_A": 0.2298,
+   "ours_B": 0.2123,
+   "stflow_B": 0.222,
+   "ours_hindsight": 0.2374,
+   "stflow_hindsight": 0.2953
+  }
+ },
+ "six_organ_mean": {
+  "ours_A": 0.3967,
+  "stflow_A": 0.3925,
+  "ours_B": 0.4052,
+  "stflow_B": 0.3903,
+  "ours_hindsight": 0.4148,
+  "stflow_hindsight": 0.4318,
+  "ours_default": 0.3857,
+  "stflow_default": 0.3861,
+  "ridge": 0.3647
+ },
+ "six_organ_mean_by_replicate": {
+  "ours_A": [
+   0.4053,
+   0.3927,
+   0.3919
+  ],
+  "stflow_A": [
+   0.3894,
+   0.397,
+   0.3911
+  ],
+  "ours_B": [
+   0.4092,
+   0.4007,
+   0.4055
+  ],
+  "stflow_B": [
+   0.39,
+   0.3919,
+   0.3892
+  ]
+ },
+ "primary_A_ours_vs_stflow": {
+  "verdict": "on par",
+  "six_organ_mean_diff": 0.0041,
+  "splits_ours_higher": 11,
+  "organs_ours_higher": 4,
+  "per_organ": {
+   "LUNG": -0.0147,
+   "PAAD": 0.0197,
+   "SKCM": 0.0017,
+   "COAD": 0.0122,
+   "READ": 0.0098,
+   "LYMPH_IDC": -0.004
+  }
+ },
+ "secondary_B_ours_vs_stflow": {
+  "verdict": "ahead",
+  "six_organ_mean_diff": 0.0148,
+  "splits_ours_higher": 11,
+  "organs_ours_higher": 4,
+  "per_organ": {
+   "LUNG": -0.0077,
+   "PAAD": 0.0362,
+   "SKCM": 0.0357,
+   "COAD": 0.0091,
+   "READ": 0.0253,
+   "LYMPH_IDC": -0.0097
+  }
+ },
+ "hindsight_ours_vs_stflow": {
+  "verdict": "behind",
+  "six_organ_mean_diff": -0.017,
+  "splits_ours_higher": 3,
+  "organs_ours_higher": 1,
+  "per_organ": {
+   "LUNG": -0.0142,
+   "PAAD": -0.0156,
+   "SKCM": 0.0039,
+   "COAD": -0.0048,
+   "READ": -0.0131,
+   "LYMPH_IDC": -0.0579
+  }
+ },
+ "regret_mean": {
+  "ours": 0.0166,
+  "stflow": 0.043
+ },
+ "gain_from_selection_vs_default_all_spots": {
+  "ours_B_minus_default": 0.0195,
+  "stflow_B_minus_default": 0.0043
+ },
+ "selected_budgets_ours": {
+  "250": 0,
+  "500": 1,
+  "1000": 2,
+  "2000": 27,
+  "4000": 15,
+  "8000": 0
+ },
+ "selected_epochs_stflow": {
+  "median": 57.0,
+  "min": 12,
+  "max": 98,
+  "quartiles": [
+   40.0,
+   71.0
+  ]
+ },
+ "stflow_alt_rule_argmax_over_100_epochs_A": 0.3912,
+ "vs_ridge_all_spots": {
+  "ours_B": 0.0404,
+  "stflow_B": 0.0256,
+  "organs_ours_B_above": 5,
+  "organs_stflow_B_above": 4
+ },
+ "notes": [
+  "A = test score of the four-fifths model at its validation-selected budget (primary, pre-registered)",
+  "B = the selected budget re-used with all training spots (secondary)",
+  "hindsight = best budget picked on the test patients; STFlow chooses among 100 epochs, ours among 6 step counts",
+  "the validation strip comes from the training patients; LUNG and SKCM have one training patient per split"
+ ]
+}

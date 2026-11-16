@@ -39,6 +39,7 @@ confound variable for every split and probe downstream.
 """
 from __future__ import annotations
 
+import os
 import argparse
 import concurrent.futures as cf
 import csv
@@ -50,7 +51,8 @@ import numpy as np
 import openslide
 from PIL import Image, ImageDraw
 
-SRC = Path("/Volumes/Lexar/camelyon17")
+# CAMELYON17 slides, tiles and caches (about 180 GB). Set C17_ROOT to keep them on another disk.
+SRC = Path(os.environ.get("C17_ROOT", Path(__file__).resolve().parent.parent / "data" / "camelyon17"))
 OUT = SRC / "tiles"
 TILE = 224
 LEVEL = 1                      # 0.486 um/px == 20x == 109 um per 224 px tile

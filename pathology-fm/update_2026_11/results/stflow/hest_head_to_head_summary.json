@@ -1,0 +1,262 @@
+{
+ "protocol": "same frozen Phikon embeddings, official HEST-Benchmark splits and 50 genes, mean Pearson over genes on pooled test spots; three seeds per method",
+ "per_organ_seed_mean": {
+  "LUNG": {
+   "ridge": 0.5528,
+   "ours": 0.5555,
+   "stflow_epoch100": 0.5908,
+   "stflow_released": 0.6168
+  },
+  "PAAD": {
+   "ridge": 0.4426,
+   "ours": 0.4715,
+   "stflow_epoch100": 0.4602,
+   "stflow_released": 0.4893
+  },
+  "SKCM": {
+   "ridge": 0.5396,
+   "ours": 0.6098,
+   "stflow_epoch100": 0.6109,
+   "stflow_released": 0.6768
+  },
+  "COAD": {
+   "ridge": 0.262,
+   "ours": 0.3047,
+   "stflow_epoch100": 0.2869,
+   "stflow_released": 0.3417
+  },
+  "READ": {
+   "ridge": 0.1543,
+   "ours": 0.159,
+   "stflow_epoch100": 0.153,
+   "stflow_released": 0.2047
+  },
+  "LYMPH_IDC": {
+   "ridge": 0.2372,
+   "ours": 0.2135,
+   "stflow_epoch100": 0.2146,
+   "stflow_released": 0.2986
+  }
+ },
+ "per_organ_by_seed": {
+  "LUNG": {
+   "ours": [
+    0.5572,
+    0.5543,
+    0.5552
+   ],
+   "stflow_epoch100": [
+    0.5919,
+    0.5859,
+    0.5945
+   ],
+   "stflow_released": [
+    0.6154,
+    0.614,
+    0.621
+   ]
+  },
+  "PAAD": {
+   "ours": [
+    0.4723,
+    0.4756,
+    0.4668
+   ],
+   "stflow_epoch100": [
+    0.4575,
+    0.4697,
+    0.4535
+   ],
+   "stflow_released": [
+    0.4885,
+    0.4938,
+    0.4855
+   ]
+  },
+  "SKCM": {
+   "ours": [
+    0.6058,
+    0.6169,
+    0.6068
+   ],
+   "stflow_epoch100": [
+    0.5948,
+    0.6196,
+    0.6182
+   ],
+   "stflow_released": [
+    0.6762,
+    0.6788,
+    0.6754
+   ]
+  },
+  "COAD": {
+   "ours": [
+    0.3126,
+    0.3048,
+    0.2966
+   ],
+   "stflow_epoch100": [
+    0.2825,
+    0.2794,
+    0.2988
+   ],
+   "stflow_released": [
+    0.3427,
+    0.3532,
+    0.3292
+   ]
+  },
+  "READ": {
+   "ours": [
+    0.1702,
+    0.1333,
+    0.1734
+   ],
+   "stflow_epoch100": [
+    0.1598,
+    0.1491,
+    0.1501
+   ],
+   "stflow_released": [
+    0.198,
+    0.2059,
+    0.2104
+   ]
+  },
+  "LYMPH_IDC": {
+   "ours": [
+    0.2147,
+    0.2105,
+    0.2152
+   ],
+   "stflow_epoch100": [
+    0.2153,
+    0.2242,
+    0.2042
+   ],
+   "stflow_released": [
+    0.2982,
+    0.2967,
+    0.301
+   ]
+  }
+ },
+ "seeds": {
+  "ours": [
+   0,
+   1,
+   2
+  ],
+  "stflow": [
+   1,
+   2,
+   3
+  ]
+ },
+ "verdict_preregistered_rule_on_seed_means": "on par",
+ "six_organ_mean": {
+  "ours": 0.3857,
+  "stflow_epoch100": 0.3861,
+  "stflow_released": 0.438,
+  "ridge": 0.3647
+ },
+ "six_organ_mean_by_seed": {
+  "ours": [
+   0.3888,
+   0.3826,
+   0.3857
+  ],
+  "stflow_epoch100": [
+   0.3836,
+   0.388,
+   0.3866
+  ],
+  "stflow_released": [
+   0.4365,
+   0.4404,
+   0.4371
+  ]
+ },
+ "six_organ_seed_sd": {
+  "ours": 0.0031,
+  "stflow_epoch100": 0.0022,
+  "stflow_released": 0.0021
+ },
+ "ours_minus_stflow_epoch100": {
+  "mean": -0.0004,
+  "splits_ours_higher": 9,
+  "organs_ours_higher": 3,
+  "per_organ": {
+   "LUNG": -0.0353,
+   "PAAD": 0.0113,
+   "SKCM": -0.0011,
+   "COAD": 0.0178,
+   "READ": 0.006,
+   "LYMPH_IDC": -0.0011
+  },
+  "seed_pairings_ours_higher": 4,
+  "seed_pairings": 9,
+  "range_over_seed_pairings": [
+   -0.0054,
+   0.0052
+  ]
+ },
+ "ours_minus_stflow_released": {
+  "mean": -0.0523,
+  "splits_ours_higher": 1
+ },
+ "selection_effect": {
+  "mean_over_organs": 0.0519,
+  "by_seed": [
+   0.0529,
+   0.0524,
+   0.0505
+  ],
+  "per_organ": {
+   "LUNG": 0.026,
+   "PAAD": 0.0291,
+   "SKCM": 0.0659,
+   "COAD": 0.0548,
+   "READ": 0.0517,
+   "LYMPH_IDC": 0.084
+  },
+  "largest_single_run": 0.1457
+ },
+ "budget_sensitivity_post_hoc": {
+  "peak_value": 0.4031,
+  "peak_epoch": 36,
+  "peak_by_seed": {
+   "1": [
+    0.4101,
+    36
+   ],
+   "2": [
+    0.4072,
+    24
+   ],
+   "3": [
+    0.3988,
+    25
+   ]
+  },
+  "epochs_stflow_mean_above_ours": [
+   9,
+   100
+  ],
+  "n_epochs_above": 87
+ },
+ "vs_ridge": {
+  "ours": 0.0209,
+  "stflow_epoch100": 0.0213,
+  "splits_ours_above_ridge": 12,
+  "splits_stflow_epoch100_above_ridge": 10,
+  "organs_ours_above_ridge": 5,
+  "organs_stflow_above_ridge": 4
+ },
+ "caveats": [
+  "public STFlow code needed a one-line repair to start; its authors describe it as a demo",
+  "STFlow's published numbers use UNI features and are not reproduced here",
+  "our model's training budget was never varied; STFlow's test curve peaks before its default 100 epochs"
+ ]
+}

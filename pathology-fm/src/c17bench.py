@@ -28,10 +28,32 @@ import torch
 import torch.nn.functional as F
 
 from audit import logistic_probe, roc_auc
-from c17data import GRADES, audit_split, load, make_split
+from c17data import GRADES, TILES, audit_split, load, make_split
 
 IMAGENET_MEAN = torch.tensor([0.485, 0.456, 0.406]).view(1, 3, 1, 1)
 IMAGENET_STD = torch.tensor([0.229, 0.224, 0.225]).view(1, 3, 1, 1)
+
+
+def checkpoint_norm(model):
+    """Input mean/std a timm checkpoint was trained with.
+
+    Not every ImageNet model uses the ImageNet statistics: the augreg ViT-S used
+    here expects 0.5/0.5. Until 2026-11 it was fed the ImageNet statistics, which
+    understated the ImageNet baseline in every table that has one.
+    """
+    import timm
+    cfg = timm.data.resolve_model_data_config(model)
+    return tuple(cfg["mean"]), tuple(cfg["std"])
+
+
+def _mean_std(normalize, dev):
+    """'imagenet', 'half' (0.5 / 0.25, our DINO), or the (mean, std) of the checkpoint itself."""
+    if normalize == "imagenet":
+        return IMAGENET_MEAN.to(dev), IMAGENET_STD.to(dev)
+    if normalize == "half":
+        return 0.5, 0.25
+    mean, std = normalize
+    return (torch.tensor(mean).view(1, 3, 1, 1).to(dev), torch.tensor(std).view(1, 3, 1, 1).to(dev))
 
 
 def raw_pixel_features(patches: np.ndarray, bins: int = 16, chunk: int = 2048) -> np.ndarray:
@@ -51,13 +73,13 @@ def raw_pixel_features(patches: np.ndarray, bins: int = 16, chunk: int = 2048) -
 def embed(model, patches, size, device, batch=64, norm="imagenet"):
     dev = torch.device(device)
     model = model.to(dev).eval()
-    mean, std = IMAGENET_MEAN.to(dev), IMAGENET_STD.to(dev)
+    mean, std = _mean_std(norm, dev)
     out = []
     for i in range(0, len(patches), batch):
         x = torch.from_numpy(patches[i:i + batch]).to(dev).permute(0, 3, 1, 2).float() / 255.0
         if x.shape[-1] != size:
             x = F.interpolate(x, (size, size), mode="bicubic", align_corners=False).clamp(0, 1)
-        x = (x - mean) / std if norm == "imagenet" else (x - 0.5) / 0.25
+        x = (x - mean) / std
         z = model(x)
         out.append((z if torch.is_tensor(z) else z.last_hidden_state[:, 0]).float().cpu().numpy())
         if (i // batch) % 60 == 0:
@@ -74,7 +96,7 @@ def encoders(which, patches, device, dino_ckpt):
         print("[enc] ImageNet ViT-S/16")
         m = timm.create_model("vit_small_patch16_224.augreg_in21k_ft_in1k",
                               pretrained=True, num_classes=0)
-        yield "imagenet-vit-s", embed(m, patches, 224, device)
+        yield "imagenet-vit-s", embed(m, patches, 224, device, norm=checkpoint_norm(m))
     if "phikon" in which:
         from transformers import AutoModel
         print("[enc] Phikon ViT-B (iBOT on TCGA)")
@@ -184,9 +206,10 @@ def main():
               f"{r['centre_mean']:>10.4f}+-{r['centre_std']:<6.4f} "
               f"{r['patient'] - r['centre_mean']:>+11.4f} "
               f"{r['centre_probe']:>10.4f} {r['slide_lift']:>8.1f}x")
-    np.savez_compressed("/Volumes/Lexar/camelyon17/c17_bench.npz",
+    out = TILES.parent / "c17_bench.npz"
+    np.savez_compressed(out,
                         results=np.array([results], dtype=object))
-    print("\n[bench] wrote /Volumes/Lexar/camelyon17/c17_bench.npz")
+    print(f"\n[bench] wrote {out}")
 
 
 if __name__ == "__main__":

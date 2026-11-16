@@ -10,6 +10,16 @@ foundation model is worth anything:
 Everything below is measured on this machine (Apple M4 Max, MPS) from public data.
 No number is estimated.
 
+> **Update, November 2026.** Four additions and one correction are in
+> [`update_2026_11/`](update_2026_11/README.md): pathology pretraining at matched
+> architecture (+0.049 AUC, all 5 held-out hospitals); expression from H&E on
+> three slides with a coordinates-only control and a noise ceiling; held-out
+> patients on six HEST-Benchmark organs (+0.040 over the benchmark's ridge
+> probe); and a head-to-head with the public STFlow code (parity). The
+> correction: the ImageNet baseline of sections 2, 4 and 6 was fed the wrong
+> input statistics. Corrected rows are marked with a dagger below. Section 0 never
+> used that encoder and is unaffected.
+
 ---
 
 ## 0. Verified results — snapshot `9eff6989265d263e`
@@ -81,6 +91,10 @@ The 0.64 figure was the worst: it differenced two kappas computed over different
 slide populations and presented the result as an effect size. That is exactly the
 failure this harness exists to prevent, and it caught it on its author.
 
+A fifth correction came later and from outside the harness: the ImageNet
+baseline of sections 2, 4 and 6 (note at the top, daggers below). The harness
+could not have caught it, because no claim in this section uses that encoder.
+
 ### Two statistical errors the harness caught in itself
 
 The first run flagged `leak` and `encoder_gap` as UNDERPOWERED. Both were
@@ -125,28 +139,41 @@ Three regimes, verified for disjointness rather than assumed:
 
 ---
 
-## 2. Main result: the leak is 0.084-0.150 AUC
+## 2. Main result: the leak is 0.067-0.106 AUC
 
 Benign/malignant AUC from a linear probe on frozen embeddings.
 
 | encoder | random (leaky) | **patient (honest)** | magnif (shift) | **leak** | patient-ID lift | MIL patient-AUC |
 |---|---|---|---|---|---|---|
 | raw-pixel (colour histogram) | 0.878 | 0.794 | 0.632 | **+0.084** | 13.4x | 0.882 +- 0.102 |
-| ImageNet ViT-S/16 | 0.951 | 0.801 | 0.766 | **+0.150** | 16.9x | 0.938 +- 0.020 |
+| ImageNet ViT-S/16 † | 0.958 | 0.891 | 0.916 | **+0.067** | 17.3x | 0.975 +- 0.039 |
 | **Phikon ViT-B** (iBOT on TCGA) | 0.993 | **0.902** | **0.941** | +0.091 | **20.0x** | **0.977 +- 0.021** |
 | ours-DINO (2500 steps, 37 min, 3.4M) | 0.943 | 0.837 | 0.865 | +0.106 | 15.8x | 0.900 +- 0.050 |
 
+† Corrected 2026-11. First published as 0.951 / 0.801 / 0.766 / +0.150 / 16.9x /
+0.938 +- 0.020: the encoder was fed the ImageNet mean and standard deviation, but
+this checkpoint (`augreg_in21k_ft_in1k`) expects 0.5 / 0.5. The as-released code
+reproduces the old row and the fixed code gives this one
+(`evidence/logs/imagenet_fix_bench_*.log`). The MIL column is not seed-stable:
+the as-released rerun gave 0.962 +- 0.032 where 0.938 +- 0.020 was published.
+
 Three things fall out.
 
-**A colour histogram matches ImageNet.** raw-pixel 0.794 vs ImageNet ViT-S 0.801.
-Indistinguishable. On this task ImageNet pretraining contributes nothing, and any
-paper reporting only its own model would never surface that. The trivial baseline
-belongs in the table.
+**A colour histogram does not match ImageNet -- I had that wrong.** The first
+version of this table had raw-pixel 0.794 against ImageNet ViT-S 0.801 and
+concluded that ImageNet pretraining contributes nothing. That was an input
+normalisation bug of mine, not a finding: with the checkpoint's own statistics
+the ImageNet encoder reaches 0.891. The trivial baseline still belongs in the
+table. So does a check that every encoder is fed what it was trained on.
 
-**Pathology-specific pretraining does pay off.** Phikon reaches 0.902 honest AUC,
-+0.108 over the colour histogram, and is the most robust under magnification shift
-(0.941). Note this is the opposite of the cross-modal result in section 4 -- FM
-value is task-dependent and cannot be asserted in general.
+**Pathology-specific pretraining is not separable from ImageNet on this
+benchmark.** Phikon reaches 0.902 honest AUC, +0.108 over the colour histogram
+but only +0.011 over the corrected ImageNet ViT-S, inside the +-0.02-0.03
+resolution of ~14 test patients. It keeps a margin under magnification shift
+(0.941 against 0.916). The comparison that isolates pretraining data, with
+architecture and method held fixed, is on CAMELYON17 in
+[`update_2026_11/`](update_2026_11/README.md): +0.049 AUC. FM value is
+task-dependent and cannot be asserted in general.
 
 **raw-pixel collapses under domain shift** (0.632). Colour statistics do not
 transfer across magnification, which confirms the shift regime is a real test.
@@ -208,12 +235,17 @@ ViT/16. Phikon was pretrained near 128-256 um. Re-cropping natively at 224px
 | encoder | morphology-kNN r @59um | @138um | `morph-only` CRPS @59um | @138um |
 |---|---|---|---|---|
 | random conv | +0.1219 | +0.1219 | 0.6251 | 0.6233 |
-| ImageNet | +0.0994 | +0.1121 | 0.6218 | 0.6115 |
+| ImageNet † | +0.0873 | +0.1111 | 0.6193 | 0.6111 |
 | **Phikon** | +0.1082 | **+0.1543** | 0.6146 | **0.6088** |
 
 At native scale Phikon's retrieval improves **43%** and the ordering becomes
 phikon > imagenet > random, which it was not at 59 um. Reading a pathology FM out
 of its training scale looks exactly like the FM being useless.
+
+† Corrected 2026-11 for the input statistics (see section 2); first published as
++0.0994 / +0.1121 / 0.6218 / 0.6115. CRPS moves by about 0.002 between identical
+runs on this hardware, so only the 59 um retrieval figure changed materially and
+the ordering above stands (`evidence/logs/imagenet_fix_xmodal_*.log`).
 
 ### Finding 3: the regime decides whether the encoder matters
 
@@ -337,13 +369,19 @@ micro+macro, 5 seeds:
 | encoder | random | slide | **patient** | centre (LOCO) | leak | **centre-ID** |
 |---|---|---|---|---|---|---|
 | raw-pixel | 0.9117 +-.003 | 0.5993 +-.141 | 0.6487 +-.099 | 0.7073 +-.081 | **+0.263** | 0.9615 |
-| ImageNet ViT-S | 0.9732 +-.002 | 0.8066 +-.068 | 0.8457 +-.039 | 0.8500 +-.086 | **+0.128** | 0.9661 |
+| ImageNet ViT-S ‡ | 0.9732 +-.002 | 0.8066 +-.068 | 0.8457 +-.039 | 0.8500 +-.086 | **+0.128** | 0.9661 |
 | **Phikon ViT-B** | 0.9973 +-.000 | 0.8827 +-.061 | **0.9250 +-.031** | 0.9595 +-.016 | +0.072 | **0.9958** |
 
 The random-split leak reaches **+0.263 AUC** -- far worse than BreaKHis's
-+0.084-0.150, because 400 tiles drawn from one 19-gigapixel slide are near
++0.067-0.106, because 400 tiles drawn from one 19-gigapixel slide are near
 duplicates of each other. Weaker encoders leak more: they lean harder on
 slide-specific colour.
+
+‡ Not rerun. This row was computed with the wrong input statistics for the
+ImageNet encoder (see section 2) on a tile snapshot that is no longer at hand,
+so it understates that baseline. On the current five-hospital tile set the fix
+moves the ImageNet ViT-S patient-disjoint AUC from 0.935 to 0.952
+([`update_2026_11/`](update_2026_11/README.md)).
 
 **Phikon identifies which of five hospitals a patch came from with 99.58%
 accuracy** (chance 33.3%). It has simultaneously the best biology (0.9250) and
@@ -566,9 +604,12 @@ correctly described the *dynamics* every time and predicted downstream quality
 
 ## 9. Limitations, stated plainly
 
-- **Cross-modal results are n=1 slide, one tissue** (lymph node). Not
-  generalisable. HEST-1k would fix this but is gated (HTTP 403 even
-  authenticated), so an open 10x Visium sample was substituted.
+- **The cross-modal decomposition of section 4 is n=1 slide, one tissue** (lymph
+  node). HEST-Benchmark has since become accessible, and
+  [`update_2026_11/`](update_2026_11/README.md) repeats the image-only prediction
+  on three slides and tests it on held-out patients of six organs. The
+  decomposition itself (what morphology adds beyond measured neighbours) has not
+  been repeated.
 - **~14 test patients** per honest split. Benchmark resolution is roughly
   +-0.02-0.03 AUC; differences smaller than that are noise. MIL numbers carry
   5-seed error bars for this reason, and raw-pixel's +-0.102 shows how thin the
@@ -609,6 +650,8 @@ src/
                        claims, paired SEs, RESOLVED/NULL/UNDERPOWERED tiers
   get_breakhis.py / get_hest.py   data acquisition, with verification output
 tile_loop.sh       watcher: tiles slides as they land, overlapping the download
+update_2026_11/    November 2026: matched pretraining, three-slide and six-organ expression
+                   prediction, head-to-head with STFlow, the ImageNet correction (own README)
 ```
 
 Reproduce:
@@ -628,7 +671,7 @@ python src/get_hest.py && python src/recrop.py --size 224
 python src/xmodal.py --src hest_sample224.npz --head flow --morph phikon
 python src/xmodal.py --src hest_sample224.npz --head flow --morph random   # control
 
-# CAMELYON17 track (152 GB, ~3 h at 17 MB/s; needs an external volume)
+# CAMELYON17 track (152 GB, ~3 h at 17 MB/s; set C17_ROOT to put it on another disk)
 python src/get_camelyon17.py          # resumable, centre-interleaved
 ./tile_loop.sh                        # or: python src/wsi.py
 python src/c17data.py                 # split disjointness audit

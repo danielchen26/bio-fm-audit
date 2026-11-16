@@ -31,6 +31,7 @@ confusing micro with macro, which plain accuracy would not capture.
 """
 from __future__ import annotations
 
+import os
 import argparse
 import glob
 import xml.etree.ElementTree as ET
@@ -39,7 +40,8 @@ from pathlib import Path
 
 import numpy as np
 
-SRC = Path("/Volumes/Lexar/camelyon17")
+# CAMELYON17 slides, tiles and caches (about 180 GB). Set C17_ROOT to keep them on another disk.
+SRC = Path(os.environ.get("C17_ROOT", Path(__file__).resolve().parent.parent / "data" / "camelyon17"))
 TILES = SRC / "tiles"
 GRADES = ("negative", "itc", "micro", "macro")
 TILE_MM = 224 * 0.4862 / 1000.0          # 224 px at level 1 (0.4862 um/px) = 0.1089 mm

@@ -21,13 +21,15 @@ site/scanner/stain shift from ordinary biological variation.
 """
 from __future__ import annotations
 
+import os
 import glob
 from dataclasses import dataclass
 from pathlib import Path
 
 import numpy as np
 
-TILES = Path("/Volumes/Lexar/camelyon17/tiles")
+# CAMELYON17 slides, tiles and caches (about 180 GB). Set C17_ROOT to keep them on another disk.
+TILES = Path(os.environ.get("C17_ROOT", Path(__file__).resolve().parent.parent / "data" / "camelyon17")) / "tiles"
 GRADES = ("negative", "itc", "micro", "macro")
 
 

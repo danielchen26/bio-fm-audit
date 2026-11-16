@@ -1,0 +1,550 @@
+{
+ "composition": {
+  "0": {
+   "slides": 8,
+   "patients": 6,
+   "tiles": 7607,
+   "tumour_tiles": 2807,
+   "slides_with_tumour": 7,
+   "grades": {
+    "negative": 1,
+    "micro": 3,
+    "macro": 4
+   }
+  },
+  "1": {
+   "slides": 9,
+   "patients": 7,
+   "tiles": 7305,
+   "tumour_tiles": 1905,
+   "slides_with_tumour": 8,
+   "grades": {
+    "negative": 1,
+    "micro": 5,
+    "macro": 3
+   }
+  },
+  "2": {
+   "slides": 9,
+   "patients": 8,
+   "tiles": 9412,
+   "tumour_tiles": 4012,
+   "slides_with_tumour": 8,
+   "grades": {
+    "negative": 1,
+    "micro": 4,
+    "macro": 4
+   }
+  },
+  "3": {
+   "slides": 7,
+   "patients": 7,
+   "tiles": 9942,
+   "tumour_tiles": 5742,
+   "slides_with_tumour": 6,
+   "grades": {
+    "negative": 1,
+    "micro": 3,
+    "macro": 3
+   }
+  },
+  "4": {
+   "slides": 6,
+   "patients": 6,
+   "tiles": 15266,
+   "tumour_tiles": 11666,
+   "slides_with_tumour": 5,
+   "grades": {
+    "negative": 1,
+    "micro": 2,
+    "macro": 3
+   }
+  }
+ },
+ "loco": {
+  "imagenet": [
+   0.9332,
+   0.9259,
+   0.9267,
+   0.9412,
+   0.9529
+  ],
+  "phikon": [
+   0.9854,
+   0.9767,
+   0.8941,
+   0.9787,
+   0.9755
+  ]
+ },
+ "per_slide": {
+  "0": [
+   {
+    "slide": "patient_000_node_0",
+    "grade": "negative",
+    "tiles": 600,
+    "tumour": 0,
+    "auc_phikon": NaN,
+    "auc_imagenet": NaN,
+    "mean_p_normal_phikon": 0.05,
+    "mean_p_normal_imagenet": 0.106
+   },
+   {
+    "slide": "patient_009_node_1",
+    "grade": "micro",
+    "tiles": 660,
+    "tumour": 60,
+    "auc_phikon": 0.936,
+    "auc_imagenet": 0.773,
+    "mean_p_normal_phikon": 0.024,
+    "mean_p_normal_imagenet": 0.123
+   },
+   {
+    "slide": "patient_010_node_4",
+    "grade": "micro",
+    "tiles": 816,
+    "tumour": 216,
+    "auc_phikon": 0.935,
+    "auc_imagenet": 0.75,
+    "mean_p_normal_phikon": 0.125,
+    "mean_p_normal_imagenet": 0.175
+   },
+   {
+    "slide": "patient_012_node_0",
+    "grade": "macro",
+    "tiles": 1678,
+    "tumour": 1078,
+    "auc_phikon": 0.996,
+    "auc_imagenet": 0.986,
+    "mean_p_normal_phikon": 0.022,
+    "mean_p_normal_imagenet": 0.092
+   },
+   {
+    "slide": "patient_015_node_1",
+    "grade": "macro",
+    "tiles": 1028,
+    "tumour": 428,
+    "auc_phikon": 0.99,
+    "auc_imagenet": 0.96,
+    "mean_p_normal_phikon": 0.011,
+    "mean_p_normal_imagenet": 0.074
+   },
+   {
+    "slide": "patient_015_node_2",
+    "grade": "macro",
+    "tiles": 717,
+    "tumour": 117,
+    "auc_phikon": 0.992,
+    "auc_imagenet": 0.931,
+    "mean_p_normal_phikon": 0.027,
+    "mean_p_normal_imagenet": 0.14
+   },
+   {
+    "slide": "patient_017_node_2",
+    "grade": "macro",
+    "tiles": 1403,
+    "tumour": 803,
+    "auc_phikon": 0.994,
+    "auc_imagenet": 0.944,
+    "mean_p_normal_phikon": 0.014,
+    "mean_p_normal_imagenet": 0.062
+   },
+   {
+    "slide": "patient_017_node_4",
+    "grade": "micro",
+    "tiles": 705,
+    "tumour": 105,
+    "auc_phikon": 0.959,
+    "auc_imagenet": 0.824,
+    "mean_p_normal_phikon": 0.124,
+    "mean_p_normal_imagenet": 0.206
+   }
+  ],
+  "1": [
+   {
+    "slide": "patient_020_node_0",
+    "grade": "negative",
+    "tiles": 600,
+    "tumour": 0,
+    "auc_phikon": NaN,
+    "auc_imagenet": NaN,
+    "mean_p_normal_phikon": 0.223,
+    "mean_p_normal_imagenet": 0.421
+   },
+   {
+    "slide": "patient_020_node_2",
+    "grade": "micro",
+    "tiles": 624,
+    "tumour": 24,
+    "auc_phikon": 0.632,
+    "auc_imagenet": 0.684,
+    "mean_p_normal_phikon": 0.098,
+    "mean_p_normal_imagenet": 0.357
+   },
+   {
+    "slide": "patient_020_node_4",
+    "grade": "macro",
+    "tiles": 902,
+    "tumour": 302,
+    "auc_phikon": 0.989,
+    "auc_imagenet": 0.977,
+    "mean_p_normal_phikon": 0.129,
+    "mean_p_normal_imagenet": 0.231
+   },
+   {
+    "slide": "patient_021_node_3",
+    "grade": "micro",
+    "tiles": 627,
+    "tumour": 27,
+    "auc_phikon": 0.9,
+    "auc_imagenet": 0.87,
+    "mean_p_normal_phikon": 0.098,
+    "mean_p_normal_imagenet": 0.235
+   },
+   {
+    "slide": "patient_022_node_4",
+    "grade": "macro",
+    "tiles": 1505,
+    "tumour": 905,
+    "auc_phikon": 0.983,
+    "auc_imagenet": 0.94,
+    "mean_p_normal_phikon": 0.243,
+    "mean_p_normal_imagenet": 0.457
+   },
+   {
+    "slide": "patient_034_node_3",
+    "grade": "macro",
+    "tiles": 1102,
+    "tumour": 502,
+    "auc_phikon": 0.984,
+    "auc_imagenet": 0.915,
+    "mean_p_normal_phikon": 0.241,
+    "mean_p_normal_imagenet": 0.3
+   },
+   {
+    "slide": "patient_036_node_3",
+    "grade": "micro",
+    "tiles": 675,
+    "tumour": 75,
+    "auc_phikon": 0.965,
+    "auc_imagenet": 0.84,
+    "mean_p_normal_phikon": 0.188,
+    "mean_p_normal_imagenet": 0.351
+   },
+   {
+    "slide": "patient_038_node_2",
+    "grade": "micro",
+    "tiles": 628,
+    "tumour": 28,
+    "auc_phikon": 0.978,
+    "auc_imagenet": 0.877,
+    "mean_p_normal_phikon": 0.056,
+    "mean_p_normal_imagenet": 0.317
+   },
+   {
+    "slide": "patient_039_node_1",
+    "grade": "micro",
+    "tiles": 642,
+    "tumour": 42,
+    "auc_phikon": 0.918,
+    "auc_imagenet": 0.764,
+    "mean_p_normal_phikon": 0.222,
+    "mean_p_normal_imagenet": 0.322
+   }
+  ],
+  "2": [
+   {
+    "slide": "patient_040_node_0",
+    "grade": "negative",
+    "tiles": 600,
+    "tumour": 0,
+    "auc_phikon": NaN,
+    "auc_imagenet": NaN,
+    "mean_p_normal_phikon": 0.166,
+    "mean_p_normal_imagenet": 0.423
+   },
+   {
+    "slide": "patient_042_node_3",
+    "grade": "macro",
+    "tiles": 1052,
+    "tumour": 452,
+    "auc_phikon": 0.99,
+    "auc_imagenet": 0.898,
+    "mean_p_normal_phikon": 0.019,
+    "mean_p_normal_imagenet": 0.283
+   },
+   {
+    "slide": "patient_044_node_4",
+    "grade": "macro",
+    "tiles": 853,
+    "tumour": 253,
+    "auc_phikon": 0.99,
+    "auc_imagenet": 0.951,
+    "mean_p_normal_phikon": 0.061,
+    "mean_p_normal_imagenet": 0.703
+   },
+   {
+    "slide": "patient_045_node_1",
+    "grade": "micro",
+    "tiles": 629,
+    "tumour": 29,
+    "auc_phikon": 0.708,
+    "auc_imagenet": 0.51,
+    "mean_p_normal_phikon": 0.015,
+    "mean_p_normal_imagenet": 0.665
+   },
+   {
+    "slide": "patient_046_node_3",
+    "grade": "micro",
+    "tiles": 698,
+    "tumour": 98,
+    "auc_phikon": 0.999,
+    "auc_imagenet": 0.958,
+    "mean_p_normal_phikon": 0.027,
+    "mean_p_normal_imagenet": 0.549
+   },
+   {
+    "slide": "patient_046_node_4",
+    "grade": "micro",
+    "tiles": 755,
+    "tumour": 155,
+    "auc_phikon": 0.991,
+    "auc_imagenet": 0.905,
+    "mean_p_normal_phikon": 0.005,
+    "mean_p_normal_imagenet": 0.582
+   },
+   {
+    "slide": "patient_048_node_1",
+    "grade": "micro",
+    "tiles": 617,
+    "tumour": 17,
+    "auc_phikon": 1.0,
+    "auc_imagenet": 0.968,
+    "mean_p_normal_phikon": 0.034,
+    "mean_p_normal_imagenet": 0.606
+   },
+   {
+    "slide": "patient_051_node_2",
+    "grade": "macro",
+    "tiles": 2958,
+    "tumour": 2358,
+    "auc_phikon": 0.97,
+    "auc_imagenet": 0.958,
+    "mean_p_normal_phikon": 0.026,
+    "mean_p_normal_imagenet": 0.602
+   },
+   {
+    "slide": "patient_052_node_1",
+    "grade": "macro",
+    "tiles": 1250,
+    "tumour": 650,
+    "auc_phikon": 0.66,
+    "auc_imagenet": 0.909,
+    "mean_p_normal_phikon": 0.019,
+    "mean_p_normal_imagenet": 0.538
+   }
+  ],
+  "3": [
+   {
+    "slide": "patient_060_node_1",
+    "grade": "negative",
+    "tiles": 600,
+    "tumour": 0,
+    "auc_phikon": NaN,
+    "auc_imagenet": NaN,
+    "mean_p_normal_phikon": 0.009,
+    "mean_p_normal_imagenet": 0.064
+   },
+   {
+    "slide": "patient_061_node_4",
+    "grade": "micro",
+    "tiles": 620,
+    "tumour": 20,
+    "auc_phikon": 0.987,
+    "auc_imagenet": 0.929,
+    "mean_p_normal_phikon": 0.014,
+    "mean_p_normal_imagenet": 0.032
+   },
+   {
+    "slide": "patient_062_node_2",
+    "grade": "macro",
+    "tiles": 807,
+    "tumour": 207,
+    "auc_phikon": 0.971,
+    "auc_imagenet": 0.867,
+    "mean_p_normal_phikon": 0.052,
+    "mean_p_normal_imagenet": 0.092
+   },
+   {
+    "slide": "patient_066_node_2",
+    "grade": "micro",
+    "tiles": 625,
+    "tumour": 25,
+    "auc_phikon": 0.998,
+    "auc_imagenet": 0.892,
+    "mean_p_normal_phikon": 0.013,
+    "mean_p_normal_imagenet": 0.049
+   },
+   {
+    "slide": "patient_067_node_4",
+    "grade": "micro",
+    "tiles": 645,
+    "tumour": 45,
+    "auc_phikon": 0.943,
+    "auc_imagenet": 0.569,
+    "mean_p_normal_phikon": 0.007,
+    "mean_p_normal_imagenet": 0.056
+   },
+   {
+    "slide": "patient_073_node_1",
+    "grade": "macro",
+    "tiles": 4742,
+    "tumour": 4142,
+    "auc_phikon": 0.978,
+    "auc_imagenet": 0.96,
+    "mean_p_normal_phikon": 0.006,
+    "mean_p_normal_imagenet": 0.032
+   },
+   {
+    "slide": "patient_075_node_4",
+    "grade": "macro",
+    "tiles": 1903,
+    "tumour": 1303,
+    "auc_phikon": 0.989,
+    "auc_imagenet": 0.937,
+    "mean_p_normal_phikon": 0.007,
+    "mean_p_normal_imagenet": 0.073
+   }
+  ],
+  "4": [
+   {
+    "slide": "patient_081_node_0",
+    "grade": "negative",
+    "tiles": 600,
+    "tumour": 0,
+    "auc_phikon": NaN,
+    "auc_imagenet": NaN,
+    "mean_p_normal_phikon": 0.013,
+    "mean_p_normal_imagenet": 0.018
+   },
+   {
+    "slide": "patient_088_node_1",
+    "grade": "micro",
+    "tiles": 643,
+    "tumour": 43,
+    "auc_phikon": 0.948,
+    "auc_imagenet": 0.833,
+    "mean_p_normal_phikon": 0.01,
+    "mean_p_normal_imagenet": 0.012
+   },
+   {
+    "slide": "patient_089_node_3",
+    "grade": "micro",
+    "tiles": 616,
+    "tumour": 16,
+    "auc_phikon": 0.986,
+    "auc_imagenet": 0.855,
+    "mean_p_normal_phikon": 0.009,
+    "mean_p_normal_imagenet": 0.015
+   },
+   {
+    "slide": "patient_092_node_1",
+    "grade": "macro",
+    "tiles": 1115,
+    "tumour": 515,
+    "auc_phikon": 0.993,
+    "auc_imagenet": 0.977,
+    "mean_p_normal_phikon": 0.004,
+    "mean_p_normal_imagenet": 0.005
+   },
+   {
+    "slide": "patient_096_node_0",
+    "grade": "macro",
+    "tiles": 10794,
+    "tumour": 10194,
+    "auc_phikon": 0.915,
+    "auc_imagenet": 0.92,
+    "mean_p_normal_phikon": 0.113,
+    "mean_p_normal_imagenet": 0.035
+   },
+   {
+    "slide": "patient_099_node_4",
+    "grade": "macro",
+    "tiles": 1498,
+    "tumour": 898,
+    "auc_phikon": 0.987,
+    "auc_imagenet": 0.947,
+    "mean_p_normal_phikon": 0.011,
+    "mean_p_normal_imagenet": 0.009
+   }
+  ]
+ },
+ "bootstrap": {
+  "0": {
+   "patients": 6,
+   "diff": 0.0522,
+   "ci95": [
+    0.0196,
+    0.1112
+   ],
+   "frac_phikon_higher": 1.0,
+   "valid_resamples": 2000
+  },
+  "1": {
+   "patients": 7,
+   "diff": 0.0508,
+   "ci95": [
+    0.034,
+    0.0978
+   ],
+   "frac_phikon_higher": 1.0,
+   "valid_resamples": 2000
+  },
+  "2": {
+   "patients": 8,
+   "diff": -0.0326,
+   "ci95": [
+    -0.2579,
+    0.1434
+   ],
+   "frac_phikon_higher": 0.372,
+   "valid_resamples": 2000
+  },
+  "3": {
+   "patients": 7,
+   "diff": 0.0375,
+   "ci95": [
+    0.0241,
+    0.148
+   ],
+   "frac_phikon_higher": 1.0,
+   "valid_resamples": 2000
+  },
+  "4": {
+   "patients": 6,
+   "diff": 0.0226,
+   "ci95": [
+    0.009,
+    0.0701
+   ],
+   "frac_phikon_higher": 1.0,
+   "valid_resamples": 2000
+  }
+ },
+ "pooled": {
+  "auc_phikon": 0.9368,
+  "auc_imagenet": 0.8231,
+  "diff_ci95": [
+   0.0188,
+   0.1721
+  ],
+  "phikon_ci95": [
+   0.9023,
+   0.975
+  ],
+  "imagenet_ci95": [
+   0.7571,
+   0.9158
+  ]
+ }
+}

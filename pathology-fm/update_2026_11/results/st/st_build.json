@@ -1,0 +1,57 @@
+{
+ "V1LN": {
+  "spots": 4035,
+  "dropped": 0,
+  "genes_total": 36601,
+  "image": [
+   11291,
+   11757
+  ],
+  "image_mode": "RGB",
+  "pitch_px": 137.004,
+  "um_per_px": 0.7299,
+  "crop_px": 224,
+  "field_um": 163.5,
+  "median_umi_per_spot": 20239.0,
+  "blankish_patches": 0,
+  "gate": "patches, coordinates, genes and expression identical to the project's hest_sample224.npz"
+ },
+ "BRCA": {
+  "spots": 3798,
+  "dropped": 0,
+  "genes_total": 36601,
+  "image": [
+   24240,
+   24240
+  ],
+  "image_mode": "RGB",
+  "pitch_px": 273.0,
+  "um_per_px": 0.3663,
+  "crop_px": 446,
+  "field_um": 163.4,
+  "median_umi_per_spot": 20761.5,
+  "blankish_patches": 0
+ },
+ "V2LN": {
+  "spots": 4163,
+  "dropped": 0,
+  "genes_total": 18085,
+  "image": [
+   54524,
+   51260
+  ],
+  "image_mode": "RGB",
+  "pitch_px": 365.386,
+  "um_per_px": 0.2737,
+  "crop_px": 597,
+  "field_um": 163.4,
+  "median_umi_per_spot": 28425.0,
+  "blankish_patches": 46,
+  "gate": {
+   "matched_spots": 1022,
+   "median_pixel_corr_vs_project_patches": 0.5449,
+   "min_pixel_corr": 0.2216,
+   "mean_abs_diff": 26.2
+  }
+ }
+}

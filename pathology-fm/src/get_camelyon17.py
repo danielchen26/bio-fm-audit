@@ -15,6 +15,7 @@ without resume wastes two hours. Same lesson as mid-run checkpointing.
 """
 from __future__ import annotations
 
+import os
 import argparse
 import subprocess
 import sys
@@ -25,7 +26,8 @@ from pathlib import Path
 
 BUCKET = "https://camelyon-dataset.s3.us-west-2.amazonaws.com"
 PREFIX = "CAMELYON17"
-DEST = Path("/Volumes/Lexar/camelyon17")
+# CAMELYON17 slides, tiles and caches (about 180 GB). Set C17_ROOT to keep them on another disk.
+DEST = Path(os.environ.get("C17_ROOT", Path(__file__).resolve().parent.parent / "data" / "camelyon17"))
 
 
 def list_keys(prefix: str) -> dict[str, int]:

@@ -1,0 +1,54 @@
+{
+ "slide": "patient_052_node_1",
+ "tiles": 1250,
+ "tumour": 650,
+ "P_tumour_on_tumour_tiles_p10_p50_p90": {
+  "phikon": [
+   0.0,
+   0.0,
+   0.065
+  ],
+  "path_dino_vits_lunit": [
+   0.154,
+   0.99,
+   1.0
+  ],
+  "in_dino_vitb": [
+   0.0,
+   0.963,
+   1.0
+  ]
+ },
+ "P_tumour_on_normal_tiles_p10_p50_p90": {
+  "phikon": [
+   0.0,
+   0.0,
+   0.002
+  ],
+  "path_dino_vits_lunit": [
+   0.0,
+   0.002,
+   0.033
+  ],
+  "in_dino_vitb": [
+   0.0,
+   0.0,
+   0.094
+  ]
+ },
+ "tumour_cover_p10_p50_p90": [
+  0.181,
+  1.0,
+  1.0
+ ],
+ "frac_tumour_tiles_scored_below_0.5": {
+  "phikon": 0.943,
+  "path_dino_vits_lunit": 0.146,
+  "in_dino_vitb": 0.335
+ },
+ "frac_normal_tiles_scored_above_0.5": {
+  "phikon": 0.017,
+  "path_dino_vits_lunit": 0.002,
+  "in_dino_vitb": 0.055
+ }
+}

@@ -1,0 +1,36 @@
+[morph] computed imagenet: (4035, 384) -> morph_imagenet_p96.npz
+[xmodal] 4035 spots, 256 genes, patch=96px, morph=imagenet(384d), head=flow | blocks 6x6 | train 3330 test 705 | 7 held-out tiles
+[xmodal] params 4.34M
+[    1] loss 1.9468 gn 0.05    0.3s
+[  500] loss 1.7697 gn 0.38    8.3s
+[ 1000] loss 1.7267 gn 0.36   16.3s
+[ 1500] loss 1.7326 gn 0.31   24.3s
+[ 2000] loss 1.6612 gn 0.44   32.4s
+[ 2500] loss 1.5546 gn 0.58   40.4s
+[ 3000] loss 1.5788 gn 0.55   48.4s
+[ 3500] loss 1.5334 gn 0.67   56.7s
+[ 4000] loss 1.4840 gn 0.59   65.1s
+
+==============================================================================================
+spatially held-out tiles | morphology = imagenet | head = flow | 32 samples/spot
+==============================================================================================
+                                             CRPS   r(mean)   cov90   sharp
+  baseline  neighbour-Gaussian (smoothing)   0.6993   +0.1099   0.700   0.833
+  baseline  neighbour-mean (point)         0.9080   +0.1137   0.004   0.000
+  baseline  morphology-kNN (imagenet)      0.6696   +0.0994   0.732   0.887
+  model     morph+ctx  (both sources)      0.5792   +0.3697   0.814   0.860
+  model     morph-only (no neighbours)     0.6201   +0.2540   0.787   0.868
+  model     ctx-only   (no morphology)     0.5839   +0.3552   0.814   0.868
+
+[decomposition]  (CRPS, lower is better -- negative delta means it helped)
+  morphology beyond spatial context : -0.0047
+  spatial context beyond morphology : -0.0408
+  model vs probabilistic smoothing  : -0.1201
+
+[compare]  morph=imagenet head=flow patch=96px
+  morph-only CRPS (deployment condition, no measured neighbours) : 0.6201
+  morphology-beyond-context delta                               : -0.0047
+  -> compare BOTH against the same numbers from --morph random.
+     If they do not beat the random-feature control, the encoder
+     contributed nothing, whatever the pretraining loss said.
+[xmodal] saved ckpt/xmodal_imagenet_flow_p96.pt

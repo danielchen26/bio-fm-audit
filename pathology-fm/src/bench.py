@@ -31,6 +31,28 @@ IMAGENET_MEAN = torch.tensor([0.485, 0.456, 0.406]).view(1, 3, 1, 1)
 IMAGENET_STD = torch.tensor([0.229, 0.224, 0.225]).view(1, 3, 1, 1)
 
 
+def checkpoint_norm(model):
+    """Input mean/std a timm checkpoint was trained with.
+
+    Not every ImageNet model uses the ImageNet statistics: the augreg ViT-S used
+    here expects 0.5/0.5. Until 2026-11 it was fed the ImageNet statistics, which
+    understated the ImageNet baseline in every table that has one.
+    """
+    import timm
+    cfg = timm.data.resolve_model_data_config(model)
+    return tuple(cfg["mean"]), tuple(cfg["std"])
+
+
+def _mean_std(normalize, dev):
+    """'imagenet', 'half' (0.5 / 0.25, our DINO), or the (mean, std) of the checkpoint itself."""
+    if normalize == "imagenet":
+        return IMAGENET_MEAN.to(dev), IMAGENET_STD.to(dev)
+    if normalize == "half":
+        return 0.5, 0.25
+    mean, std = normalize
+    return (torch.tensor(mean).view(1, 3, 1, 1).to(dev), torch.tensor(std).view(1, 3, 1, 1).to(dev))
+
+
 def raw_pixel_features(patches: np.ndarray, bins: int = 16) -> np.ndarray:
     """Colour statistics only. No learning of any kind."""
     x = patches.astype(np.float32) / 255.0
@@ -46,13 +68,13 @@ def embed_torch(model, patches, size, device, batch=64, normalize="imagenet", cl
     dev = torch.device(device)
     model = model.to(dev).eval()
     out = []
-    mean, std = IMAGENET_MEAN.to(dev), IMAGENET_STD.to(dev)
+    mean, std = _mean_std(normalize, dev)
     for i in range(0, len(patches), batch):
         u8 = torch.from_numpy(patches[i:i + batch]).to(dev)
         x = u8.permute(0, 3, 1, 2).float() / 255.0
         if x.shape[-1] != size:
             x = F.interpolate(x, size=(size, size), mode="bicubic", align_corners=False).clamp(0, 1)
-        x = (x - mean) / std if normalize == "imagenet" else (x - 0.5) / 0.25
+        x = (x - mean) / std
         z = model(x)
         if not torch.is_tensor(z):
             z = z.last_hidden_state[:, 0] if cls_only else z.pooler_output
@@ -73,7 +95,7 @@ def get_encoders(which, patches, device):
         print("[bench] ImageNet ViT-S/16")
         m = timm.create_model("vit_small_patch16_224.augreg_in21k_ft_in1k",
                               pretrained=True, num_classes=0)
-        yield "imagenet-vit-s", embed_torch(m, patches, 224, device)
+        yield "imagenet-vit-s", embed_torch(m, patches, 224, device, normalize=checkpoint_norm(m))
 
     if "phikon" in which:
         from transformers import AutoModel
