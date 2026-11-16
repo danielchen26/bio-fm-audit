@@ -1,0 +1,36 @@
+[morph] computed imagenet: (4035, 384) -> morph_imagenet_cfgnorm_p224.npz
+[xmodal] 4035 spots, 256 genes, patch=224px, morph=imagenet(384d), head=flow | blocks 6x6 | train 3330 test 705 | 7 held-out tiles
+[xmodal] params 4.34M
+[    1] loss 1.9349 gn 0.06    0.2s
+[  500] loss 1.8132 gn 0.46    8.2s
+[ 1000] loss 1.7565 gn 0.30   16.2s
+[ 1500] loss 1.7665 gn 0.35   24.3s
+[ 2000] loss 1.6723 gn 0.49   32.3s
+[ 2500] loss 1.5359 gn 0.54   40.4s
+[ 3000] loss 1.5635 gn 0.61   48.4s
+[ 3500] loss 1.5582 gn 0.58   56.5s
+[ 4000] loss 1.4825 gn 0.60   64.6s
+
+==============================================================================================
+spatially held-out tiles | morphology = imagenet | head = flow | 32 samples/spot
+==============================================================================================
+                                             CRPS   r(mean)   cov90   sharp
+  baseline  neighbour-Gaussian (smoothing)   0.6993   +0.1099   0.700   0.833
+  baseline  neighbour-mean (point)         0.9080   +0.1137   0.004   0.000
+  baseline  morphology-kNN (imagenet)      0.6651   +0.1111   0.731   0.881
+  model     morph+ctx  (both sources)      0.5813   +0.3619   0.814   0.862
+  model     morph-only (no neighbours)     0.6111   +0.2728   0.795   0.866
+  model     ctx-only   (no morphology)     0.5833   +0.3571   0.813   0.868
+
+[decomposition]  (CRPS, lower is better -- negative delta means it helped)
+  morphology beyond spatial context : -0.0021
+  spatial context beyond morphology : -0.0298
+  model vs probabilistic smoothing  : -0.1181
+
+[compare]  morph=imagenet head=flow patch=224px
+  morph-only CRPS (deployment condition, no measured neighbours) : 0.6111
+  morphology-beyond-context delta                               : -0.0021
+  -> compare BOTH against the same numbers from --morph random.
+     If they do not beat the random-feature control, the encoder
+     contributed nothing, whatever the pretraining loss said.
+[xmodal] saved ckpt/xmodal_imagenet_flow_p224.pt

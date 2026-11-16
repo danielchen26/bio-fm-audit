@@ -99,7 +99,9 @@ class RandomConv(nn.Module):
 def precompute_morph(patches, kind, device, batch=64, tag=""):
     # tag MUST include the patch size: otherwise a 96px cache is silently
     # reused for a 224px run and the whole field-of-view experiment is void
-    cache = DATA / f"morph_{kind}{tag}.npz"
+    # "_cfgnorm" marks ImageNet features computed with the checkpoint's own input
+    # statistics; caches without it were made with the wrong ones (see bench.checkpoint_norm)
+    cache = DATA / f"morph_{kind}{'_cfgnorm' if kind == 'imagenet' else ''}{tag}.npz"
     if cache.exists():
         f = np.load(cache)["feat"]
         print(f"[morph] cached {kind}: {f.shape}")
@@ -111,20 +113,26 @@ def precompute_morph(patches, kind, device, batch=64, tag=""):
         import timm
         model = timm.create_model("vit_small_patch16_224.augreg_in21k_ft_in1k",
                                   pretrained=True, num_classes=0).to(dev).eval()
-        size, norm = 224, "imagenet"
+        cfg = timm.data.resolve_model_data_config(model)
+        size, norm = 224, (cfg["mean"], cfg["std"])
     elif kind == "phikon":
         from transformers import AutoModel
         model = AutoModel.from_pretrained("owkin/phikon", add_pooling_layer=False).to(dev).eval()
         size, norm = 224, "imagenet"
     else:
         raise ValueError(kind)
-    mean, std = IMAGENET_MEAN.to(dev), IMAGENET_STD.to(dev)
+    if norm == "imagenet":
+        mean, std = IMAGENET_MEAN.to(dev), IMAGENET_STD.to(dev)
+    elif norm == "half":
+        mean, std = 0.5, 0.25
+    else:                                   # the checkpoint's own (mean, std)
+        mean, std = (torch.tensor(v).view(1, 3, 1, 1).to(dev) for v in norm)
     out = []
     for i in range(0, len(patches), batch):
         x = torch.from_numpy(patches[i:i + batch]).to(dev).permute(0, 3, 1, 2).float() / 255.0
         if x.shape[-1] != size:
             x = F.interpolate(x, (size, size), mode="bicubic", align_corners=False).clamp(0, 1)
-        x = (x - mean) / std if norm == "imagenet" else (x - 0.5) / 0.25
+        x = (x - mean) / std
         z = model(x)
         out.append((z if torch.is_tensor(z) else z.last_hidden_state[:, 0]).float().cpu().numpy())
     feat = np.concatenate(out).astype(np.float32)

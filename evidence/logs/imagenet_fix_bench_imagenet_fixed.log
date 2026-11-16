@@ -1,0 +1,27 @@
+[bench] 7909 patches, 81 patients, malignant fraction 0.686
+
+[split:random] train/val/test = (5515, 1183, 1211)
+[split:patient] train/val/test = (5354, 1122, 1433)
+[split:magnification] train/val/test = (2997, 1439, 513)
+
+[bench] ImageNet ViT-S/16
+
+=== imagenet-vit-s  (dim 384) ===
+  [random]
+  imagenet-vit-s             bio-AUC 0.958  bio-acc 0.900 (chance 0.699)   || confounds: patient-ID 0.755 (chance 0.0356, lift   21.2x)  magnif 0.917 (chance 0.274)
+  [patient]
+  imagenet-vit-s             bio-AUC 0.891  bio-acc 0.857 (chance 0.664)   || confounds: patient-ID 0.838 (chance 0.0485, lift   17.3x)  magnif 0.865 (chance 0.271)
+  [magnification]
+  imagenet-vit-s             bio-AUC 0.916  bio-acc 0.834 (chance 0.612)   || confounds: patient-ID 0.863 (chance 0.0522, lift   16.5x)  magnif 0.000 (chance 1.000)
+  [leakage]
+    random-split AUC 0.958 -> patient-disjoint AUC 0.891   leak = +0.067 AUC (+14.7% of headroom)
+  [patient-level MIL, honest split]
+  imagenet-vit-s             patient-AUC 0.975 +- 0.039   acc 0.928 +- 0.045   (n_test_patients~16, 5 seeds)
+
+====================================================================================================
+SUMMARY  biology AUC by split regime (higher is better; the gap is the story)
+====================================================================================================
+encoder             random(leaky)  patient(honest)  magnif(shift)     leak  patientID-lift          MIL-AUC
+imagenet-vit-s              0.958            0.891          0.916   +0.067           17.3x     0.975+-0.039
+
+[bench] wrote data/bench_results.npz

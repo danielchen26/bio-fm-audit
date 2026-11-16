@@ -27,22 +27,27 @@ Positive means unseen hospitals genuinely cost accuracy.
 """
 from __future__ import annotations
 
+import os
 import argparse
 from collections import Counter
+
+from pathlib import Path
 
 import numpy as np
 import torch
 
 from audit import logistic_probe
-from c17bench import embed, raw_pixel_features
+from c17bench import checkpoint_norm, embed, raw_pixel_features
 from c17data import GRADES, load
 
-CACHE = "/Volumes/Lexar/camelyon17"
+# CAMELYON17 slides, tiles and caches (about 180 GB). Set C17_ROOT to keep them on another disk.
+CACHE = str(Path(os.environ.get("C17_ROOT", Path(__file__).resolve().parent.parent / "data" / "camelyon17")))
 
 
 def get_embedding(d, kind: str, device: str) -> np.ndarray:
     import os
-    path = f"{CACHE}/emb_{kind}_{len(d)}.npz"
+    # "_cfgnorm": ImageNet features made with the checkpoint's own input statistics (older caches used the wrong ones)
+    path = f"{CACHE}/emb_{kind}{'_cfgnorm' if kind == 'imagenet' else ''}_{len(d)}.npz"
     if os.path.exists(path):
         e = np.load(path)["emb"]
         print(f"[emb] cached {kind} {e.shape}")
@@ -53,7 +58,7 @@ def get_embedding(d, kind: str, device: str) -> np.ndarray:
         import timm
         m = timm.create_model("vit_small_patch16_224.augreg_in21k_ft_in1k",
                               pretrained=True, num_classes=0)
-        e = embed(m, d.patches, 224, device)
+        e = embed(m, d.patches, 224, device, norm=checkpoint_norm(m))
     elif kind == "phikon":
         from transformers import AutoModel
         m = AutoModel.from_pretrained("owkin/phikon", add_pooling_layer=False)

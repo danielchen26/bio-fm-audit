@@ -6,7 +6,7 @@
 # and exited 0 at 37/50 simply because it ran out of passes, which looks
 # identical to success in the exit code.
 cd "$(dirname "$0")/src" || exit 1
-TILES=/Volumes/Lexar/camelyon17/tiles
+TILES=${C17_ROOT:-$(cd .. && pwd)/data/camelyon17}/tiles     # same default as the Python scripts
 TARGET=${TARGET:-50}
 STALL_LIMIT=${STALL_LIMIT:-40}          # passes with no progress before giving up
 prev=-1

@@ -76,4 +76,4 @@ raw-pixel          0.9117   0.5993   0.6487     0.7073+-0.0806     -0.0587     0
 imagenet-vit-s     0.9732   0.8066   0.8457     0.8500+-0.0855     -0.0044     0.9661      9.1x
 phikon-vit-b       0.9973   0.8827   0.9250     0.9595+-0.0158     -0.0345     0.9958     10.0x
 
-[bench] wrote /Volumes/Lexar/camelyon17/c17_bench.npz
+[bench] wrote $C17_ROOT/c17_bench.npz
