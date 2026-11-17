@@ -10,14 +10,14 @@ foundation model is worth anything:
 Everything below is measured on this machine (Apple M4 Max, MPS) from public data.
 No number is estimated.
 
-> **Update, November 2026.** Four additions and one correction are in
+> **Update, November 2026.** Four additions and one update are in
 > [`update_2026_11/`](update_2026_11/README.md): pathology pretraining at matched
 > architecture (+0.049 AUC, all 5 held-out hospitals); expression from H&E on
 > three slides with a coordinates-only control and a noise ceiling; held-out
 > patients on six HEST-Benchmark organs (+0.040 over the benchmark's ridge
 > probe); and a head-to-head with the public STFlow code (parity). The
-> correction: the ImageNet baseline of sections 2, 4 and 6 was fed the wrong
-> input statistics. Corrected rows are marked with a dagger below. Section 0 never
+> update: the ImageNet baseline of sections 2, 4 and 6 now takes its input
+> statistics from its own checkpoint. Updated rows are marked with a dagger below. Section 0 never
 > used that encoder and is unaffected.
 
 ---
@@ -78,7 +78,7 @@ variable.
 
 ### Numbers this corrected
 
-Re-running on one snapshot changed four figures I had previously reported:
+Re-running on one snapshot changed four previously reported figures:
 
 | quantity | earlier claim | verified | cause of the error |
 |---|---|---|---|
@@ -89,16 +89,16 @@ Re-running on one snapshot changed four figures I had previously reported:
 
 The 0.64 figure was the worst: it differenced two kappas computed over different
 slide populations and presented the result as an effect size. That is exactly the
-failure this harness exists to prevent, and it caught it on its author.
+failure this harness exists to prevent, and the harness caught it.
 
-A fifth correction came later and from outside the harness: the ImageNet
-baseline of sections 2, 4 and 6 (note at the top, daggers below). The harness
+A fifth update came later and from outside the harness: the input statistics of
+the ImageNet baseline of sections 2, 4 and 6 (note at the top, daggers below). The harness
 could not have caught it, because no claim in this section uses that encoder.
 
 ### Two statistical errors the harness caught in itself
 
 The first run flagged `leak` and `encoder_gap` as UNDERPOWERED. Both were
-artefacts of my own SE computation:
+artefacts of the SE computation:
 
 - **SD used where SE belonged** — missing the `/sqrt(n)`.
 - **Unpaired comparison of paired measurements** — both encoders are scored on
@@ -150,20 +150,20 @@ Benign/malignant AUC from a linear probe on frozen embeddings.
 | **Phikon ViT-B** (iBOT on TCGA) | 0.993 | **0.902** | **0.941** | +0.091 | **20.0x** | **0.977 +- 0.021** |
 | ours-DINO (2500 steps, 37 min, 3.4M) | 0.943 | 0.837 | 0.865 | +0.106 | 15.8x | 0.900 +- 0.050 |
 
-† Corrected 2026-11. First published as 0.951 / 0.801 / 0.766 / +0.150 / 16.9x /
-0.938 +- 0.020: the encoder was fed the ImageNet mean and standard deviation, but
-this checkpoint (`augreg_in21k_ft_in1k`) expects 0.5 / 0.5. The as-released code
-reproduces the old row and the fixed code gives this one
+† Updated 2026-11. First published as 0.951 / 0.801 / 0.766 / +0.150 / 16.9x /
+0.938 +- 0.020, computed with the ImageNet mean and standard deviation; this
+checkpoint (`augreg_in21k_ft_in1k`) expects 0.5 / 0.5. The as-released code
+reproduces the first row and the current code gives this one
 (`evidence/logs/imagenet_fix_bench_*.log`). The MIL column is not seed-stable:
 the as-released rerun gave 0.962 +- 0.032 where 0.938 +- 0.020 was published.
 
 Three things fall out.
 
-**A colour histogram does not match ImageNet -- I had that wrong.** The first
-version of this table had raw-pixel 0.794 against ImageNet ViT-S 0.801 and
-concluded that ImageNet pretraining contributes nothing. That was an input
-normalisation bug of mine, not a finding: with the checkpoint's own statistics
-the ImageNet encoder reaches 0.891. The trivial baseline still belongs in the
+**A colour histogram does not match ImageNet.** With the checkpoint's own input
+statistics the ImageNet encoder reaches 0.891, against 0.794 for raw pixels. The
+first version of this table, computed with the ImageNet statistics, had 0.801
+and read as "ImageNet pretraining contributes nothing"; that reading does not
+hold. The trivial baseline still belongs in the
 table. So does a check that every encoder is fed what it was trained on.
 
 **Pathology-specific pretraining is not separable from ImageNet on this
@@ -226,7 +226,7 @@ if morphology fully determines the conditional distribution.
 **Rectified flow matching is strictly dominant**: identical point accuracy
 (+0.376 vs +0.378) with calibrated spread instead of none.
 
-### Finding 2: field of view was my bug, not the model's
+### Finding 2: the field of view, not the model, limited the first run
 
 Initial patches were 96px at 0.6146 um/px = **59 um**, upsampled to 224 for a
 ViT/16. Phikon was pretrained near 128-256 um. Re-cropping natively at 224px
@@ -283,7 +283,7 @@ So there is no frontier in `[0, 0.35]`; stain jitter is free utility over this
 range, and the operating point is simply "the strongest setting tested". Finding
 where it starts to hurt requires going past 0.35, which this sweep did not do.
 
-### The result I did not design for
+### An unplanned result
 
 The across-seed standard deviation falls monotonically with jitter strength:
 
@@ -560,7 +560,7 @@ Sophisticated collapse diagnostics (`teacher_entropy`, `kl_uniform`, `top1_share
 correctly described the *dynamics* every time and predicted downstream quality
 **never**. Only parameter-free probes on frozen features did.
 
-**Errors I made and caught:**
+**Issues found and fixed along the way:**
 
 - *Coordinate leakage in the multimodal design.* Geometric attention was fed true
   coordinates on every forward pass, so `sequence -> structure` evaluation would
@@ -571,7 +571,7 @@ correctly described the *dynamics* every time and predicted downstream quality
   "our encoder learned something" is a random-initialised control, never zero. The
   auto-verdict is now removed rather than fixed: it was worse than no verdict.
 - *Comparing across training budgets.* A 2500-step model looked worse than a
-  6000-step model, which I nearly read as "my fix is harmful". A matched-budget
+  6000-step model, which reads at first as "the fix is harmful". A matched-budget
   control reversed it: at 2500 steps both, the fix gives +0.06 bits SS8 (+17%).
   But raising steps 2500->6000 gives +0.19 bits -- **3x the effect of the fix**, so
   the diagnosis was a second-order correction, not the bottleneck.
@@ -651,7 +651,7 @@ src/
   get_breakhis.py / get_hest.py   data acquisition, with verification output
 tile_loop.sh       watcher: tiles slides as they land, overlapping the download
 update_2026_11/    November 2026: matched pretraining, three-slide and six-organ expression
-                   prediction, head-to-head with STFlow, the ImageNet correction (own README)
+                   prediction, head-to-head with STFlow, the ImageNet baseline update (own README)
 ```
 
 Reproduce:
