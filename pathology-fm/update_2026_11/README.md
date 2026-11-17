@@ -1,6 +1,6 @@
 # Update, November 2026: what holds across patients, organs and a published method
 
-Four additions to the pathology half, and one correction to it. Every rule that
+Four additions to the pathology half, and one update to its ImageNet baseline. Every rule that
 decides a claim was written down before the run that tests it
 ([`PREREG.md`](PREREG.md)), and every new pipeline first had to reproduce a
 number that already existed.
@@ -11,7 +11,7 @@ number that already existed.
 | Is expression predicted from H&E more than spatial interpolation? | image beats a coordinates-only baseline in **15 of 15** folds; the median gene reaches 62–86% of its noise ceiling | [2](#2-expression-from-he-within-a-slide-three-slides) |
 | Does it carry to patients never seen? | **+0.040** mean Pearson over the benchmark's ridge probe, 13 of 15 splits, 5 of 6 organs | [3](#3-held-out-patients-hest-benchmark-six-organs) |
 | How does it compare with a published method on identical inputs? | **0.397 vs 0.393** against the public STFlow code: parity under a pre-registered rule | [4](#4-head-to-head-with-the-public-stflow-code) |
-| What did the old code get wrong? | the ImageNet baseline was fed the wrong input statistics; "ImageNet contributes nothing" was an artefact | [5](#5-correction-the-imagenet-baseline) |
+| How strong is the ImageNet baseline with its own input statistics? | 0.891 patient-held-out AUC on BreaKHis, not 0.801; "ImageNet contributes nothing" does not hold | [5](#5-update-input-statistics-of-the-imagenet-baseline) |
 
 ---
 
@@ -133,31 +133,31 @@ unseen ones. The public STFlow code needed a one-line repair to start
 ([`stflow_cmp/patch_model.py`](stflow_cmp/patch_model.py)) and its authors
 describe it as a demo.
 
-## 5. Correction: the ImageNet baseline
+## 5. Update: input statistics of the ImageNet baseline
 
 `src/bench.py`, `src/c17bench.py`, `src/c17site.py` and `src/xmodal.py` normalised
 every encoder's input with the ImageNet mean and standard deviation. The
 ImageNet ViT-S used as the baseline (`augreg_in21k_ft_in1k`) expects 0.5 / 0.5.
-Nothing errored and the numbers looked plausible. Fixed by reading the statistics
-from the checkpoint's own configuration; the as-released code was first rerun to
-confirm it reproduces the published row, then rerun with the fix
+The mismatch raises no error. The code now reads the statistics
+from each checkpoint's own configuration; the as-released code was first rerun to
+confirm it reproduces the published row, then rerun with the change
 ([`rerun_imagenet_rows.sh`](rerun_imagenet_rows.sh)).
 
 | BreaKHis, ImageNet ViT-S/16 | random | patient (honest) | magnification shift | leak |
 |---|---|---|---|---|
-| as published (wrong input statistics) | 0.951 | 0.801 | 0.766 | +0.150 |
-| **corrected** | **0.958** | **0.891** | **0.916** | **+0.067** |
+| first published (ImageNet input statistics) | 0.951 | 0.801 | 0.766 | +0.150 |
+| **current (the checkpoint's own statistics)** | **0.958** | **0.891** | **0.916** | **+0.067** |
 
 Consequences, applied to the main README: "a colour histogram matches ImageNet"
-is withdrawn (0.794 against 0.891); on BreaKHis, Phikon's margin over ImageNet
+does not hold (0.794 against 0.891); on BreaKHis, Phikon's margin over ImageNet
 shrinks to 0.011, inside the ±0.02–0.03 resolution of that benchmark; the leak
 range becomes 0.067–0.106. Section 0, the verified table, compares raw-pixel and
 Phikon only and is unaffected. On the CAMELYON17 tile set of section 1 the same
-fix moves the ImageNet ViT-S from 0.935 to 0.952.
+change moves the ImageNet ViT-S from 0.935 to 0.952.
 
 Two other ImageNet rows of the main README are affected. The cross-modal one
 barely moves (morphology-kNN r +0.0994 → +0.0873 at 59 µm, +0.1121 → +0.1111 at
-138 µm; CRPS within the ±0.002 run-to-run variation) and is corrected in place.
+138 µm; CRPS within the ±0.002 run-to-run variation) and is updated in place.
 The whole-slide CAMELYON17 one was computed on a tile snapshot that is no longer
 at hand; it is marked as understated there and has not been rerun.
 

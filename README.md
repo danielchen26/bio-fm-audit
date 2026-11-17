@@ -40,7 +40,7 @@ published method's evaluation script:
 | expression from H&E, three slides | prediction, or spatial interpolation? | image beats a coordinates-only baseline in **15 of 15** folds; median gene at 62–86% of its noise ceiling |
 | HEST-Benchmark, six organs | does it survive a new patient? | **+0.040** mean Pearson over the benchmark's ridge probe, 13 of 15 splits; lymph node is the exception |
 | head-to-head with STFlow (ICML 2025) | a better score, or a budget picked on the test patients? | **parity** (0.397 vs 0.393) once neither side sees the test patients; picking on them adds 0.02–0.04 |
-| the ImageNet baseline | a finding, or my preprocessing? | **my preprocessing**: wrong input statistics, 0.801 → 0.891 once fixed |
+| the ImageNet baseline | a finding, or the preprocessing? | **the preprocessing**: 0.801 → 0.891 with the checkpoint's own input statistics |
 
 Everything was measured on one laptop (Apple M4 Max, MPS) from public data.
 No number is estimated.
@@ -144,7 +144,7 @@ publishable-looking number.
 | `pos_thr=0.5` on lesion coverage | 16 of 50 slides contribute **zero** signal, ITC stratum silently deleted |
 | auditing XML structure with `grep` | a phantom annotation class that is really a `<Group>` header row |
 | null hypothesis set to zero | **random features** declared effective |
-| comparing across training budgets | concluded "my fix is harmful" — the **opposite** of the truth |
+| comparing across training budgets | concluded "the fix is harmful" — the **opposite** of the truth |
 | feature cache keyed without patch size | 96 µm features silently reused for a 138 µm experiment |
 | `delta_site` v1/v2/v3 | three clean-looking numbers, each confounded by a different nuisance (grade, test size, train size) |
 | no mid-run checkpointing | 5,750 of 6,000 steps discarded on a wall-clock kill |
@@ -153,11 +153,11 @@ publishable-looking number.
 | **SD used where SE belonged** | a real +0.185 effect reported as underpowered |
 | **unpaired comparison of paired measurements** | 2·SE inflated 0.090 → 0.317, burying that effect |
 
-The last two were caught by the harness **on its author**.
+The last two were caught by the harness itself.
 
-### Five numbers I published and then had to correct
+### Five published numbers, since updated
 
-| quantity | I claimed | verified | cause |
+| quantity | first published | verified | cause |
 |---|---|---|---|
 | value of segmentation | 0.64 κ | **+0.3133** | differenced two κ computed over **different slide populations** |
 | `delta_site` | −0.028, underpowered | **+0.0077, NULL** | matched test sets, equalised training, all 65 slides |
@@ -168,7 +168,7 @@ The last two were caught by the harness **on its author**.
 The 0.64 was the worst: two kappas over different populations, differenced and
 presented as an effect size. Precisely what the harness exists to prevent.
 
-### Three hypotheses of mine that the experiments killed
+### Three hypotheses the experiments rejected
 
 - Stain augmentation would trade confound for biology → **both halves false**.
   Biology rose monotonically (+0.0475); confound stayed flat within error bars.
